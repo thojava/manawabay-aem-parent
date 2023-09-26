@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="a566f02c-661f-431e-8490-5a40ebaedd9e">
+    <jcr:content
+        dam:assetState="processed"
+        jcr:lastModified="{Date}2023-08-29T12:51:08.839+10:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:BitRate="{Long}128"
+            dam:extracted="{Date}2023-08-29T12:51:08.761+10:00"
+            dam:HasCopyRight="false"
+            dam:Layer="{Long}3"
+            dam:Length="{Long}66"
+            dam:Mode="{Long}1"
+            dam:MPEGLevel="{Long}1"
+            dam:Original="true"
+            dam:Padding="false"
+            dam:SamplerRate="{Long}44100"
+            dam:sha1="e493d393c751d2bfa8807af52d306552b73ecae4"
+            dam:size="{Long}1059386"
+            dam:Year="{Long}2018"
+            dc:format="audio/mpeg"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,35 @@
+<div class="cmp-navigation__toggle-mobile">
+    <button class="cmp-navigation__toggle-button"></button>
+</div>
+<sly data-sly-include="navigation.html"></sly>
+<div class="cmp-navigation__menu-container">
+    <div class="cmp-navigation__menu-left">
+        <div class="cmp-navigation__menu-list"></div>
+        <sly data-sly-test="${properties.bottomcolumnpath}"
+             data-sly-resource="${@path=properties.bottomcolumnpath, selectors='content', wcmmode='disabled'}"></sly>
+    </div>
+    <div class="cmp-navigation__menu-right">
+        <sly data-sly-test="${properties.rightcolumnpath}"
+             data-sly-resource="${@path=properties.rightcolumnpath, selectors='content', wcmmode='disabled'}"></sly>
+    </div>
+</div>
+
+<div class="cmp-navigation__mobile-container">
+    <div class="cmp-navigation__mobile-header">
+        <div class="cmp-navigation__mobile-header--logo">
+            <img src="" alt="Mobile logo">
+        </div>
+        <button class="cmp-navigation__mobile-header--close"></button>
+    </div>
+    <div class="cmp-navigation__mobile-navigation">
+        <div class="cmp-navigation__mobile-back d-none">
+            <button class="cmp-navigation__mobile-back--button">Back</button>
+            <span class="cmp-navigation__mobile-back--name"></span>
+        </div>
+        <sly data-sly-include="navigation.html"></sly>
+    </div>
+    <div class="cmp-navigation__menu-bottom">
+        <sly data-sly-test="${properties.bottomcolumnpath}"
+             data-sly-resource="${@path=properties.bottomcolumnpath, selectors='content', wcmmode='disabled'}"></sly>
+    </div>
+</div>

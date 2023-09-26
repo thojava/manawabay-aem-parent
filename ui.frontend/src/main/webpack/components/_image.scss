@@ -1,0 +1,24 @@
+div.image {
+  margin-bottom: 0;
+}
+
+.cmp-image {
+}
+
+.cmp-image__link {
+  .cmp-link__screen-reader-only {
+    display: none;
+  }
+}
+
+.cmp-image__image {
+}
+
+.cmp-image__title {
+}
+
+.image--social {
+  .cmp-image__image {
+    width: $spacing-24;
+  }
+}

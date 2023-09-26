@@ -1,0 +1,24 @@
+<ul data-sly-use.list="com.adobe.cq.wcm.core.components.models.List"
+    data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.itemTemplate="item.html"
+    data-sly-use.tagTemplate="tag.html"
+    data-sly-use.teaserTemplate="teaser.html"
+    data-activation="${list.activationData}"
+    data-sly-list.item="${list.listItems}"
+    id="${list.id}"
+    data-cmp-data-layer="${list.data.json}"
+    class="cmp-list">
+    <sly data-sly-test="${list.displayAsTags}">
+        <li class="cmp-list__item" data-sly-call="${tagTemplate.item @ list = list, item = item}"
+            data-cmp-data-layer="${item.data.json}"></li>
+    </sly>
+    <sly data-sly-test="${list.displayAsPages}">
+        <li data-sly-test="${!list.displayItemAsTeaser}"
+            class="cmp-list__item" data-page-tags="${item.pageTagsIds}" data-sly-call="${itemTemplate.item @ list = list, item = item}"
+            data-cmp-data-layer="${item.data.json}"></li>
+        <li data-sly-test="${list.displayItemAsTeaser && item.teaserResource}"
+            class="cmp-list__item" data-page-tags="${item.pageTagsIds}" data-sly-call="${teaserTemplate.teaser @ item = item}"
+            data-cmp-data-layer="${item.data.json}"></li>
+    </sly>
+</ul>
+<sly data-sly-call="${template.placeholder @ isEmpty=list.listItems.size == 0, classAppend='cmp-list'}"></sly>

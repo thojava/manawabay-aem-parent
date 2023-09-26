@@ -1,0 +1,115 @@
+.cmp-teaser {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-height: 566px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cmp-teaser__image {
+  width: 100%;
+}
+
+.cmp-teaser__content {
+  padding: $spacing-2 $spacing-80;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: auto;
+  min-width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba($black, 0.38);
+
+  @include media-breakpoint-down(md) {
+    padding: 0 $spacing-20 $spacing-28;
+    justify-content: flex-end;
+  }
+}
+
+.cmp-teaser__pretitle {
+  margin-bottom: 0;
+}
+
+.cmp-teaser__title,
+.cmp-teaser__pretitle {
+  color: $white;
+  font-size: $font-8xl;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-tightest;
+  font-family: $font-family--typonine;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    font-size: $font-7xl;
+    line-height: $font-7xl;
+    letter-spacing: $tracking-ml;
+  }
+}
+
+.cmp-teaser__title {
+  margin-bottom: $spacing-40;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: $spacing-20;
+  }
+}
+
+.cmp-teaser__title-link {
+}
+
+.cmp-teaser__description {
+  text-align: center;
+}
+
+.cmp-teaser__action-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $spacing-20;
+}
+
+.cmp-teaser__action-link {
+  padding: $spacing-12 $spacing-22;
+  border: 1px solid $white;
+  border-radius: $rounded-full;
+  transition: color, background-color ease-in 0.15s;
+  gap: $spacing-16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-lg;
+  font-weight: $font-weight-bold;
+  font-family: $font-family--typonine;
+  text-transform: capitalize;
+  color: $white;
+  text-decoration: none;
+
+  &:after {
+    content: '';
+    background-image: url('../resources/images/arrow-black.svg');
+    display: none;
+    visibility: hidden;
+    transition: visibility ease-in 0.15s;
+    width: $spacing-24;
+    height: $spacing-24;
+  }
+
+  &:hover {
+    background: $white;
+    color: $black;
+
+    &:after {
+      display: block;
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-08-30T23:48:22.284+10:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
+        jcr:description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor aliquam dolor, a rhoncus nulla porta eget."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Dine 1"
+        sling:resourceType="manawabay/components/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="manawabay/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="manawabay/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/container"
+                    layout="responsiveGrid">
+                    <title
+                        jcr:lastModified="{Date}2023-08-16T12:05:44.504+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/title"/>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-08-30T23:48:22.281+10:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="true"
+            fileReference="/content/dam/manawabay-showcase/page-images/image-11.jpg"/>
+    </jcr:content>
+</jcr:root>

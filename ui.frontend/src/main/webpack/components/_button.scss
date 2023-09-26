@@ -1,0 +1,280 @@
+$paddings: ('none':$spacing-0, 'xs':$spacing-4, "sm":$spacing-8, 'md':$spacing-16, 'lg':$spacing-24, 'xl':$spacing-48);
+
+.button {
+  width: fit-content;
+}
+
+.button--center {
+  margin: 0 auto !important;
+}
+
+.button--right {
+  margin-left: auto !important;
+}
+
+.aem-GridColumn {
+  &.button--center,
+  &.button--right {
+    float: initial !important;
+    width: fit-content !important;
+  }
+}
+
+a.cmp-button,
+a.cmp-button:active {
+  text-decoration: none;
+}
+
+.cmp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacer;
+  transition: color, opacity, background-color .15s ease-in;
+  border-radius: $spacing-2;
+  border: 1px solid transparent;
+  padding: $spacing-8;
+
+  &:has(.cmp-button__text) {
+    padding: $spacing-12 $spacing-22;
+    border-radius: $rounded-full;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.cmp-button__text {
+  font-size: $font-base;
+  line-height: $line-height-normal;
+  font-weight: $font-weight-normal;
+  font-family: $font-family--sohne;
+  letter-spacing: $tracking-lg;
+  text-transform: capitalize;
+}
+
+.cmp-button__icon {
+  i {
+    font-size: $font-base;
+    transition: color, opacity .15s ease-in;
+  }
+}
+
+.button:not(.button--link-filled) {
+  a.cmp-button {
+    height: auto;
+    gap: $spacing-8;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+
+    .cmp-button__text,
+    .cmp-link__screen-reader-only {
+      font-weight: $font-weight-normal;
+      color: currentColor;
+      line-height: $line-height-none;
+      font-size: $font-base;
+    }
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      .cmp-button__text,
+      .cmp-link__screen-reader-only {
+        color: $accent-01;
+
+        @media (prefers-color-scheme: light) {
+          color: $color-accent-01-light;
+        }
+      }
+
+      .cmp-button__icon {
+        i {
+          color: $dark;
+        }
+      }
+    }
+
+    .cmp-button__icon {
+      i {
+        color: $black;
+      }
+    }
+  }
+}
+
+.button--primary {
+  .cmp-button {
+    background-color: $black;
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: $dark;
+    }
+  }
+
+  .cmp-button__text {
+    color: $white;
+  }
+
+  .cmp-button__icon {
+    i {
+      color: $white;
+    }
+  }
+}
+
+.button--secondary-black {
+  .cmp-button {
+    background-color: transparent;
+    border-color: $black;
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: rgba($dark, 0.2);
+    }
+  }
+
+  .cmp-button__text {
+    color: $black;
+  }
+
+  .cmp-button__icon {
+    i {
+      color: $black;
+    }
+  }
+}
+
+.button--secondary-white {
+  .cmp-button {
+    background-color: transparent;
+    border-color: $white;
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: rgba($accent-01, 0.2);
+    }
+  }
+
+  .cmp-button__text {
+    color: $white;
+  }
+
+  .cmp-button__icon {
+    i {
+      color: $white;
+    }
+  }
+}
+
+.button--accent {
+  .cmp-button {
+    background-color: $white;
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: $accent-01;
+
+      .cmp-button__text {
+        color: $dark;
+      }
+
+      .cmp-button__icon {
+        i {
+          color: $dark;
+        }
+      }
+    }
+  }
+
+  .cmp-button__text {
+    color: $black;
+  }
+
+  .cmp-button__icon {
+    i {
+      color: $black;
+    }
+  }
+}
+
+.button--duststorm {
+  .cmp-button {
+    background-color: $duststorm;
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: rgba($duststorm, .8);
+
+      .cmp-button__text {
+        color: $dark;
+      }
+
+      .cmp-button__icon {
+        i {
+          color: $dark;
+        }
+      }
+    }
+  }
+
+  .cmp-button__text {
+    color: $black;
+  }
+
+  .cmp-button__icon {
+    i {
+      color: $black;
+    }
+  }
+}
+
+.button--delete {
+  .cmp-button {
+    background-color: $red;
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: $red-500;
+    }
+  }
+
+  .cmp-button__text {
+    color: $white;
+  }
+
+  .cmp-button__icon {
+    i {
+      color: $white;
+    }
+  }
+}
+
+.button--icon-right {
+  .cmp-button__icon {
+    order: 2;
+  }
+}
+
+@each $name, $padding in $paddings {
+  .button {
+    &.padding-x--#{$name} {
+      .cmp-button {
+        padding-left: $padding;
+        padding-right: $padding;
+      }
+    }
+
+    &.padding-y--#{$name} {
+      .cmp-button {
+        padding-top: $padding;
+        padding-bottom: $padding;
+      }
+    }
+  }
+}
+
+
+

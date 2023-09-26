@@ -1,0 +1,4 @@
+./_packages/manawabay-dam.zip
+./_packages/manawabay-sites.zip
+./_packages/manawabay-apps.zip
+./_packages/dev-manawabay-showcase.zip

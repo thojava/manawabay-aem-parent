@@ -1,0 +1,78 @@
+.cmp-title {
+}
+
+.cmp-title__text {
+  font-weight: $font-weight-bold;
+}
+
+.cmp-title__text,
+.cmp-title__link {
+  letter-spacing: $tracking-normal;
+  margin: 0;
+}
+
+h1.cmp-title__text,
+h1.cmp-title__text a.cmp-title__link {
+  font-size: $font-8xl;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-7xl;
+  }
+}
+
+h2.cmp-title__text,
+h2.cmp-title__text a.cmp-title__link {
+  font-size: $font-5xl;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-2xl;
+  }
+}
+
+h3.cmp-title__text,
+h3.cmp-title__text a.cmp-title__link {
+  font-size: $font-2xl;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-lg;
+  }
+}
+
+h4.cmp-title__text,
+h4.cmp-title__text a.cmp-title__link {
+  font-size: $font-lg;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-base;
+  }
+}
+
+h5.cmp-title__text,
+h5.cmp-title__text a.cmp-title__link {
+  font-size: $font-base;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-md;
+  }
+}
+
+h6.cmp-title__text,
+h6.cmp-title__text a.cmp-title__link {
+  font-size: $font-md;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-xs;
+  }
+}
+
+.title--center {
+  .cmp-title__text {
+    text-align: center;
+  }
+}
+
+.title--right {
+  .cmp-title__text {
+    text-align: end;
+  }
+}

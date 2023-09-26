@@ -1,0 +1,20 @@
+@cmp-advanced__editor-config-spacing: 10px;
+
+// .cq-Dialog:not([fullscreen]) .cmp-advanced__editor .cq-RichText-editable {
+//     height: initial;
+// }
+
+.cmp-advanced__editor-keyvalue {
+    display: flex;
+}
+
+.cmp-advanced__editor-action .cmp-advanced__editor-keyvalue-key.coral-Form-field,
+.cmp-advanced__editor-action .cmp-advanced__editor-keyvalue-value.coral-Form-field {
+    width: 20%;
+    margin-left: @cmp-advanced__editor-config-spacing;
+}
+
+/* stylelint-disable-next-line selector-max-type */
+.cmp-advanced__editor-keyvalue coral-tooltip {
+    min-width: 100px;
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/manawabay/clientlibs"/>
+    <filter root="/apps/manawabay/components"/>
+    <filter root="/apps/manawabay/i18n"/>
+    <filter root="/apps/manawabay/tabs"/>
+    <filter root="/apps/sling" />
+    <filter root="/apps/msm/manawabay_blueprint" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,356 @@
+$container-columns: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+$container-spaces: ('0':$spacing-0, '2xs':$spacing-2, 'xs':$spacing-8, 'sm':$spacing-12, 'base':$spacing-16, 'md':$spacing-20, 'ml':$spacing-28, 'lg':$spacing-32, '2lg':$spacing-40, '3lg':$spacing-48, '4lg':$spacing-64, '5lg':$spacing-80);
+$container-backgrounds: ('white':$white, 'black':$black, 'darkgrey':$darkgrey, 'midgrey':$midgrey, 'lightgrey':$lightgrey, 'locust':$locust, 'duststorm':$duststorm, 'gulfstream':$gulfstream, 'darksalmon':$darksalmon);
+$container-font-colors: ('white':$black, 'black':$white, 'darkgrey':$white, 'midgrey':$black, 'lightgrey':$black, 'locust':$black, 'duststorm':$black, 'gulfstream':$black, 'darksalmon':$black);
+
+@each $name, $background in $container-backgrounds {
+  .container--#{$name} {
+    > .cmp-container {
+      background-color: $background;
+    }
+  }
+}
+
+@each $name, $color in $container-font-colors {
+  .container--#{$name} {
+    > .cmp-container {
+      color: $color;
+    }
+  }
+}
+
+html:not(.aem-AuthorLayer-Edit) {
+  .container--notification-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    .cmp-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: $spacing-10;
+      padding: $spacing-10 $spacing-40;
+
+      @include media-breakpoint-down(sm) {
+        padding: $spacing-8 $spacing-20;
+      }
+    }
+
+    .text {
+      width: 100%;
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      a,
+      .cmp-link__screen-reader-only {
+        font-size: $font-md;
+      }
+    }
+  }
+
+  .container--notification-popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($black, 0.3);
+    z-index: 9999;
+    max-width: none;
+
+    @include media-breakpoint-down(md) {
+      padding: $spacing-28 $spacing-20;
+    }
+
+    .cmp-container {
+      position: relative;
+      max-width: 714px;
+      padding: $spacing-50;
+
+      @include media-breakpoint-down(md) {
+        padding: $spacing-28 $spacing-20;
+      }
+    }
+
+    .button:has(button#popup-close-button) {
+      position: absolute;
+      top: $spacing-24;
+      right: $spacing-24;
+
+      @include media-breakpoint-down(md) {
+        top: $spacing-16;
+        right: $spacing-16;
+      }
+    }
+  }
+
+  .container--notification-header,
+  .container--notification-popup {
+    .button {
+      button {
+        padding: 0;
+        background-color: transparent;
+        width: $spacing-20;
+        height: $spacing-20;
+      }
+
+      .cmp-button__icon--close {
+        background-image: url('../resources/images/close-black.svg');
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &.container--black,
+    &.container--darkgrey {
+      .button .cmp-button__icon--close {
+        background-image: url('../resources/images/close-white.svg');
+      }
+    }
+  }
+}
+
+// Grid Columns
+html:not(.aem-AuthorLayer-Edit) {
+  @each $column in $container-columns {
+    &.grid-cols-#{$column} {
+      > .cmp-container {
+        display: grid;
+        grid-template-columns: repeat($column, minmax(0, 1fr));
+      }
+    }
+  }
+
+  &.col-auto {
+    grid-column: auto;
+  }
+
+  @each $column in $container-columns {
+    &.col-span-#{$column} {
+      grid-column: span $column / span $column;
+    }
+  }
+
+  &.col-span-full {
+    grid-column: 1 / -1;
+  }
+
+  @each $column in $container-columns {
+    &.col-start-#{$column} {
+      grid-column-start: $column;
+    }
+  }
+
+  &.col-start-13 {
+    grid-column-start: 13;
+  }
+
+  &.col-start-auto {
+    grid-column-start: auto;
+  }
+
+  @each $column in $container-columns {
+    .col-end-#{$column} {
+      grid-column-end: $column;
+    }
+  }
+
+  .col-end-13 {
+    grid-column-end: 13;
+  }
+
+  .col-end-auto {
+    grid-column-end: auto;
+  }
+}
+
+// Paddings
+html:not(.aem-AuthorLayer-Edit) {
+  .container {
+    padding: 0;
+  }
+
+  @each $name, $spacing in $container-spaces {
+    .p-#{$name} {
+      > .cmp-container {
+        padding: $spacing;
+      }
+    }
+
+    .px-#{$name} {
+      > .cmp-container {
+        padding-left: $spacing;
+        padding-right: $spacing;
+      }
+    }
+
+    .py-#{$name} {
+      > .cmp-container {
+        padding-top: $spacing;
+        padding-bottom: $spacing;
+      }
+    }
+
+    .pt-#{$name} {
+      > .cmp-container {
+        padding-top: $spacing;
+      }
+    }
+
+    .pr-#{$name} {
+      > .cmp-container {
+        padding-right: $spacing;
+      }
+    }
+
+    .pb-#{$name} {
+      > .cmp-container {
+        padding-bottom: $spacing;
+      }
+    }
+
+    .pl-#{$name} {
+      > .cmp-container {
+        padding-left: $spacing;
+      }
+    }
+  }
+}
+
+// Mobile Paddings
+html:not(.aem-AuthorLayer-Edit) {
+  @each $name, $spacing in $container-spaces {
+    .p-md-#{$name} {
+      > .cmp-container {
+        @include media-breakpoint-down(md) {
+          padding: $spacing;
+        }
+      }
+    }
+
+    .px-md-#{$name} {
+      > .cmp-container {
+        @include media-breakpoint-down(md) {
+          padding-left: $spacing;
+          padding-right: $spacing;
+        }
+      }
+    }
+    .py-md-#{$name} {
+      > .cmp-container {
+        @include media-breakpoint-down(md) {
+          padding-top: $spacing;
+          padding-bottom: $spacing;
+        }
+      }
+    }
+    .pt-md-#{$name} {
+      > .cmp-container {
+        @include media-breakpoint-down(md) {
+          padding-top: $spacing;
+        }
+      }
+    }
+    .pr-md-#{$name} {
+      > .cmp-container {
+        @include media-breakpoint-down(md) {
+          padding-right: $spacing;
+        }
+      }
+    }
+    .pb-md-#{$name} {
+      > .cmp-container {
+        @include media-breakpoint-down(md) {
+          padding-bottom: $spacing;
+        }
+      }
+    }
+    .pl-md-#{$name} {
+      > .cmp-container {
+        @include media-breakpoint-down(md) {
+          padding-left: $spacing;
+        }
+      }
+    }
+  }
+}
+
+// Watermark background image
+.watermark-container {
+  > .cmp-container {
+    background-image: url("../resources/images/watermark-white.svg");
+    background-repeat: no-repeat;
+  }
+
+  &--top-left {
+    > .cmp-container {
+      background-position: left top;
+    }
+  }
+
+  &--top-right {
+    > .cmp-container {
+      background-position: right top;
+    }
+  }
+
+  &--bottom-left {
+    > .cmp-container {
+      background-position: left bottom;
+    }
+  }
+
+  &--bottom-right {
+    > .cmp-container {
+      background-position: right bottom;
+    }
+  }
+}
+
+// Border radius
+.rounded-1,
+.rounded-2,
+.rounded-3,
+.rounded-4,
+.rounded-5 {
+  overflow: hidden;
+}
+
+.responsive-grid {
+  > .cmp-container {
+    > .aem-Grid {
+      @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column;
+
+        > * {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+html:not(.aem-AuthorLayer-Edit) {
+  .container--flex {
+    .cmp-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: $spacing-8;
+    }
+  }
+}
+
+

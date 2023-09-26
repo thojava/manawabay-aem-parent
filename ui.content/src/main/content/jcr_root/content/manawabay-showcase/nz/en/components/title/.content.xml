@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-08-01T16:21:42.788+10:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Title"
+        sling:resourceType="manawabay/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="manawabay/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="manawabay/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:lastModified="{Date}2023-08-01T15:33:29.036+10:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Title Component Showcase"
+                    sling:resourceType="manawabay/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/container"
+                    layout="responsiveGrid">
+                    <container
+                        jcr:lastModified="{Date}2023-08-01T15:33:43.130+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <text
+                            jcr:lastModified="{Date}2023-08-01T16:21:42.786+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;p>Standard&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                        <h1
+                            jcr:lastModified="{Date}2023-08-01T15:42:00.747+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 1"
+                            sling:resourceType="manawabay/components/title"
+                            id="defaulth1"
+                            linkTarget="_self"
+                            type="h1"/>
+                        <h2
+                            jcr:lastModified="{Date}2023-08-01T15:35:14.099+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 2"
+                            sling:resourceType="manawabay/components/title"
+                            id="defaulth2"
+                            linkTarget="_self"
+                            type="h2"/>
+                        <h3
+                            jcr:lastModified="{Date}2023-08-01T15:35:14.099+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 3"
+                            sling:resourceType="manawabay/components/title"
+                            id="defaulth3"
+                            linkTarget="_self"
+                            type="h3"/>
+                        <h4
+                            jcr:lastModified="{Date}2023-08-01T15:35:14.099+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 4"
+                            sling:resourceType="manawabay/components/title"
+                            id="defaulth4"
+                            linkTarget="_self"
+                            type="h4"/>
+                        <h5
+                            jcr:lastModified="{Date}2023-08-01T15:35:14.099+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 5"
+                            sling:resourceType="manawabay/components/title"
+                            id="defaulth5"
+                            linkTarget="_self"
+                            type="h5"/>
+                        <h6
+                            jcr:lastModified="{Date}2023-08-01T15:35:14.099+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 6"
+                            sling:resourceType="manawabay/components/title"
+                            id="defaulth6"
+                            linkTarget="_self"
+                            type="h6"/>
+                    </container>
+                    <container1
+                        jcr:lastModified="{Date}2023-08-01T15:33:43.130+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <text
+                            jcr:lastModified="{Date}2023-08-01T15:41:05.287+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;p>Linked&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                        <h1
+                            jcr:lastModified="{Date}2023-08-01T15:41:19.928+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 1"
+                            sling:resourceType="manawabay/components/title"
+                            id="linkedh1"
+                            linkTarget="_blank"
+                            linkURL="/content/manawabay-showcase/nz/en"
+                            type="h1"/>
+                        <h2
+                            jcr:lastModified="{Date}2023-08-01T15:41:23.888+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 2"
+                            sling:resourceType="manawabay/components/title"
+                            id="linkedh2"
+                            linkTarget="_blank"
+                            linkURL="/content/manawabay-showcase/nz/en"
+                            type="h2"/>
+                        <h3
+                            jcr:lastModified="{Date}2023-08-01T15:41:27.728+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 3"
+                            sling:resourceType="manawabay/components/title"
+                            id="linkedh3"
+                            linkTarget="_blank"
+                            linkURL="/content/manawabay-showcase/nz/en"
+                            type="h3"/>
+                        <h4
+                            jcr:lastModified="{Date}2023-08-01T15:41:34.449+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 4"
+                            sling:resourceType="manawabay/components/title"
+                            id="linkedh4"
+                            linkTarget="_blank"
+                            linkURL="/content/manawabay-showcase/nz/en"
+                            type="h4"/>
+                        <h5
+                            jcr:lastModified="{Date}2023-08-01T15:41:40.278+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 5"
+                            sling:resourceType="manawabay/components/title"
+                            id="linkedh5"
+                            linkTarget="_blank"
+                            linkURL="/content/manawabay-showcase/nz/en"
+                            type="h5"/>
+                        <h6
+                            jcr:lastModified="{Date}2023-08-01T15:41:44.378+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Heading 6"
+                            sling:resourceType="manawabay/components/title"
+                            id="linkedh6"
+                            linkTarget="_blank"
+                            linkURL="/content/manawabay-showcase/nz/en"
+                            type="h6"/>
+                    </container1>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+    <examples/>
+</jcr:root>

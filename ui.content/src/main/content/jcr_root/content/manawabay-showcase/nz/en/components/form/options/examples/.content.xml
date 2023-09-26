@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-08-16T19:44:20.815+10:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Examples"
+        sling:resourceType="manawabay/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="manawabay/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="manawabay/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:lastModified="{Date}2023-08-15T14:29:53.951+10:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Examples of Form Options"
+                    sling:resourceType="manawabay/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/container"
+                    layout="responsiveGrid">
+                    <options
+                        jcr:lastModified="{Date}2023-08-15T14:32:42.235+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="What can we help you with?"
+                        sling:resourceType="core/wcm/components/form/options/v2/options"
+                        name="what"
+                        source="local"
+                        type="drop-down">
+                        <items jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                selected="true"
+                                text="- Please select one - "
+                                value="select"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                selected="false"
+                                text="Tech Support"
+                                value="tech-support"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                selected="false"
+                                text="Help Find Shop"
+                                value="help-find-shop"/>
+                        </items>
+                    </options>
+                    <container_copy
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/form/container"
+                        action="/content/usergenerated/manawabay-showcase/nz/en/components/form/options/examples/cq-gen1692178753725/"
+                        actionType="foundation/components/form/actions/store">
+                        <options
+                            jcr:lastModified="{Date}2023-08-16T19:39:52.613+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Checkbox"
+                            sling:resourceType="manawabay/components/form/options"
+                            name="checkbox"
+                            source="local"
+                            type="checkbox">
+                            <items jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    selected="false"
+                                    text="First"
+                                    value="first"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    selected="false"
+                                    text="Second"
+                                    value="second"/>
+                            </items>
+                        </options>
+                    </container_copy>
+                    <container_copy_copy
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/form/container"
+                        action="/content/usergenerated/manawabay-showcase/nz/en/components/form/options/examples/cq-gen1692178753725/"
+                        actionType="foundation/components/form/actions/store">
+                        <options
+                            jcr:lastModified="{Date}2023-08-16T19:40:07.685+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Radio"
+                            sling:resourceType="manawabay/components/form/options"
+                            name="radio"
+                            source="local"
+                            type="radio">
+                            <items jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    selected="false"
+                                    text="First"
+                                    value="first"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    selected="false"
+                                    text="Second"
+                                    value="second"/>
+                            </items>
+                        </options>
+                    </container_copy_copy>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

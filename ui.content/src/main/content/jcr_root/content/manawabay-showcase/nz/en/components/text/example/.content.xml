@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-08-16T17:49:02.543+10:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Examples"
+        sling:resourceType="manawabay/components/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="manawabay/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="manawabay/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/container"
+                    layout="responsiveGrid">
+                    <container_1012027047
+                        jcr:lastModified="{Date}2023-08-04T17:32:32.268+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <title
+                            jcr:lastModified="{Date}2023-08-04T17:34:52.325+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="MANAWA BAY"
+                            sling:resourceType="manawabay/components/title"/>
+                        <text
+                            jcr:lastModified="{Date}2023-08-11T18:52:25.824+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;h2>Our vision is to inspire New Zealanders with the best imaginable outlet shopping experience.&lt;/h2>&#xd;&#xa;"
+                            textIsRich="true"/>
+                    </container_1012027047>
+                    <container
+                        cq:styleIds="[1691075116721]"
+                        jcr:lastModified="{Date}2023-08-01T15:45:54.474+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <text
+                            jcr:lastModified="{Date}2023-08-03T23:05:16.001+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;p>&lt;label>Our name&lt;/label>&lt;/p>&#xd;&#xa;&lt;h1>Mānawa Bay&lt;/h1>&#xd;&#xa;&lt;p>Our name, Mānawa Bay, is inspired by our unique location here in the park-like grounds at the water's edge and the historical and cultural significance of this area to tangata whenua.&lt;br>&#xd;&#xa;In te reo Māori, Mānawa means mangroves – a coastal plant species that provides a habitat for native birds and fish. They are a vital part of the eco-system and have long featured in the waterways surrounding the land Auckland Airport sits on. We acknowledge this in our name.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/manawabay-showcase.html&quot; target=&quot;_blank&quot;>Click here for the pronunciation&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>Take a tour through New Zealand’s premium outlet destination. Coming soon.&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                    </container>
+                    <text
+                        jcr:lastModified="{Date}2023-08-03T23:44:44.800+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/text"
+                        text="&lt;h2>Our Sustainability Journey&lt;/h2>&#xd;&#xa;&lt;p>Since the earliest concept stages, we have built our vision for Mānawa Bay around sustainability, in every sense of the word. More than just a shopping destination, we wanted to build a place designed to be better for people and the planet, grounded in its local environment and setting a new benchmark for eco-conscious building and commerce.&lt;/p>&#xd;&#xa;&lt;p>This green vision starts at ground level, with careful planning to protect and regenerate the spaces surrounding Mānawa Bay. With over 40,000sqm of green space, our extensive planting and stormwater management systems will allow the diverse native flora and fauna — including eels, native lizards and nesting dotterels — to thrive. Open public spaces will be available for the community to enjoy, with protected sightlines ensuring the views across the mangroves and upper Manukau Harbour are unobscured. Unseen from the ground but central to our sustainability plans will be the roof of Mānawa Bay, supporting New Zealand’s largest rooftop solar array. What does that mean for visitors?&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"/>
+                    <container_1983162550
+                        jcr:lastModified="{Date}2023-08-03T23:58:04.549+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="8"
+                                width="4"/>
+                        </cq:responsive>
+                    </container_1983162550>
+                    <container_463946014
+                        jcr:lastModified="{Date}2023-08-03T23:51:19.706+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                behavior="none"
+                                offset="6"
+                                width="6"/>
+                        </cq:responsive>
+                        <text_copy
+                            jcr:lastModified="{Date}2023-08-03T23:56:25.277+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;ul>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/manawabay-showcase.html&quot;>News &amp;amp; Events&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/manawabay-showcase.html&quot;>Promotions&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/manawabay-showcase.html&quot;>Support&lt;/a>&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                            textIsRich="true">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    behavior="none"
+                                    offset="0"
+                                    width="6"/>
+                            </cq:responsive>
+                        </text_copy>
+                        <text
+                            jcr:lastModified="{Date}2023-08-04T00:01:07.936+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;ul>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/manawabay-showcase.html&quot;>What’s On&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/manawabay-showcase.html&quot;>Stores&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/manawabay-showcase.html&quot;>Eat &amp;amp; Drink&lt;/a>&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                            textIsRich="true">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    behavior="newline"
+                                    offset="0"
+                                    width="3"/>
+                            </cq:responsive>
+                        </text>
+                    </container_463946014>
+                    <container_892560654
+                        jcr:lastModified="{Date}2023-08-04T17:07:12.130+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="6"/>
+                        </cq:responsive>
+                        <text
+                            jcr:lastModified="{Date}2023-08-04T17:09:28.985+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;h6>Opening Hours&lt;/h6>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Monday-Friday&lt;/li>&#xd;&#xa;&lt;li>10am-6pm&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Saturday&lt;/li>&#xd;&#xa;&lt;li>10am-6pm&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Sunday&lt;/li>&#xd;&#xa;&lt;li>10am-6pm&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Public Holidays&lt;/li>&#xd;&#xa;&lt;li>10am-6pm&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                            textIsRich="true"/>
+                        <text_718398501
+                            jcr:lastModified="{Date}2023-08-04T17:12:39.860+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;h6>Contact Us&lt;/h6>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>1 Mānawa Bay Drive&lt;/li>&#xd;&#xa;&lt;li>Auckland Airport&lt;/li>&#xd;&#xa;&lt;li>Auckland 2022&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>0800 XXX XXX&lt;/li>&#xd;&#xa;&lt;li> hello@manawabay.co.nz&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;h6>Follow Us&lt;/h6>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/manawabay-showcase.html&quot;>€&lt;/a>&amp;nbsp;&amp;nbsp;&lt;a href=&quot;/content/manawabay-showcase.html&quot;>©&lt;/a>&lt;/p>&#xd;&#xa;&lt;h6>&amp;nbsp;&lt;/h6>&#xd;&#xa;"
+                            textIsRich="true"/>
+                    </container_892560654>
+                    <container_1976891749
+                        cq:styleIds="[1691075116721]"
+                        jcr:lastModified="{Date}2023-08-04T17:47:09.963+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <text
+                            cq:styleIds="[1691742909922]"
+                            jcr:lastModified="{Date}2023-08-04T17:47:44.657+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;p>100+ &lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                        <text_689307332
+                            jcr:lastModified="{Date}2023-08-04T17:48:07.590+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;p>Iconic brands&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                    </container_1976891749>
+                    <container_610636599
+                        cq:styleIds="[1691075114812,1691742649645]"
+                        jcr:lastModified="{Date}2023-08-11T21:49:41.202+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <text
+                            jcr:lastModified="{Date}2023-08-11T21:50:22.345+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;p>Helvetica&amp;nbsp;font&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                        <text_copy
+                            cq:styleIds="[1691754285816]"
+                            jcr:lastModified="{Date}2023-08-11T21:50:08.578+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;p>Typonine font&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                        <text_copy_1419993295
+                            cq:styleIds="[1691754324985]"
+                            jcr:lastModified="{Date}2023-08-11T21:50:29.320+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;p>Thema font&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                        <text_copy_1419993295_1281837091
+                            cq:styleIds="[1691754342038]"
+                            jcr:lastModified="{Date}2023-08-16T17:48:59.349+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            text="&lt;p>Sohne font&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                        <text_copy_1911398777
+                            cq:styleIds="[1691754342038]"
+                            jcr:lastModified="{Date}2023-08-11T21:56:51.626+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/text"
+                            textIsRich="true"/>
+                    </container_610636599>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-08-14T13:01:38.204+10:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>

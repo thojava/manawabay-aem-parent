@@ -1,0 +1,17 @@
+<template data-sly-template.item="${@ list, item}">
+    <a class="cmp-list__item-link" data-sly-attribute="${item.link.htmlAttributes}" data-sly-unwrap="${!list.linkItems || !item.link.valid}"
+        data-cmp-clickable="${item.data ? true : false}">
+        <span data-sly-test="${list.showIcon}" class="cmp-list__item-icon">
+            <sly  data-sly-resource="${item.iconResource @ wcmmode='disabled'}"></sly>
+        </span>
+        <span data-sly-test="${list.showBrandImage}" class="cmp-list__item-brandimage">
+            <sly  data-sly-resource="${item.brandImageResource @ wcmmode='disabled'}"></sly>
+        </span>
+        <span data-sly-test="${list.showPublishDate}"
+              class="cmp-list__item-publishdate">${list.publishDateFormatString @format=item.publishDate}</span>
+        <span class="cmp-list__item-title">${item.title}</span>
+        <span data-sly-test="${list.showModificationDate}"
+              class="cmp-list__item-date">${list.dateFormatString @format=item.lastModified}</span>
+    </a>
+    <span data-sly-test="${list.showDescription}" class="cmp-list__item-description">${item.description}</span>
+</template>

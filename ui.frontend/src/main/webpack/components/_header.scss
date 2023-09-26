@@ -1,0 +1,37 @@
+header.experiencefragment {
+  padding: 0 !important;
+  border-bottom: none !important;
+}
+
+header.experiencefragment.experiencefragment--reset {
+  .cmp-container {
+    display: block;
+  }
+
+  .cmp-navigation__item--level-0 {
+    display: list-item;
+
+    & > .cmp-navigation__group {
+      display: none;
+    }
+  }
+
+  a {
+    color: currentColor;
+
+    &:hover {
+      text-decoration: none;
+      color: $accent-01;
+    }
+  }
+
+  .cmp-search__field {
+    margin: 0;
+    display: block;
+  }
+
+  .cmp-search__input {
+    height: 100%;
+  }
+}
+

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-08-18T13:23:30.317+10:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Contact Us Thank You"
+        jcr:uuid="0bac1c3f-c631-4bb4-8d26-4d830206b174"
+        sling:resourceType="manawabay/components/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="manawabay/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="manawabay/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/container"
+                    layout="responsiveGrid">
+                    <container_copy
+                        cq:styleIds="[1691075100848,1691571144655,1691570133106]"
+                        jcr:lastModified="{Date}2023-08-16T10:09:48.024+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="6"/>
+                        </cq:responsive>
+                        <title
+                            jcr:lastModified="{Date}2023-08-18T13:16:33.165+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Thank You"
+                            sling:resourceType="manawabay/components/title"/>
+                        <container
+                            jcr:lastModified="{Date}2023-08-16T14:40:48.900+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/container">
+                            <text
+                                jcr:lastModified="{Date}2023-08-18T13:23:30.316+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/text"
+                                text="&lt;p>Someone from our team will get in touch with you shortly.&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                        </container>
+                        <container_1132631472
+                            cq:styleIds="[1691075117344,1691570127151,1691570133106]"
+                            jcr:lastModified="{Date}2023-08-13T10:40:28.377+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/container">
+                            <text_538428106
+                                cq:styleIds="[1691742881444,1691754324985]"
+                                jcr:lastModified="{Date}2023-08-13T10:41:08.446+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/text"
+                                text="&lt;h4>Need a hand?&lt;/h4>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <text_546783545
+                                cq:styleIds="[1691742881444,1691754342038]"
+                                jcr:lastModified="{Date}2023-08-13T10:42:38.707+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/text"
+                                text="&lt;p>&lt;b>Email&lt;br>&#xd;&#xa;hello@mānawabay.co.nz&lt;/b>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone&lt;br>&#xd;&#xa;0800 XXX XXX&lt;/b>&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <button_369747152
+                                cq:styleIds="[1691133379496]"
+                                jcr:lastModified="{Date}2023-08-13T10:43:44.485+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Get In Touch"
+                                sling:resourceType="manawabay/components/button"
+                                linkTarget="_self"/>
+                        </container_1132631472>
+                    </container_copy>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-08-18T13:16:15.525+10:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>

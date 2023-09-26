@@ -1,0 +1,26 @@
+# Pipeline for synching Azure Devops "main" branch to Adobe "main" branch
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- checkout: self
+  clean: true
+  persistCredentials: true
+  fetchDepth: 0
+  displayName: Fetch repo and save authentication token
+  
+- bash: git fetch
+  displayName: Git fetch
+
+- bash: git checkout main
+  displayName: Checkout Main branch
+
+- bash: git remote add adobe https://$(USER_NAME):$(PASSWORD)@git.cloudmanager.adobe.com/aucklandairport/manawabay/
+  displayName: Add Cloud Manager repository
+  
+- bash: git push -f -v adobe main
+  displayName: Push changes from to Cloud Manager

@@ -1,0 +1,250 @@
+.cmp-search {
+}
+
+.cmp-search__form {
+}
+
+.cmp-search__field {
+}
+
+.cmp-search__icon {
+  width: $spacing-24;
+  height: $spacing-24;
+  background-image: url("../resources/images/search-black.svg");
+}
+
+.cmp-search__input {
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.cmp-search__loading-indicator {
+}
+
+.cmp-search__clear {
+}
+
+.cmp-search__clear-icon {
+}
+
+.cmp-search__results {
+}
+
+.cmp-search__item {
+}
+
+.cmp-search__item--is-focused {
+}
+
+.cmp-search__item-mark {
+}
+
+.cmp-search__item-title {
+}
+
+// Base search
+.search--base {
+  .cmp-search__field {
+    height: auto;
+
+    @include media-breakpoint-down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-8;
+    }
+  }
+
+  .cmp-search__submit {
+    top: $spacing-8;
+    right: $spacing-8;
+    border-radius: $rounded-full;
+    background-color: $black;
+    padding: 0 $spacing-32;
+    color: $white;
+    border: none;
+    letter-spacing: $tracking-lg;
+    height: 50px;
+
+    @include media-breakpoint-up(sm) {
+      position: absolute;
+    }
+  }
+
+  .cmp-search__icon {
+    left: $spacing-16;
+    top: $spacing-20;
+
+    @include media-breakpoint-down(sm) {
+      top: $spacing-14;
+    }
+  }
+
+  .cmp-search__loading-indicator {
+    left: $spacing-16;
+    top: $spacing-24;
+  }
+
+  .cmp-search__input {
+    height: 66px;
+    border: 1px solid $gray-600;
+    border-radius: $rounded-full;
+    background: $white;
+    padding: $spacing-8 ($spacing-64 * 2) $spacing-8 $spacing-48;
+
+    @include media-breakpoint-down(sm) {
+      padding: $spacing-16 $spacing-16 $spacing-16 $spacing-48;
+      height: auto;
+    }
+  }
+}
+
+// Filter search
+.search--filter {
+  .cmp-search__field {
+    height: 50px;
+  }
+
+  .cmp-search__input {
+    border-radius: $rounded-full;
+    border: 1px solid $gray-50;
+    background-color: $gray-50;
+    padding: 0 $spacing-64;
+    color: $accent-01;
+
+    &::placeholder {
+      color: $accent-01;
+    }
+  }
+
+  .cmp-search__icon-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    background-color: $duststorm;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cmp-search__icon {
+    position: static;
+  }
+}
+
+// Popup search
+.search--popup {
+  .cmp-search__field {
+    overflow: hidden;
+    height: 45px;
+  }
+
+  .cmp-search__icon {
+    left: $spacing-20;
+    top: $spacing-10;
+  }
+
+  .cmp-search__input {
+    padding-left: $spacing-50;
+    border-radius: $rounded-full;
+    border: 1px solid $gray-50;
+    font-size: $font-base;
+    color: $black;
+    line-height: $line-height-normal;
+    letter-spacing: $tracking-md;
+    font-family: $font-family--sohne;
+    max-width: none;
+
+    &::placeholder {
+      font-size: $font-base;
+      color: $black;
+      line-height: $line-height-normal;
+      letter-spacing: $tracking-md;
+      font-family: $font-family--sohne;
+    }
+  }
+
+  .cmp-search__clear-icon,
+  .cmp-search__loading-indicator {
+    top: $spacing-14;
+  }
+
+  &:has(.cmp-search__input:focus) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $black;
+      opacity: 0.5;
+    }
+
+    .cmp-search {
+      z-index: 1;
+      padding: $spacing-40;
+      background-color: $black;
+    }
+
+    .cmp-search__field {
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: $spacing-16;
+    }
+
+    .cmp-search__icon {
+      left: 0;
+      background-image: url("../resources/images/search-white.svg");
+    }
+
+    .cmp-search__input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $gray-900;
+      border-radius: 0;
+      padding-left: $spacing-32;
+      color: $white;
+      max-width: 80%;
+
+      &::placeholder {
+        color: $white;
+      }
+    }
+
+    .cmp-search__clear-icon {
+      display: block;
+      position: relative;
+      background-image: url("../resources/images/close-white.svg");
+      width: $spacing-20;
+      height: $spacing-20;
+    }
+
+    .cmp-search__results {
+      left: $spacing-40;
+      right: $spacing-40;
+      min-width: 0;
+      background-color: $black;
+      border: none;
+      padding: $spacing-32;
+    }
+  }
+}
+
+.search-info--none {
+  .cmp_search__info {
+    //display: none;
+  }
+}
+

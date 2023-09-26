@@ -1,0 +1,1 @@
+docker compose cp .\_packages\aem-forms-addon-2023.02.01.00-230200.far author:/aem/crx-quickstart/install

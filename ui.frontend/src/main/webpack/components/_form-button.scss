@@ -1,0 +1,41 @@
+.cmp-form-button {
+  padding: $spacing-16 $spacing-24;
+  font-size: $font-base;
+  font-weight: $font-weight-normal;
+  font-family: $font-family--sohne;
+  color: $white;
+  background-color: $black;
+  border-radius: $rounded-full;
+  border: none;
+  letter-spacing: $tracking-lg;
+
+  @include media-breakpoint-down(md) {
+    padding: $spacing-12 $spacing-20;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: $color-white-dark;
+    background: $color-black-dark;
+  }
+}
+
+.container--black,
+.container--darkgrey {
+  .cmp-form-button {
+    color: $black;
+    background-color: $white;
+  }
+}
+
+.container--white,
+.container--midgrey,
+.container--lightgrey,
+.container--locust,
+.container--duststorm,
+.container--gulfstream,
+.container--darksalmon {
+  .cmp-form-button {
+    color: $white;
+    background-color: $black;
+  }
+}

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-09-05T22:03:48.043+10:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Accessibility"
+        sling:resourceType="manawabay/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="manawabay/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="manawabay/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/container"
+                    layout="responsiveGrid">
+                    <container_copy_copy_
+                        cq:styleIds="[1691571144655,1691571160629,1691075100848]"
+                        jcr:lastModified="{Date}2023-09-03T23:56:04.641+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <breadcrumb
+                            cq:styleIds="[1691396573210]"
+                            jcr:lastModified="{Date}2023-09-03T23:56:09.232+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/breadcrumb"/>
+                    </container_copy_copy_>
+                    <container_copy_copy__214065883
+                        cq:styleIds="[1691075100848,1691571260720,1691571267134,1691571272199]"
+                        jcr:lastModified="{Date}2023-09-04T02:23:33.171+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container"
+                        layout="responsiveGrid">
+                        <container_copy
+                            cq:styleIds="[1691571267134]"
+                            jcr:lastModified="{Date}2023-09-05T22:03:48.040+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/container">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="6"/>
+                            </cq:responsive>
+                            <container
+                                cq:styleIds="[1691571277376]"
+                                jcr:lastModified="{Date}2023-09-04T02:30:06.807+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/container">
+                                <separator
+                                    cq:styleIds="[1691752090680]"
+                                    jcr:lastModified="{Date}2023-09-04T02:12:40.702+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <text_copy_copy
+                                    cq:styleIds="[1691742919161,1691754285816]"
+                                    jcr:lastModified="{Date}2023-09-05T21:46:50.200+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>Accessibility&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <separator_copy
+                                    cq:styleIds="[1691752111236]"
+                                    jcr:lastModified="{Date}2023-09-04T02:12:40.702+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <text_copy_copy_copy
+                                    cq:styleIds="[1691742881444,1691754342038]"
+                                    jcr:lastModified="{Date}2023-09-05T21:46:58.210+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>To ensure all our customers can navigate around our centre with ease we offer the following services to assist with accessibility.&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                            </container>
+                            <separator
+                                cq:styleIds="[1691752192978]"
+                                jcr:lastModified="{Date}2023-09-04T02:16:01.535+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/separator"/>
+                            <container_893198918
+                                cq:styleIds="[1691571277376]"
+                                jcr:lastModified="{Date}2023-09-04T02:29:55.639+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/container">
+                                <container_753307844_
+                                    cq:styleIds="[1691075117344,1691570121687]"
+                                    jcr:lastModified="{Date}2023-09-04T02:31:08.131+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container">
+                                    <text
+                                        cq:styleIds="[1691135180160,1691754285816]"
+                                        jcr:lastModified="{Date}2023-09-04T02:22:17.031+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/text"
+                                        text="&lt;h2>&lt;b>Need a hand?&lt;/b>&lt;/h2>&#xd;&#xa;"
+                                        textIsRich="true"/>
+                                    <separator
+                                        cq:styleIds="[1691752111236]"
+                                        jcr:lastModified="{Date}2023-09-04T02:18:18.671+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/separator"/>
+                                    <text_751356832
+                                        jcr:lastModified="{Date}2023-09-04T02:18:59.531+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/text"
+                                        text="&lt;p>&lt;b>Email&amp;nbsp;&lt;/b>&lt;br>&#xd;&#xa;hello@mānawabay.co.nz&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                                        textIsRich="true"/>
+                                    <separator_copy
+                                        cq:styleIds="[1691752111236]"
+                                        jcr:lastModified="{Date}2023-09-04T02:18:18.671+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/separator"/>
+                                    <text_751356832_copy
+                                        jcr:lastModified="{Date}2023-09-04T02:19:20.699+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/text"
+                                        text="&lt;p>&lt;b>Phone&lt;/b>&lt;br>&#xd;&#xa;0800 XXX XXX&lt;/p>&#xd;&#xa;"
+                                        textIsRich="true"/>
+                                    <separator_copy_copy
+                                        cq:styleIds="[1691752111236]"
+                                        jcr:lastModified="{Date}2023-09-04T02:18:18.671+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/separator"/>
+                                    <button_369747152_cop
+                                        cq:styleIds="[1693471145433,1693671860011]"
+                                        jcr:lastModified="{Date}2023-08-13T10:43:44.485+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Get In Touch"
+                                        sling:resourceType="manawabay/components/button"
+                                        linkTarget="_self"/>
+                                </container_753307844_>
+                            </container_893198918>
+                            <container_1246577934
+                                jcr:lastModified="{Date}2023-09-04T02:26:09.382+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/container"
+                                layout="responsiveGrid"/>
+                        </container_copy>
+                        <container_copy_23442652
+                            cq:styleIds="[1691571069839]"
+                            jcr:lastModified="{Date}2023-09-03T22:10:37.442+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/container">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="6"/>
+                            </cq:responsive>
+                            <accordion_copy_copy_
+                                jcr:lastModified="{Date}2023-09-05T22:02:55.069+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/accordion"
+                                headingElement="h2"
+                                singleExpansion="false">
+                                <item_1
+                                    cq:panelTitle="Quiet Room"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Item 1"
+                                    sling:resourceType="manawabay/components/container"
+                                    layout="responsiveGrid">
+                                    <text
+                                        jcr:lastModified="{Date}2023-08-30T11:49:16.304+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/text"
+                                        text="&lt;p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sociosqu orci tortor ante neque nulla venenatis, vivamus magna cubilia nascetur suscipit eu.&lt;/p>&#xd;&#xa;"
+                                        textIsRich="true"/>
+                                </item_1>
+                                <item_2
+                                    cq:panelTitle="Reflection Room "
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Item 2"
+                                    sling:resourceType="manawabay/components/container"
+                                    layout="responsiveGrid">
+                                    <text
+                                        jcr:lastModified="{Date}2023-08-30T11:49:42.424+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/text"
+                                        text="&lt;p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sociosqu orci tortor ante neque nulla venenatis, vivamus magna cubilia nascetur suscipit eu.&lt;/p>&#xd;&#xa;"
+                                        textIsRich="true"/>
+                                </item_2>
+                                <item_1693359982128
+                                    cq:panelTitle="Wheel Chairs and Mobility Equipment"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container">
+                                    <text
+                                        jcr:lastModified="{Date}2023-08-30T11:50:00.724+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/text"
+                                        text="&lt;p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sociosqu orci tortor ante neque nulla venenatis, vivamus magna cubilia nascetur suscipit eu.&lt;/p>&#xd;&#xa;"
+                                        textIsRich="true"/>
+                                </item_1693359982128>
+                                <item_1693359992696
+                                    cq:panelTitle="Free Wi-Fi"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container">
+                                    <text
+                                        jcr:lastModified="{Date}2023-08-30T11:50:16.384+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/text"
+                                        text="&lt;p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sociosqu orci tortor ante neque nulla venenatis, vivamus magna cubilia nascetur suscipit eu.&lt;/p>&#xd;&#xa;"
+                                        textIsRich="true"/>
+                                </item_1693359992696>
+                                <item_1693360009507
+                                    cq:panelTitle="Accessible amenities"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container">
+                                    <text
+                                        jcr:lastModified="{Date}2023-08-30T11:51:38.846+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/text"
+                                        text="&lt;p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sociosqu orci tortor ante neque nulla venenatis, vivamus magna cubilia nascetur suscipit eu.&lt;/p>&#xd;&#xa;"
+                                        textIsRich="true"/>
+                                </item_1693360009507>
+                                <item_1693915290121
+                                    cq:panelTitle="Guest Services desks"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container"/>
+                                <item_1693915291735
+                                    cq:panelTitle="Hidden Disabilities Sunflower Scheme"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container"/>
+                                <item_1693915293191
+                                    cq:panelTitle="Changing Places"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container"/>
+                                <item_1693915294860
+                                    cq:panelTitle="Parents Room"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container"/>
+                                <item_1693915296621
+                                    cq:panelTitle="Visiting with Kids"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container"/>
+                                <item_1693915344247
+                                    cq:panelTitle="Support Animals"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container"/>
+                                <item_1693915346002
+                                    cq:panelTitle="Accessible Routes"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container"/>
+                                <item_1693915347587
+                                    cq:panelTitle="Accessible Parking"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container"/>
+                                <item_1693915366541
+                                    cq:panelTitle="Mobility Scooter Charging Station"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container"/>
+                                <item_1693915368373
+                                    cq:panelTitle="Play Area"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container"/>
+                            </accordion_copy_copy_>
+                        </container_copy_23442652>
+                    </container_copy_copy__214065883>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

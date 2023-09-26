@@ -1,0 +1,52 @@
+.cmp-text {
+  p {
+    margin-bottom: 0;
+  }
+
+  blockquote {
+    font-size: $font-4xl;
+    letter-spacing: $tracking-ml;
+  }
+
+  label {
+    font-size: $font-xs;
+    font-weight: $font-weight-medium;
+    letter-spacing: $tracking-xl;
+    line-height: $font-md;
+    text-transform: uppercase;
+  }
+
+  ul {
+    padding-left: 0;
+
+    li {
+      font-size: $font-base;
+      line-height: $font-2xl;
+      letter-spacing: $tracking-md;
+    }
+
+    a,
+    a .cmp-link__screen-reader-only {
+      color: currentColor;
+      font-size: $font-xl;
+      line-height: $font-5xl;
+      text-decoration: none;
+    }
+  }
+
+  a,
+  a .cmp-link__screen-reader-only {
+    color: currentColor;
+    font-size: $font-base;
+    line-height: $line-height-tight;
+    letter-spacing: $tracking-md;
+  }
+
+  caption {
+    white-space: nowrap;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+  }
+}

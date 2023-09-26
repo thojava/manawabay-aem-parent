@@ -1,0 +1,59 @@
+//== Base
+
+html,
+body {
+  margin: 0;
+  font-size: $font-base;
+  font-family: $font-family--sohne;
+  line-height: $line-height-tight;
+  color: $color-foreground;
+  background: $color-background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (prefers-color-scheme: dark) {
+    color: $color-foreground-dark;
+    background: $color-background-dark;
+  }
+}
+
+main.container {
+  padding: 0 !important;
+}
+
+a {
+  color: currentColor;
+  transition: color ease-in .15s;
+
+  &:hover {
+    color: $accent-01;
+  }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  font-size: $font-md;
+  font-family: $font-family--sohne;
+  line-height: $font-md;
+  letter-spacing: $tracking-normal;
+}
+
+.border-secondary {
+  border-color: $gray-50 !important;
+}
+
+footer.experiencefragment {
+  padding: 0 !important;
+  border-top: none !important;
+}
+
+.container {
+  max-width: none;
+}

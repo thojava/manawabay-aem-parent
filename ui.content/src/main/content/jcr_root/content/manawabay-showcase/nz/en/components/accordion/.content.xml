@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-08-21T09:49:59.578+10:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Accordion"
+        sling:resourceType="manawabay/components/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="manawabay/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="manawabay/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/container"
+                    layout="responsiveGrid">
+                    <separator_copy_240181279
+                        cq:styleIds="[1691752220390]"
+                        jcr:lastModified="{Date}2023-08-21T07:30:11.876+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/separator"/>
+                    <container_2007307603
+                        jcr:lastModified="{Date}2023-08-21T07:25:50.435+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <title
+                            jcr:lastModified="{Date}2023-08-21T09:49:50.585+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Accordion 1 - no background"
+                            sling:resourceType="manawabay/components/title"/>
+                        <accordion_copy
+                            jcr:lastModified="{Date}2023-08-21T07:24:01.019+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/accordion"
+                            singleExpansion="true">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="12"/>
+                            </cq:responsive>
+                            <item_1
+                                cq:panelTitle="What are the malls operating hours?"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Item 1"
+                                sling:resourceType="manawabay/components/container"
+                                layout="responsiveGrid">
+                                <text
+                                    jcr:lastModified="{Date}2023-08-04T19:19:25.405+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>Mānawa Bay is accessible being close to Auckland Airport, motorways and main arterial routes.&amp;nbsp; There are a wide range of transport modes, including public and future mass transit.&amp;nbsp; Parking is free and there are 1,400 car parks&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                            </item_1>
+                            <item_2
+                                cq:panelTitle="Is there parking available?"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Item 2"
+                                sling:resourceType="manawabay/components/container"
+                                layout="responsiveGrid">
+                                <text
+                                    jcr:lastModified="{Date}2023-08-04T19:20:29.765+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>Mānawa Bay is accessible being close to Auckland Airport, motorways and main arterial routes.&amp;nbsp; There are a wide range of transport modes, including public and future mass transit.&amp;nbsp; Parking is free and there are 1,400 car parks&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                            </item_2>
+                        </accordion_copy>
+                    </container_2007307603>
+                    <separator
+                        cq:styleIds="[1691752220390]"
+                        jcr:lastModified="{Date}2023-08-21T07:30:11.876+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/separator"/>
+                    <container
+                        cq:styleIds="[1691075100848,1691569886410,1691569933619]"
+                        jcr:lastModified="{Date}2023-08-11T19:55:35.433+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <title_copy
+                            jcr:lastModified="{Date}2023-08-21T09:49:54.394+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Accordion 2 - background 1"
+                            sling:resourceType="manawabay/components/title"/>
+                        <accordion_copy
+                            jcr:lastModified="{Date}2023-08-21T07:24:06.990+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/accordion"
+                            singleExpansion="true">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="12"/>
+                            </cq:responsive>
+                            <item_1
+                                cq:panelTitle="What are the malls operating hours?"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Item 1"
+                                sling:resourceType="manawabay/components/container"
+                                layout="responsiveGrid">
+                                <text
+                                    jcr:lastModified="{Date}2023-08-04T19:19:25.405+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>Mānawa Bay is accessible being close to Auckland Airport, motorways and main arterial routes.&amp;nbsp; There are a wide range of transport modes, including public and future mass transit.&amp;nbsp; Parking is free and there are 1,400 car parks&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                            </item_1>
+                            <item_2
+                                cq:panelTitle="Is there parking available?"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Item 2"
+                                sling:resourceType="manawabay/components/container"
+                                layout="responsiveGrid">
+                                <text
+                                    jcr:lastModified="{Date}2023-08-04T19:20:29.765+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>Mānawa Bay is accessible being close to Auckland Airport, motorways and main arterial routes.&amp;nbsp; There are a wide range of transport modes, including public and future mass transit.&amp;nbsp; Parking is free and there are 1,400 car parks&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                            </item_2>
+                        </accordion_copy>
+                    </container>
+                    <separator_copy
+                        cq:styleIds="[1691752220390]"
+                        jcr:lastModified="{Date}2023-08-21T07:30:11.876+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/separator"/>
+                    <container_copy
+                        cq:styleIds="[1691075118667]"
+                        jcr:lastModified="{Date}2023-08-11T19:55:35.433+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/container">
+                        <title_copy_copy
+                            jcr:lastModified="{Date}2023-08-21T09:49:59.575+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Accordion 3 - background 2"
+                            sling:resourceType="manawabay/components/title"/>
+                        <accordion_copy
+                            jcr:lastModified="{Date}2023-08-21T07:24:13.867+10:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/accordion"
+                            singleExpansion="true">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="12"/>
+                            </cq:responsive>
+                            <item_1
+                                cq:panelTitle="What are the malls operating hours?"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Item 1"
+                                sling:resourceType="manawabay/components/container"
+                                layout="responsiveGrid">
+                                <text
+                                    jcr:lastModified="{Date}2023-08-04T19:19:25.405+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>Mānawa Bay is accessible being close to Auckland Airport, motorways and main arterial routes.&amp;nbsp; There are a wide range of transport modes, including public and future mass transit.&amp;nbsp; Parking is free and there are 1,400 car parks&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                            </item_1>
+                            <item_2
+                                cq:panelTitle="Is there parking available?"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Item 2"
+                                sling:resourceType="manawabay/components/container"
+                                layout="responsiveGrid">
+                                <text
+                                    jcr:lastModified="{Date}2023-08-04T19:20:29.765+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>Mānawa Bay is accessible being close to Auckland Airport, motorways and main arterial routes.&amp;nbsp; There are a wide range of transport modes, including public and future mass transit.&amp;nbsp; Parking is free and there are 1,400 car parks&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                            </item_2>
+                        </accordion_copy>
+                    </container_copy>
+                    <separator_copy_2083807083
+                        cq:styleIds="[1691752220390]"
+                        jcr:lastModified="{Date}2023-08-21T07:30:11.876+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/separator"/>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-08-04T18:25:32.140+10:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+    <examples/>
+</jcr:root>

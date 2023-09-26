@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-08-17T00:36:46.729+10:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Examples"
+        jcr:uuid="57b30e39-c0bd-4279-81ff-14dfcef43752"
+        sling:resourceType="manawabay/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="manawabay/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="manawabay/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="manawabay/components/container"
+                    layout="responsiveGrid">
+                    <title
+                        jcr:lastModified="{Date}2023-08-16T12:05:44.504+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/title"/>
+                    <download
+                        jcr:description="&lt;p>Description&lt;/p>&#xd;&#xa;"
+                        jcr:lastModified="{Date}2023-08-17T00:34:06.451+10:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Image title"
+                        sling:resourceType="manawabay/components/download"
+                        actionText="download"
+                        descriptionFromAsset="false"
+                        fileReference="/content/dam/manawabay-showcase/images/image04.png"
+                        inline="false"
+                        textIsRich="true"
+                        titleFromAsset="false"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

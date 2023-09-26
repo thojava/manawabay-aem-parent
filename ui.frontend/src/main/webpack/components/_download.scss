@@ -1,0 +1,65 @@
+.cmp-download {
+  border: 1px solid $gray-900;
+  border-radius: $rounded-xs;
+  padding: $spacing-16;
+  width: fit-content;
+}
+
+.cmp-download__title {
+  font-size: $font-lg;
+  font-weight: $font-weight-bold;
+}
+
+.cmp-download__title-link {
+  color: $color-link;
+  text-decoration: none;
+}
+
+.cmp-download__description {
+}
+
+.cmp-download__properties {
+  display: flex;
+  align-items: center;
+  gap: $spacing-8;
+  margin-bottom: $spacing-20;
+}
+
+.cmp-download__property {
+  padding: $spacing-4 $spacing-8;
+  background-color: $gray-600;
+}
+
+.cmp-download__property-label {
+  display: none;
+}
+
+.cmp-download__property-content {
+  margin-bottom: 0;
+  color: $black;
+}
+
+.cmp-download__property--filename {
+}
+
+.cmp-download__property--size {
+}
+
+.cmp-download__property--format {
+}
+
+.cmp-download__action {
+  color: $gray-200;
+  border: 2px solid $gray-200;
+  border-radius: $rounded-xs;
+  padding: $spacing-8 $spacing-20;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cmp-download__action-text {
+  color: $gray-600;
+  font-size: $font-xs;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+}

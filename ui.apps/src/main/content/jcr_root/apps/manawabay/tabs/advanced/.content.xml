@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:Folder"
+    jcr:title="Shared Tabs">
+    <tab
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Advanced"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <activation
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Activation"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <config
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        granite:class="foundation-toggleable cmp-advanced__editor-multifield_activationconfig"
+                                        composite="{Boolean}true"
+                                        fieldDescription="Define module config options. This is used to control how this component interacts with other components."
+                                        fieldLabel="Module Config"
+                                        renderReadOnly="{Boolean}true">
+                                        <field
+                                            granite:class="cmp-advanced__editor-activationconfig"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            name="./activationconfig">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <option
+                                                    granite:class="cmp-options--editor-item-multifield-composite-item-container"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <type
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                fieldLabel="Activation Type"
+                                                                fieldDescription="Emit event on component actions or consume event."
+                                                                name="type">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <emit
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Emit"
+                                                                        value="emit"/>
+                                                                <consume
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Consume"
+                                                                        value="consume"/>
+                                                            </items>
+                                                        </type>
+                                                        <tags
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                            fieldLabel="Tags"
+                                                            fieldDescription="Used to control visibility of component using tag based rules"
+                                                            multiple="{Boolean}true"
+                                                            name="tags"/>
+                                                        <topic
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Topic on which control will be activated on."
+                                                            fieldLabel="Topic"
+                                                            name="topic"/>
+                                                        <module
+                                                            granite:class="cmp-advanced__editor-activationconfig-module"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            emptyText="Select Module"
+                                                            fieldDescription="Module to use for this event."
+                                                            fieldLabel="Module"
+                                                            mode="contains"
+                                                            multiple="{Boolean}false"
+                                                            name="module"
+                                                            required="{Boolean}false">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <toggleComponent
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Toggle Visibility"
+                                                                    value="toggleComponent"/>
+                                                                <toggleComponentOnTag
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Toggle Visibility on Tag Select"
+                                                                    value="toggleComponentOnTag"/>
+                                                            </items>
+                                                        </module>
+<!--                                                        <module-->
+<!--                                                            jcr:primaryType="nt:unstructured"-->
+<!--                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"-->
+<!--                                                            fieldDescription="The item that is expanded by default."-->
+<!--                                                            fieldLabel="Module"-->
+<!--                                                            name="./module">-->
+<!--                                                            <granite:data-->
+<!--                                                                jcr:primaryType="nt:unstructured"-->
+<!--                                                                cmp-teaser-v1-dialog-edit-hook="activationmodule"/>-->
+<!--                                                        </module>-->
+                                                        <options
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                            composite="{Boolean}true"
+                                                            fieldDescription="Options to pass to module for activation."
+                                                            fieldLabel="Options">
+                                                            <field
+                                                                granite:class="cmp-advanced__editor-keyvalue"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                name="options">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <key
+                                                                        granite:class="cmp-teaser__editor-keyvalue-key"
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        emptyText="Key"
+                                                                        name="key"
+                                                                        required="{Boolean}true"/>
+                                                                    <value
+                                                                        granite:class="cmp-teaser__editor-keyvalue-value"
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        emptyText="Value"
+                                                                        name="value"
+                                                                        required="{Boolean}true"/>
+                                                                </items>
+                                                            </field>
+                                                        </options>
+                                                    </items>
+                                                </option>
+                                            </items>
+                                        </field>
+                                    </config>
+                                </items>
+                            </activation>
+                        </items>
+                    </column>
+                </items>
+            </columns>
+        </items>
+    </tab>
+</jcr:root>
