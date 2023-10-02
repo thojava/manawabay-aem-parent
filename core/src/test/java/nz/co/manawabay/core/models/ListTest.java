@@ -5,6 +5,7 @@ import com.day.cq.search.result.SearchResult;
 import com.day.cq.wcm.api.Page;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import nz.co.manawabay.core.utils.ModelUtils;
 import nz.co.manawabay.core.testcontext.AppAemContext;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -23,7 +24,6 @@ import static org.mockito.Mockito.when;
 @ExtendWith(AemContextExtension.class)
 public class ListTest {
     private static final String TEST_BASE = "/list";
-    private static final String CONTENT_ROOT = "/content";
     private static final String CURRENT_PAGE = "/content/list";
     private static final String TEST_PAGE_CONTENT_ROOT = CURRENT_PAGE + "/jcr:content/root";
     private static final String LIST_1 = TEST_PAGE_CONTENT_ROOT + "/staticListType";
@@ -43,6 +43,7 @@ public class ListTest {
     private static final String LIST_15 = TEST_PAGE_CONTENT_ROOT + "/staticOrderByTitleListTypeWithNoTitleForOneItem";
     private static final String LIST_16 = TEST_PAGE_CONTENT_ROOT + "/staticOrderByTitleListTypeWithAccent";
     private static final String LIST_21 = TEST_PAGE_CONTENT_ROOT + "/staticOrderByTitleListTypeWithBlankTitle";
+
     private final AemContext context = AppAemContext.newAemContext();
 
     private String testBase;
@@ -54,9 +55,9 @@ public class ListTest {
     }
 
     protected void internalSetup() {
-        context.load().json(testBase + AppAemContext.TEST_CONTENT_JSON, CONTENT_ROOT);
+        context.load().json(testBase + AppAemContext.TEST_CONTENT_JSON, AppAemContext.CONTENT_ROOT);
         context.load().json(testBase + AppAemContext.TEST_APPS_JSON, AppAemContext.TEST_APPS_ROOT);
-        context.load().json(testBase + AppAemContext.TEST_TAGS_JSON, CONTENT_ROOT + "/cq:tags/list");
+        context.load().json(testBase + AppAemContext.TEST_TAGS_JSON, AppAemContext.CONTENT_ROOT + "/cq:tags/list");
     }
 
     @Test
@@ -200,7 +201,7 @@ public class ListTest {
     }
 
     private List getListUnderTest(String resourcePath) {
-        Utils.enableDataLayer(context, true);
+        ModelUtils.enableDataLayer(context, true);
         Resource resource = context.resourceResolver().getResource(resourcePath);
         if (resource == null) {
             throw new IllegalStateException("Did you forget to define test resource " + resourcePath + "?");

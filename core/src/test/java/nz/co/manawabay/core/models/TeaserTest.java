@@ -4,6 +4,7 @@ import com.adobe.cq.wcm.core.components.models.ListItem;
 import com.day.cq.commons.jcr.JcrConstants;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import nz.co.manawabay.core.utils.ModelUtils;
 import nz.co.manawabay.core.testcontext.AppAemContext;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
@@ -21,13 +22,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TeaserTest {
 
     private static final String TEST_BASE = "/teaser";
-    protected static final String CONTENT_ROOT = "/content";
     protected static final String CONF_ROOT = "/conf";
     protected static final String PNG_IMAGE_BINARY_NAME = "Adobe_Systems_logo_and_wordmark.png";
     protected static final String PNG_ASSET_PATH = "/content/dam/core/images/" + PNG_IMAGE_BINARY_NAME;
     protected static final String CONTEXT_PATH = "/core";
     protected static final String TEST_ROOT_PAGE = "/content/teasers";
-    protected static final String TEST_APPS_ROOT = "/apps/manawabay/components";
     protected static final String TEST_ROOT_PAGE_GRID = "/jcr:content/root/responsivegrid";
     protected static final String TITLE = "Teaser";
     protected static final String PRETITLE = "Teaser's Pretitle";
@@ -59,7 +58,7 @@ public class TeaserTest {
     }
 
     protected void internalSetup() {
-        context.load().json(testBase + AppAemContext.TEST_CONTENT_JSON, CONTENT_ROOT);
+        context.load().json(testBase + AppAemContext.TEST_CONTENT_JSON, AppAemContext.CONTENT_ROOT);
         context.load().json(testBase + AppAemContext.TEST_CONTENT_DAM_JSON, "/content/dam/core/images");
         context.load().json(testBase + AppAemContext.TEST_APPS_JSON, AppAemContext.TEST_APPS_ROOT);
         context.load().json(testBase + AppAemContext.TEST_CONF_JSON, CONF_ROOT);
@@ -145,14 +144,13 @@ public class TeaserTest {
         assertTrue(teaser.isActionsEnabled(), "Expected teaser with actions");
         assertEquals(2, teaser.getActions().size(), "Expected to find two actions");
         ListItem action = teaser.getActions().get(0);
-        assertEquals("http://www.adobe.com", action.getPath(), "Action link does not match");
+        assertEquals("https://www.adobe.com", action.getPath(), "Action link does not match");
         assertEquals("Adobe", action.getTitle(), "Action text does not match");
     }
 
     @Test
     protected void testTeaserWithActionsDisabled() {
-        getTeaserUnderTest(TEASER_7,
-                Teaser.PN_ACTIONS_DISABLED, true);
+        getTeaserUnderTest(TEASER_7, Teaser.PN_ACTIONS_DISABLED, true);
     }
 
     @Test
@@ -167,8 +165,7 @@ public class TeaserTest {
 
     @Test
     protected void testTeaserWithTitleType() {
-        Teaser teaser = getTeaserUnderTest(TEASER_1,
-                Teaser.PN_TITLE_TYPE, "h5");
+        Teaser teaser = getTeaserUnderTest(TEASER_1, Teaser.PN_TITLE_TYPE, "h5");
         assertEquals("h5", teaser.getTitleType(), "Expected title type is not correct");
     }
 
@@ -204,7 +201,7 @@ public class TeaserTest {
         Teaser teaser = getTeaserUnderTest(TEASER_11);
         assertEquals("Teaser", teaser.getTitle());
         List<ListItem> actions = teaser.getActions();
-        assertEquals("http://www.adobe.com", actions.get(0).getPath());
+        assertEquals("https://www.adobe.com", actions.get(0).getPath());
         assertEquals("Adobe", actions.get(0).getTitle());
         assertEquals("/content/teasers", actions.get(1).getPath());
         assertEquals("Teasers", actions.get(1).getTitle());
@@ -215,7 +212,7 @@ public class TeaserTest {
         Teaser teaser = getTeaserUnderTest(TEASER_12);
         assertEquals("Adobe", teaser.getTitle());
         List<ListItem> actions = teaser.getActions();
-        assertEquals("http://www.adobe.com", actions.get(0).getPath());
+        assertEquals("https://www.adobe.com", actions.get(0).getPath());
         assertEquals("Adobe", actions.get(0).getTitle());
     }
 
@@ -224,7 +221,7 @@ public class TeaserTest {
         String ENCODED_LINK_URL = CONTEXT_PATH + "/content/teasers/%C3%A9.html";
         Teaser teaser = getTeaserUnderTest(TEASER_14);
         List<ListItem> actions = teaser.getActions();
-        assertEquals(ENCODED_LINK_URL, actions.get(0).getURL());
+        assertEquals(ENCODED_LINK_URL, Objects.requireNonNull(actions.get(0).getLink()).getURL());
     }
 
     @Test
@@ -235,7 +232,7 @@ public class TeaserTest {
     }
 
     protected Teaser getTeaserUnderTest(String resourcePath, Object... properties) {
-        Utils.enableDataLayer(context, true);
+        ModelUtils.enableDataLayer(context, true);
         MockSlingHttpServletRequest request = context.request();
         Resource resource = context.currentResource(resourcePath);
         if (resource != null && properties != null) {

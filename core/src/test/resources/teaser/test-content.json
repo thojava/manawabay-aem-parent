@@ -74,7 +74,7 @@
               "jcr:primaryType" : "nt:unstructured",
               "item0" : {
                 "jcr:primaryType" : "nt:unstructured",
-                "link": "http://www.adobe.com",
+                "link": "https://www.adobe.com",
                 "text": "Adobe"
               },
               "item1" : {
@@ -101,7 +101,7 @@
               },
               "item1" : {
                 "jcr:primaryType" : "nt:unstructured",
-                "link": "http://www.adobe.com",
+                "link": "https://www.adobe.com",
                 "text": "Adobe"
               }
 
@@ -130,7 +130,7 @@
               "jcr:primaryType" : "nt:unstructured",
               "item0" : {
                 "jcr:primaryType" : "nt:unstructured",
-                "link": "http://www.adobe.com",
+                "link": "https://www.adobe.com",
                 "text": "Adobe"
               },
               "item1" : {
@@ -150,7 +150,7 @@
               "jcr:primaryType" : "nt:unstructured",
               "item0" : {
                 "jcr:primaryType" : "nt:unstructured",
-                "link": "http://www.adobe.com",
+                "link": "https://www.adobe.com",
                 "text": "Adobe"
               }
             }

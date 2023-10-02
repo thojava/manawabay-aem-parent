@@ -15,9 +15,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class ButtonTest {
 
     private static final String TEST_BASE = "/button";
-    protected static final String TEST_ROOT_PAGE = "/content";
     protected static final String TEST_ROOT_PAGE_GRID = "/button/jcr:content/root/responsivegrid";
-    protected static final String BUTTON_1 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/button-1";
+    protected static final String BUTTON_1 = AppAemContext.CONTENT_ROOT + TEST_ROOT_PAGE_GRID + "/button-1";
 
     private final AemContext context = AppAemContext.newAemContext();
 
@@ -32,7 +31,7 @@ public class ButtonTest {
     }
 
     private void internalSetup() {
-        context.load().json(testBase + AppAemContext.TEST_CONTENT_JSON, TEST_ROOT_PAGE);
+        context.load().json(testBase + AppAemContext.TEST_CONTENT_JSON, AppAemContext.CONTENT_ROOT);
         context.load().json(testBase + AppAemContext.TEST_APPS_JSON, AppAemContext.TEST_APPS_ROOT);
     }
 

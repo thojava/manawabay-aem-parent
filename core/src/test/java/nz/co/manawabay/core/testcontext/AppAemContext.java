@@ -29,7 +29,7 @@ import io.wcm.testing.mock.aem.junit5.AemContextCallback;
  */
 public final class AppAemContext {
     public static final String TEST_APPS_ROOT = "/apps/manawabay/components";
-
+    public static final String CONTENT_ROOT = "/content";
     public static final String TEST_CONTENT_JSON = "/test-content.json";
     public static final String TEST_TAGS_JSON = "/test-tags.json";
     public static final String TEST_CONTENT_DAM_JSON = "/test-content-dam.json";
