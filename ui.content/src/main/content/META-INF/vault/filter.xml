@@ -12,15 +12,15 @@
 <!--    <filter root="/content/dam/manawabay/asset.jpg" mode="merge"/>-->
 <!--    <filter root="/content/experience-fragments/manawabay" mode="merge"/>-->
 
-    <!-- Content Override -->
-    <filter root="/conf/manawabay"/>
-<!--    <filter root="/content/manawabay"/>-->
-<!--    <filter root="/content/dam/manawabay">-->
-<!--        <exclude pattern="/content/dam/manawabay(/.*)?"/>-->
-<!--        <include pattern="/content/dam/manawabay/jcr:content(/.*)?"/>-->
-<!--    </filter>-->
-<!--    <filter root="/content/dam/manawabay/asset.jpg"/>-->
-<!--    <filter root="/content/experience-fragments/manawabay"/>-->
+   <!-- Content Override -->
+   <filter root="/conf/manawabay"/>
+   <filter root="/content/manawabay"/>
+   <filter root="/content/dam/manawabay">
+       <exclude pattern="/content/dam/manawabay(/.*)?"/>
+       <include pattern="/content/dam/manawabay/jcr:content(/.*)?"/>
+   </filter>
+   <filter root="/content/dam/manawabay/asset.jpg"/>
+   <filter root="/content/experience-fragments/manawabay"/>
 
     <!-- Showcase Content -->
     <filter root="/content/manawabay-showcase"/>

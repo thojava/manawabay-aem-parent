@@ -1,0 +1,9 @@
+{
+  "button": {
+    "jcr:primaryType": "cq:Component",
+    "jcr:title": "Button",
+    "sling:resourceSuperType": "core/wcm/components/button",
+    "jcr:description": "Button Component",
+    "cq:icon": "button"
+  }
+}

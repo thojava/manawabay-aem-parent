@@ -4,12 +4,19 @@ package nz.co.manawabay.core.models;
 
 import com.adobe.cq.wcm.core.components.commons.link.LinkManager;
 import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
+import com.day.cq.search.Predicate;
+import com.day.cq.search.SimpleSearch;
+import com.day.cq.search.result.SearchResult;
 import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
+import com.day.cq.wcm.api.NameConstants;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.components.Component;
 import com.day.cq.wcm.api.designer.Style;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import nz.co.manawabay.core.internal.models.v1.PageListItemImpl;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
@@ -29,8 +36,13 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
+import javax.jcr.RepositoryException;
+import java.io.Serializable;
+import java.text.Collator;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 import static nz.co.manawabay.core.JsonUtils.getJsonString;
 import static nz.co.manawabay.core.models.ActivationModule.CONFIG_ITEMS_PATH;
@@ -39,11 +51,26 @@ import static nz.co.manawabay.core.models.Teaser.NN_PAGE_ICON_IMAGE;
 
 @Model(adaptables = SlingHttpServletRequest.class,
         adapters = com.adobe.cq.wcm.core.components.models.List.class,
-        resourceType = "manawabay/components/list",
+        resourceType = List.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class List implements com.adobe.cq.wcm.core.components.models.List {
+    public static final String RESOURCE_TYPE = "manawabay/components/list";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(List.class);
+
+    public static final String REQUEST_QUERY_SEARCH = "q";
+    public static final String PN_LIST_FROM_SEARCH = "search";
+    public static final String PN_ORDER_BY_TITLE = "title";
+    public static final String PN_ORDER_BY_MODIFIED = "modified";
+    public static final String PN_SORT_ORDER_ASC = "asc";
+    public static final String PN_SORT_ORDER_DESC = "desc";
+
+    public static final String PN_MAX_ITEMS = "maxItems";
+    public static final int MAX_ITEMS_DEFAULT = 0;
+
+    public static final String PN_SEARCH_QUERY = "query";
+    private static final String PN_SEARCH_LIMIT = "limit";
+    private static final int SEARCH_LIMIT_DEFAULT = 100;
 
     /**
      * Type of content to use when list is built. Possible values are:
@@ -93,6 +120,12 @@ public class List implements com.adobe.cq.wcm.core.components.models.List {
     public static final String PN_HIDE_TITLE = "hideTitle";
     public static final String PN_HIDE_DESCRIPTION = "hideDescription";
     public static final String PN_HIDE_IMAGE = "hideImage";
+
+    /**
+     * The current request
+     */
+    @Self
+    private SlingHttpServletRequest slingRequest;
     @ScriptVariable
     protected ValueMap pageProperties;
     /**
@@ -122,6 +155,19 @@ public class List implements com.adobe.cq.wcm.core.components.models.List {
 
     @Self
     protected LinkManager linkManager;
+
+    @ValueMapValue
+    @Named(com.adobe.cq.wcm.core.components.models.List.PN_SOURCE)
+    @Default(values = com.adobe.cq.wcm.core.components.models.List.PN_PAGES)
+    protected String listFrom;
+    @ValueMapValue
+    @Named(com.adobe.cq.wcm.core.components.models.List.PN_ORDER_BY)
+    @Default(values = StringUtils.EMPTY)
+    protected String orderBy;
+    @ValueMapValue
+    @Named(com.adobe.cq.wcm.core.components.models.List.PN_SORT_ORDER)
+    @Default(values = PN_SORT_ORDER_ASC)
+    protected String sortOrder;
 
     @ValueMapValue
     @Named(PN_TYPE)
@@ -166,7 +212,91 @@ public class List implements com.adobe.cq.wcm.core.components.models.List {
 
     @Override
     public Collection<Page> getItems() {
-        return list.getItems();
+        if (list != null) {
+            if (listFrom.equals(PN_LIST_FROM_SEARCH)) {
+                return getPages(listFrom);
+            }
+            return list.getItems();
+        }
+        return Collections.EMPTY_LIST;
+    }
+    protected java.util.List<Page> getPages(String type) {
+        Stream<Page> itemStream;
+        if (type.equals(PN_LIST_FROM_SEARCH)) {
+            itemStream = getSearchListItems();
+        } else {
+            return new ArrayList<>(list.getItems());
+        }
+
+        if (orderBy != null && sortOrder != null && currentPage != null) {
+            itemStream = itemStream.sorted(new ListSort(orderBy, sortOrder, this.currentPage.getLanguage()));
+        }
+
+        if (properties != null) {
+            // get the max number of items to display (0 means no limit
+            int maxItems = properties.get(PN_MAX_ITEMS, MAX_ITEMS_DEFAULT);
+            // limit the results
+            if (maxItems != 0) {
+                itemStream = itemStream.limit(maxItems);
+            }
+        }
+
+        return itemStream.collect(Collectors.toList());
+    }
+    protected Stream<Page> getSearchListItems() {
+        Optional<Page> searchRoot = getRootPage(PN_SEARCH_IN);
+        // get default query
+        String query = properties.get(PN_SEARCH_QUERY, String.class);
+        // get query from request
+        if (slingRequest != null) {
+            String searchString = slingRequest.getParameter(REQUEST_QUERY_SEARCH);
+            if (StringUtils.isNotBlank(searchString)) {
+                query = searchString;
+            }
+        }
+
+        if (!StringUtils.isBlank(query) && searchRoot.isPresent()) {
+            SimpleSearch search = resource.adaptTo(SimpleSearch.class);
+            if (search != null) {
+                search.setQuery(query);
+                search.setSearchIn(searchRoot.get().getPath());
+                search.addPredicate(new Predicate("type", "type").set("type", NameConstants.NT_PAGE));
+                int limit = properties.get(PN_SEARCH_LIMIT, SEARCH_LIMIT_DEFAULT);
+                search.setHitsPerPage(limit);
+                return safeGetSearchResult(search)
+                        .map(SearchResult::getResources)
+                        .map(it -> (Iterable<Resource>) () -> it)
+                        .map(it -> StreamSupport.stream(it.spliterator(), false))
+                        .orElseGet(Stream::empty)
+                        .filter(Objects::nonNull)
+                        .map(currentPage.getPageManager()::getContainingPage)
+                        .filter(Objects::nonNull);
+            }
+        }
+        return Stream.empty();
+    }
+    protected Optional<Page> getRootPage(@NotNull final String fieldName) {
+        Optional<String> parentPath = Optional.ofNullable(this.properties.get(fieldName, String.class))
+                .filter(StringUtils::isNotBlank);
+
+        // no path is specified, use current page
+        if (!parentPath.isPresent()) {
+            return Optional.of(this.currentPage);
+        }
+
+        // a path is specified, get that page or return null
+        return parentPath
+                .map(resource.getResourceResolver()::getResource)
+                .map(currentPage.getPageManager()::getContainingPage);
+    }
+    @NotNull
+    protected Optional<SearchResult> safeGetSearchResult(@NotNull final SimpleSearch search) {
+        try {
+            return Optional.of(search.getResult());
+        } catch (RepositoryException e) {
+            LOGGER.error("Unable to retrieve search results for query.", e);
+        }
+        return Optional.empty();
     }
 
     @Override
@@ -178,35 +308,27 @@ public class List implements com.adobe.cq.wcm.core.components.models.List {
                 LOGGER.warn("Could not locate the AEM WCM Core Components List SlingModel via this component's ResourceSuperType. Returning an empty list.");
                 listItems = Collections.EMPTY_LIST;
             } else {
-                 if (type.equals(PN_TYPE_TAGS)) {
+                if (type.equals(PN_TYPE_TAGS)) {
                     listItems = new ArrayList<>();
                     TagManager tagManager = resource.getResourceResolver().adaptTo(TagManager.class);
                     if (tagManager != null) {
                         if (listFromTags.equals(PN_SOURCE_TAGS_FIXED)) {
                             for (String tagid : listTags) {
-                                try {
-                                    Tag tag = tagManager.resolve(tagid);
-                                    if (tag != null) {
-                                        listItems.add(newListItemTag(tag, getId(), component, this));
-                                    }
-                                } catch (Exception e) {
-                                    LOGGER.error("Error resolving tag: " + tagid, e);
+                                Tag tag = tagManager.resolve(tagid);
+                                if (tag != null) {
+                                    listItems.add(newListItemTag(tag, getId(), component, this));
                                 }
                             }
                         } else {
                             // get first tag in list of tags, list all childen of that tag and return as list
                             if (listTags.length > 0) {
                                 String tagid = listTags[0];
-                                try {
-                                    Tag tag = tagManager.resolve(tagid);
-                                    if (tag != null) {
-                                        for (Iterator<Tag> it = tag.listChildren(); it.hasNext(); ) {
-                                            Tag child = it.next();
-                                            listItems.add(newListItemTag(child, getId(), component, this));
-                                        }
+                                Tag tag = tagManager.resolve(tagid);
+                                if (tag != null) {
+                                    for (Iterator<Tag> it = tag.listChildren(); it.hasNext(); ) {
+                                        Tag child = it.next();
+                                        listItems.add(newListItemTag(child, getId(), component, this));
                                     }
-                                } catch (Exception e) {
-                                    LOGGER.error("Error resolving tag: " + tagid, e);
                                 }
                             }
                         }
@@ -214,10 +336,17 @@ public class List implements com.adobe.cq.wcm.core.components.models.List {
                         LOGGER.error("Could not get TagManager.");
                     }
                 } else {
-                    this.listItems = list.getItems().stream()
-                            .filter(Objects::nonNull)
-                            .map(page -> newListItem(linkManager, page, getId(), component, this))
-                            .collect(Collectors.toList());
+                    if (listFrom.equals(PN_LIST_FROM_SEARCH)) {
+                        this.listItems = getItems().stream()
+                                .filter(Objects::nonNull)
+                                .map(page -> newListItem(linkManager, page, getId(), component, this))
+                                .collect(Collectors.toList());
+                    } else {
+                        this.listItems = list.getItems().stream()
+                                .filter(Objects::nonNull)
+                                .map(page -> newListItem(linkManager, page, getId(), component, this))
+                                .collect(Collectors.toList());
+                    }
                 }
             }
 
@@ -350,5 +479,61 @@ public class List implements com.adobe.cq.wcm.core.components.models.List {
 
     public boolean getDisplayAsTags() {
         return type.equals(PN_TYPE_TAGS);
+    }
+
+    /**
+     * Comparator for sorting pages.
+     */
+    public static class ListSort implements Comparator<Page>, Serializable {
+
+        /**
+         * Serial version UID.
+         */
+        private static final long serialVersionUID = -707429230313589969L;
+
+        /**
+         * The sort order
+         */
+        @Nullable
+        private final String sortOrder;
+
+        /**
+         * Comparator for comparing pages.
+         */
+        @NotNull
+        private final transient Comparator<Page> pageComparator;
+
+        /**
+         * Construct a page sorting comparator.
+         *
+         * @param orderBy The field to order by.
+         * @param sortOrder The sort order.
+         * @param locale Current locale.
+         */
+        ListSort(@Nullable final String orderBy, @Nullable final String sortOrder, @NotNull Locale locale) {
+            this.sortOrder = sortOrder;
+
+            if (PN_ORDER_BY_MODIFIED.equals(orderBy)) {
+                // getLastModified may return null, define null to be after nonnull values
+                this.pageComparator = (a, b) -> ObjectUtils.compare(a.getLastModified(), b.getLastModified(), true);
+            } else if (PN_ORDER_BY_TITLE.equals(orderBy)) {
+                Collator collator = Collator.getInstance(locale);
+                collator.setStrength(Collator.PRIMARY);
+                // getTitle may return null, define null to be greater than nonnull values
+                Comparator<String> titleComparator = Comparator.nullsLast(collator);
+                this.pageComparator = (a, b) -> titleComparator.compare(PageListItemImpl.getTitle(a), PageListItemImpl.getTitle(b));
+            } else {
+                this.pageComparator = (a, b) -> 0;
+            }
+        }
+
+        @Override
+        public int compare(@NotNull final Page item1, @NotNull final Page item2) {
+            int i = this.pageComparator.compare(item1, item2);
+            if (sortOrder.equals(PN_SORT_ORDER_DESC)) {
+                i = i * -1;
+            }
+            return i;
+        }
     }
 }

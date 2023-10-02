@@ -1,0 +1,9 @@
+{
+  "teaser": {
+    "jcr:primaryType": "cq:Component",
+    "jcr:title": "Teaser",
+    "sling:resourceSuperType": "core/wcm/components/teaser",
+    "jcr:description": "Teaser Component",
+    "cq:icon": "teaser"
+  }
+}

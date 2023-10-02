@@ -1,0 +1,9 @@
+{
+  "list": {
+    "jcr:primaryType": "cq:Component",
+    "jcr:title": "List",
+    "sling:resourceSuperType": "core/wcm/components/list",
+    "jcr:description": "List Component",
+    "cq:icon": "list"
+  }
+}
