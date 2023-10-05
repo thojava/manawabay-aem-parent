@@ -1,6 +1,6 @@
-$paddings: ('0':$spacing-0, '2xs':$spacing-2, 'xs':$spacing-8, 'sm':$spacing-12, 'base':$spacing-16, 'md':$spacing-20, 'ml':$spacing-28, 'lg':$spacing-32, '2lg':$spacing-40, '3lg':$spacing-48, '4lg':$spacing-64, '5lg':$spacing-80);
+$paddings: ('2xs':$spacing-2, 'xs':$spacing-8, 'sm':$spacing-12, 'base':$spacing-16, 'md':$spacing-20, 'ml':$spacing-28, 'lg':$spacing-32, '2lg':$spacing-40, '3lg':$spacing-48, '4lg':$spacing-64, '5lg':$spacing-80, '0':$spacing-0);
 $fonts: ('typonine': $font-family--typonine, 'sohne': $font-family--sohne);
-$font-sizes: ('xxs':$font-xxs, 'xs':$font-xs, 'sm':$font-sm, 'md':$font-md, 'ml':$font-ml, 'lg':$font-lg, 'xl':$font-xl, '2xl':$font-2xl, '3xl':$font-3xl, '4xl':$font-4xl, '5xl':$font-5xl, '6xl':$font-6xl, '7xl':$font-7xl, '8xl':$font-8xl);
+$font-sizes: ('xxs':$font-xxs, 'xs':$font-xs, 'sm':$font-sm, 'md':$font-md, 'ml':$font-ml, 'base':$font-base, 'lg':$font-lg, 'xl':$font-xl, '2xl':$font-2xl, '3xl':$font-3xl, '4xl':$font-4xl, '5xl':$font-5xl, '6xl':$font-6xl, '7xl':$font-7xl, '8xl':$font-8xl);
 $line-height: ('none':$line-height-none, 'snug':$line-height-tighter, 'tight':$line-height-tight, 'normal':$line-height-normal);
 $letter-spacing: ('normal':$tracking-normal, 'sm':$tracking-sm, 'md':$tracking-md, 'ml':$tracking-ml, 'lg':$tracking-lg, 'xl':$tracking-xl, '2xl':$tracking-2xl);
 $font-weight: ('light':$font-weight-light, 'normal':$font-weight-normal, 'medium':$font-weight-medium, 'semibold':$font-weight-semibold, 'bold':$font-weight-bold);
@@ -29,6 +29,7 @@ $font-weight: ('light':$font-weight-light, 'normal':$font-weight-normal, 'medium
 }
 
 .cmp-tabs__tab--active {
+    font-weight: bold;
 }
 
 .cmp-tabs__tabpanel {
@@ -142,13 +143,13 @@ html:not(.aem-AuthorLayer-Edit) {
 // Paddings
 html:not(.aem-AuthorLayer-Edit) {
   @each $name, $padding in $paddings {
-    .pt-#{$name} {
+    .tabs--vertical.pt-#{$name} {
       .cmp-tabs__tab {
         padding-top: $padding;
       }
     }
 
-    .pb-#{$name} {
+    .tabs--vertical.pb-#{$name} {
       .cmp-tabs__tab {
         padding-bottom: $padding;
       }
@@ -159,14 +160,15 @@ html:not(.aem-AuthorLayer-Edit) {
 // Mobile Paddings
 html:not(.aem-AuthorLayer-Edit) {
   @each $name, $padding in $paddings {
-    .pt-md-#{$name} {
+    .tabs--vertical.pt-md-#{$name} {
       .cmp-tabs__tab {
         @include media-breakpoint-down(md) {
           padding-top: $padding;
         }
       }
     }
-    .pb-md-#{$name} {
+
+    .tabs--vertical.pb-md-#{$name} {
       .cmp-tabs__tab {
         @include media-breakpoint-down(md) {
           padding-bottom: $padding;

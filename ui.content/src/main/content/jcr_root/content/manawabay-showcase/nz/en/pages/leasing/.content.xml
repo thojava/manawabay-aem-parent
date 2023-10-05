@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2023-09-04T03:12:31.436+10:00"
+        cq:lastModified="{Date}2023-10-04T02:18:27.289+11:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
@@ -24,8 +24,8 @@
                     sling:resourceType="manawabay/components/container"
                     layout="responsiveGrid">
                     <container_copy
-                        cq:styleIds="[1691571144655,1691571160629,1691075100848]"
-                        jcr:lastModified="{Date}2023-09-03T23:56:04.641+10:00"
+                        cq:styleIds="[1691075100848,1691571144655,1691571160629]"
+                        jcr:lastModified="{Date}2023-10-04T00:34:57.603+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="manawabay/components/container">
@@ -37,13 +37,13 @@
                             sling:resourceType="manawabay/components/breadcrumb"/>
                     </container_copy>
                     <container_copy_1476091132
-                        cq:styleIds="[1691075100848,1691571247359,1691571160629,1691571272199]"
-                        jcr:lastModified="{Date}2023-09-03T23:59:24.843+10:00"
+                        cq:styleIds="[1691075100848,1691571247359,1694424543576,1691571045770,1694423870732,1691571272199,1694423870711]"
+                        jcr:lastModified="{Date}2023-10-04T00:36:33.273+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="manawabay/components/container">
                         <title
-                            cq:styleIds="[1692758757237,1693671091862]"
+                            cq:styleIds="[1693671091862,1691754285826,1695200281044]"
                             jcr:lastModified="{Date}2023-09-03T23:57:59.831+10:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
@@ -51,16 +51,24 @@
                             sling:resourceType="manawabay/components/title"
                             linkTarget="_self"
                             type="h1"/>
+                        <separator_457114850
+                            cq:styleIds="[1691752213057,1695198064249]"
+                            jcr:created="{Date}2023-10-04T00:03:39.262+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2023-10-04T00:03:39.262+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/separator"/>
                         <text
-                            cq:styleIds="[1691742930748,1691754342038]"
-                            jcr:lastModified="{Date}2023-09-04T00:00:19.491+10:00"
+                            cq:styleIds="[1695199770651,1691742954184,1691754342038]"
+                            jcr:lastModified="{Date}2023-10-04T00:32:21.088+11:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/text"
-                            text="&lt;p style=&quot;text-align: center;&quot;>Mānawa Bay has been designed to set a new benchmark for outlet shopping in New Zealand. Mānawa Bay will be a purpose-built destination focused on delivering a customer-led experience bringing the best fashion, athleisure, lifestyle and homeware brands together under one roof. Nestled on the water’s edge overlooking the mangroves, Mānawa Bay will offer great shopping, unique park-like grounds and outdoor spaces within our estuary location.&lt;/p>&#xd;&#xa;&lt;p style=&quot;text-align: center;&quot;>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p style=&quot;text-align: center;&quot;>A unique opportunity, leasing now.&lt;/p>&#xd;&#xa;"
+                            text="&lt;p style=&quot;&#x9;text-align: center;&#xd;&#xa;&quot;>Mānawa Bay has been designed to set a new benchmark for outlet shopping in New Zealand. Mānawa Bay will be a purpose-built destination focused on delivering a customer-led experience bringing the best fashion, athleisure, lifestyle and homeware brands together under one roof. Nestled on the water’s edge overlooking the mangroves, Mānawa Bay will offer great shopping, unique park-like grounds and outdoor spaces within our estuary location.&lt;/p>&#xd;&#xa;&lt;p style=&quot;&#x9;text-align: center;&#xd;&#xa;&quot;> &lt;/p>&#xd;&#xa;&lt;p style=&quot;&#x9;text-align: center;&#xd;&#xa;&quot;>A unique opportunity, leasing now.&lt;/p>&#xd;&#xa;"
                             textIsRich="true"/>
                         <separator_copy
-                            cq:styleIds="[1691752142029]"
+                            cq:styleIds="[1691752185305]"
                             jcr:lastModified="{Date}2023-09-03T19:05:26.283+10:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
@@ -74,7 +82,7 @@
                             sling:resourceType="manawabay/components/button"
                             linkTarget="_self"/>
                         <separator
-                            cq:styleIds="[1691752142029]"
+                            cq:styleIds="[1691752192978,1695198064249]"
                             jcr:lastModified="{Date}2023-09-03T19:05:26.283+10:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
@@ -92,14 +100,16 @@
                             titleFromAsset="true"/>
                     </container_copy_1476091132>
                     <container
-                        cq:styleIds="[1691075116721,1691571247359,1691571260720,1691571272199]"
-                        jcr:lastModified="{Date}2023-09-04T00:04:13.204+10:00"
+                        cq:styleIds="[1691075116721,1691571247359,1694424543576,1691571260720,1694429457084,1691571272199,1694423870712,1694082522705]"
+                        jcr:lastModified="{Date}2023-10-04T01:06:45.187+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="manawabay/components/container"
                         layout="responsiveGrid">
                         <container
-                            cq:styleIds="1691571056074"
+                            cq:styleIds="[1691570085130,1694429457086,1691561100000,1691561200002]"
+                            jcr:lastModified="{Date}2023-10-04T00:57:04.154+11:00"
+                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/container">
                             <cq:responsive jcr:primaryType="nt:unstructured">
@@ -122,7 +132,9 @@
                                 titleValueFromDAM="true"/>
                         </container>
                         <container_copy
-                            cq:styleIds="1691571069839"
+                            cq:styleIds="[1691570097904,1694429457090]"
+                            jcr:lastModified="{Date}2023-10-04T00:48:10.284+11:00"
+                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/container">
                             <cq:responsive jcr:primaryType="nt:unstructured">
@@ -132,27 +144,31 @@
                                     width="6"/>
                             </cq:responsive>
                             <separator
-                                cq:styleIds="1691752192978"
+                                cq:styleIds="[1691752192978,1695198064249]"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
-                            <text
-                                cq:styleIds="1691754342038"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;label>Pre Title&lt;/label>"
-                                textIsRich="true"/>
                             <text_copy
-                                cq:styleIds="[1691742919161,1691754285816]"
+                                cq:styleIds="[1694161047613,1691754285816,1695199798194]"
+                                jcr:lastModified="{Date}2023-10-04T00:46:37.643+11:00"
+                                jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/text"
-                                text="&lt;p>Mānawa Bay will be easily accessible being close to Auckland Airport, motorways and main arterial routes.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                                text="&lt;p>Mānawa Bay will be easily accessible being close to Auckland Airport, motorways and main arterial routes. &lt;/p>&#xd;&#xa;"
                                 textIsRich="true"/>
                             <separator_2071068293
                                 cq:styleIds="1691752090680"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
+                            <separator_915207609
+                                cq:styleIds="[1691752192978,1695198052890]"
+                                jcr:created="{Date}2023-10-04T00:58:44.429+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T00:58:44.429+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/separator"/>
                             <text_copy_copy
-                                cq:styleIds="[1691742881444,1691754342038]"
+                                cq:styleIds="[1691754342038,1691742954184,1695199770651]"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/text"
                                 text="&lt;p>Mānawa Bay will accommodate a wide range&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>of transport modes, including public and future&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>mass transit. Designed to welcome everyone, we will offer ample parking, an intuitive retail layout and quality facilities, with a unique food and beverage offering including beautiful indoor and outdoor dining spaces.&amp;nbsp;&lt;/p>&#xd;&#xa;"
@@ -166,7 +182,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
                             <separator_copy_copy
-                                cq:styleIds="1691752142029"
+                                cq:styleIds="[1691752229681,1695198064249]"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
                             <image
@@ -181,11 +197,32 @@
                                 isDecorative="false"
                                 linkTarget="_self"
                                 titleValueFromDAM="true"/>
+                            <container
+                                cq:styleIds="[1691570135419,1691561100002]"
+                                jcr:created="{Date}2023-10-04T00:57:44.394+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T00:58:16.481+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/container">
+                                <image_copy
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/image"
+                                    alt="alt text goes here"
+                                    altValueFromDAM="false"
+                                    disableLazyLoading="false"
+                                    displayPopupTitle="true"
+                                    fileReference="/content/dam/manawabay-showcase/images/image09.jpg"
+                                    imageFromPageImage="false"
+                                    isDecorative="false"
+                                    linkTarget="_self"
+                                    titleValueFromDAM="true"/>
+                            </container>
                         </container_copy>
                     </container>
                     <container_copy_186291749
-                        cq:styleIds="[1691075116721,1691571247359,1691571260720,1691569961575]"
-                        jcr:lastModified="{Date}2023-09-04T00:06:58.811+10:00"
+                        cq:styleIds="[1691075116721,1691571247359,1691569961575,1694429457088]"
+                        jcr:lastModified="{Date}2023-10-04T01:12:03.013+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="manawabay/components/container">
@@ -196,7 +233,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/separator"/>
                         <text_copy_copy
-                            cq:styleIds="[1691742919161,1691754285816]"
+                            cq:styleIds="[1691754285816,1694161047613,1695199798194]"
                             jcr:lastModified="{Date}2023-09-04T00:05:42.752+10:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
@@ -209,8 +246,16 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/separator"/>
+                        <separator
+                            cq:styleIds="[1691752185305,1695198052890]"
+                            jcr:created="{Date}2023-10-04T01:04:46.361+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2023-10-04T01:04:46.361+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/separator"/>
                         <text_copy_copy_copy
-                            cq:styleIds="[1691742930748,1691754342038]"
+                            cq:styleIds="[1691754342038,1691742954184,1695199770651]"
                             jcr:lastModified="{Date}2023-09-04T00:06:08.481+10:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
@@ -219,97 +264,282 @@
                             textIsRich="true"/>
                     </container_copy_186291749>
                     <container_copy_1830977423
-                        cq:styleIds="[1691571247359,1691571255501,1691075116721]"
-                        jcr:lastModified="{Date}2023-09-03T22:40:10.131+10:00"
+                        cq:styleIds="[1691075116721,1691571247359,1694424543576,1691571039978,1694424369695,1691571272199,1694423870712]"
+                        jcr:lastModified="{Date}2023-10-04T01:34:12.517+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="manawabay/components/container"
-                        layout="responsiveGrid">
+                        sling:resourceType="manawabay/components/container">
+                        <container_2136540556
+                            cq:styleIds="[1691570046773,1694423870707,1694082522705]"
+                            jcr:created="{Date}2023-10-04T01:21:08.196+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2023-10-04T01:22:58.096+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/container"
+                            layout="responsiveGrid">
+                            <container
+                                cq:styleIds="[1691570041224,1694429457086]"
+                                jcr:lastModified="{Date}2023-10-04T01:17:53.314+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/container">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="0"
+                                        width="6"/>
+                                </cq:responsive>
+                                <separator
+                                    cq:styleIds="[1693676340989,1693677760430]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_copy_2040250577
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <text
+                                    cq:styleIds="[1691754285816,1694161055211,1695199807597,1694159494283]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:59.633+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>100+&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <text_copy
+                                    cq:styleIds="[1691754342038]"
+                                    jcr:lastModified="{Date}2023-09-03T22:41:17.582+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>Iconic brands*&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <separator_copy_20402
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_copy
+                                    cq:styleIds="[1693677760430,1693676340989]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_copy_20402_381326927
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <text_copy_710655220
+                                    cq:styleIds="[1691754285816,1694161055211,1695199807597,1694159494283]"
+                                    jcr:lastModified="{Date}2023-09-03T22:44:53.590+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>1,400+&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <text_copy_copy
+                                    cq:styleIds="[1691754342038]"
+                                    jcr:lastModified="{Date}2023-09-03T22:45:04.451+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>On grade carparks&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <separator_copy_20402_2024021675
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_copy_267256519
+                                    cq:styleIds="[1693676340989,1693677760430]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_copy_20402_1268605652
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <text_copy_885758573
+                                    cq:styleIds="[1691754285816,1694161055211,1695199807597,1694159494283]"
+                                    jcr:lastModified="{Date}2023-09-03T22:45:18.996+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>25mins&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <text_copy_copy_2025955275
+                                    cq:styleIds="[1691754342038]"
+                                    jcr:lastModified="{Date}2023-09-03T22:45:26.313+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>From Auckland CBD&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <separator_copy_20402_1655724810
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_copy_818198047
+                                    cq:styleIds="[1693676340989,1693677760430]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                            </container>
+                            <container_copy
+                                cq:styleIds="[1691570053162,1694429457090]"
+                                jcr:lastModified="{Date}2023-10-04T01:18:11.662+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/container">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="0"
+                                        width="6"/>
+                                </cq:responsive>
+                                <container
+                                    cq:styleIds="[1691561100000,1691561200002]"
+                                    jcr:created="{Date}2023-10-04T01:27:24.728+11:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2023-10-04T01:27:56.456+11:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/container">
+                                    <separator_copy
+                                        cq:styleIds="[1693676340989,1693677760430]"
+                                        jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="manawabay/components/separator"/>
+                                </container>
+                                <separator_copy_20402
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <text
+                                    cq:styleIds="[1691754285816,1694161055211,1695199807597,1694159494283]"
+                                    jcr:lastModified="{Date}2023-09-03T22:45:36.271+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>24,000M2+&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <text_copy
+                                    cq:styleIds="[1691754342038]"
+                                    jcr:lastModified="{Date}2023-09-03T22:46:15.371+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>Leasable retail space&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <separator_copy_20402_1675656523
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_copy_1862767216
+                                    cq:styleIds="[1693676340989,1693677760430]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_copy_20402_1640299951
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <text_copy_710655220
+                                    cq:styleIds="[1691754285816,1694161055211,1695199807597,1694159494283]"
+                                    jcr:lastModified="{Date}2023-09-03T22:45:44.671+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>7 day Trading&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <text_copy_copy_867737545
+                                    cq:styleIds="[1691754342038]"
+                                    jcr:lastModified="{Date}2023-09-03T22:47:49.063+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>10am - 6pm&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <separator_copy_20402_955215551
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_copy_1427669882
+                                    cq:styleIds="[1693676340989,1693677760430]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_copy_20402_1824979314
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <text_copy_885758573
+                                    cq:styleIds="[1691754285816,1694161055211,1695199807597,1694159494283]"
+                                    jcr:lastModified="{Date}2023-09-03T22:45:52.651+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>5 Green Star&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <text_1746744962
+                                    cq:styleIds="[1691754342038]"
+                                    jcr:lastModified="{Date}2023-09-03T22:50:15.694+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/text"
+                                    text="&lt;p>Sustainability Rating*&lt;/p>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                                <separator_copy_20402_881138437
+                                    cq:styleIds="[1691752166213]"
+                                    jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator
+                                    cq:styleIds="[1693676340989,1693677760430]"
+                                    jcr:lastModified="{Date}2023-09-03T22:51:33.933+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                            </container_copy>
+                        </container_2136540556>
                         <container
-                            cq:styleIds="[1691570144109]"
-                            jcr:lastModified="{Date}2023-09-03T22:43:42.852+10:00"
+                            cq:styleIds="[1691561100000,1691561200002]"
+                            jcr:created="{Date}2023-10-04T01:31:59.408+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2023-10-04T01:32:18.817+11:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/container">
-                            <cq:responsive jcr:primaryType="nt:unstructured">
-                                <default
-                                    jcr:primaryType="nt:unstructured"
-                                    offset="0"
-                                    width="6"/>
-                            </cq:responsive>
-                            <separator
-                                cq:styleIds="[1693676340989]"
-                                jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
-                            <text
-                                cq:styleIds="[1691742919161,1691754285816]"
-                                jcr:lastModified="{Date}2023-09-03T22:40:59.633+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>100+&amp;nbsp;&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <text_copy
-                                cq:styleIds="[1691742881444,1691754342038]"
-                                jcr:lastModified="{Date}2023-09-03T22:41:17.582+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>Iconic brands*&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <separator_copy
-                                cq:styleIds="[1693676340989]"
-                                jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
-                            <text_copy_710655220
-                                cq:styleIds="[1691742919161,1691754285816]"
-                                jcr:lastModified="{Date}2023-09-03T22:44:53.590+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>1,400+&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <text_copy_copy
-                                cq:styleIds="[1691742881444,1691754342038]"
-                                jcr:lastModified="{Date}2023-09-03T22:45:04.451+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>On grade carparks&amp;nbsp;&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <separator_copy_267256519
-                                cq:styleIds="[1693676340989]"
-                                jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
-                            <text_copy_885758573
-                                cq:styleIds="[1691742919161,1691754285816]"
-                                jcr:lastModified="{Date}2023-09-03T22:45:18.996+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>25mins&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <text_copy_copy_2025955275
-                                cq:styleIds="[1691742881444,1691754342038]"
-                                jcr:lastModified="{Date}2023-09-03T22:45:26.313+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>From Auckland CBD&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <separator_copy_818198047
-                                cq:styleIds="[1693676340989]"
-                                jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
                             <text_1950118087
+                                cq:styleIds="[1691742919161,1694531387273]"
                                 jcr:lastModified="{Date}2023-09-03T22:52:23.631+10:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
@@ -317,102 +547,17 @@
                                 text="&lt;p>*Targeted for opening.&lt;/p>&#xd;&#xa;"
                                 textIsRich="true"/>
                         </container>
-                        <container_copy
-                            cq:styleIds="[1691570155538]"
-                            jcr:lastModified="{Date}2023-09-03T22:46:58.942+10:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="manawabay/components/container">
-                            <cq:responsive jcr:primaryType="nt:unstructured">
-                                <default
-                                    jcr:primaryType="nt:unstructured"
-                                    offset="0"
-                                    width="6"/>
-                            </cq:responsive>
-                            <separator_copy
-                                cq:styleIds="[1693676340989]"
-                                jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
-                            <text
-                                cq:styleIds="[1691742919161,1691754285816]"
-                                jcr:lastModified="{Date}2023-09-03T22:45:36.271+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>24,000M2+&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <text_copy
-                                cq:styleIds="[1691742881444,1691754342038]"
-                                jcr:lastModified="{Date}2023-09-03T22:46:15.371+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>Leasable retail space&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <separator_copy_1862767216
-                                cq:styleIds="[1693676340989]"
-                                jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
-                            <text_copy_710655220
-                                cq:styleIds="[1691742919161,1691754285816]"
-                                jcr:lastModified="{Date}2023-09-03T22:45:44.671+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>7 day Trading&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <text_copy_copy_867737545
-                                cq:styleIds="[1691742881444,1691754342038]"
-                                jcr:lastModified="{Date}2023-09-03T22:47:49.063+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>10am - 6pm&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <separator_copy_1427669882
-                                cq:styleIds="[1693676340989]"
-                                jcr:lastModified="{Date}2023-09-03T22:40:43.292+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
-                            <text_copy_885758573
-                                cq:styleIds="[1691742919161,1691754285816]"
-                                jcr:lastModified="{Date}2023-09-03T22:45:52.651+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>5 Green Star&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <text_1746744962
-                                cq:styleIds="[1691742881444,1691754342038]"
-                                jcr:lastModified="{Date}2023-09-03T22:50:15.694+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>Sustainability Rating*&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <separator
-                                cq:styleIds="[1693676340989]"
-                                jcr:lastModified="{Date}2023-09-03T22:51:33.933+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
-                        </container_copy>
                     </container_copy_1830977423>
                     <container_copy_2121069323
-                        cq:styleIds="[1691075116721,1691571247359,1691571260720,1691571272199]"
-                        jcr:lastModified="{Date}2023-09-03T22:12:20.783+10:00"
+                        cq:styleIds="[1691075116721,1691571247359,1694424543576,1691571272199,1694423870712,1694082522705]"
+                        jcr:lastModified="{Date}2023-10-04T01:33:42.338+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="manawabay/components/container"
                         layout="responsiveGrid">
                         <container
-                            cq:styleIds="[1691571056074]"
-                            jcr:lastModified="{Date}2023-09-03T21:11:27.712+10:00"
+                            cq:styleIds="[1691570041224,1694429457086]"
+                            jcr:lastModified="{Date}2023-10-04T01:36:44.369+11:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/container">
@@ -438,8 +583,8 @@
                                 titleValueFromDAM="true"/>
                         </container>
                         <container_copy
-                            cq:styleIds="[1691571069839]"
-                            jcr:lastModified="{Date}2023-09-03T21:11:38.302+10:00"
+                            cq:styleIds="[1691570053162,1694429457090]"
+                            jcr:lastModified="{Date}2023-10-04T01:37:01.357+11:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/container">
@@ -456,7 +601,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
                             <text_copy
-                                cq:styleIds="[1691742919161,1691754285816]"
+                                cq:styleIds="[1691754285816,1694161055211,1695199807597]"
                                 jcr:lastModified="{Date}2023-09-04T00:08:07.841+10:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
@@ -469,13 +614,19 @@
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
+                            <separator_copy
+                                cq:styleIds="[1691752192978,1695198064249]"
+                                jcr:lastModified="{Date}2023-09-03T19:19:14.602+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/separator"/>
                             <text_copy_copy
-                                cq:styleIds="[1691742881444,1691754342038]"
-                                jcr:lastModified="{Date}2023-09-04T03:12:31.431+10:00"
+                                cq:styleIds="[1691754342038,1691742954184,1695199770651]"
+                                jcr:lastModified="{Date}2023-10-04T01:35:33.434+11:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/text"
-                                text="&lt;p style=&quot;text-align: left;&quot;>Mānawa Bay will be easily accessible for Aucklanders and those visiting from out of town.Conveniently located close to the airport, motorways and main arterial routes, only a 25-minute drive from Auckland CBD, accommodating all forms of transport, including public and future mass transit.Approximately 90% of the city’s population, 1.6 million people, live within a 30 minute drive of Mānawa Bay.&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>**Macroplan Auckland Airport market potential for outlet retail, April 2021&lt;/p>&#xd;&#xa;"
+                                text="&lt;p style=&quot;text-align: left;&quot;>Mānawa Bay will be easily accessible for Aucklanders and those visiting from out of town.Conveniently located close to the airport, motorways and main arterial routes, only a 25-minute drive from Auckland CBD, accommodating all forms of transport, including public and future mass transit.Approximately 90% of the city’s population, 1.6 million people, live within a 30 minute drive of Mānawa Bay.&lt;/p>&#xd;&#xa;"
                                 textIsRich="true"/>
                             <separator_2071068293_255172056
                                 cq:styleIds="[1691752090680]"
@@ -489,16 +640,32 @@
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
+                            <separator_copy_copy
+                                cq:styleIds="[1691752192978,1695198064249]"
+                                jcr:lastModified="{Date}2023-09-03T19:19:14.602+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/separator"/>
+                            <text
+                                cq:styleIds="[1691742919161,1694531387273]"
+                                jcr:created="{Date}2023-10-04T01:35:38.828+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T01:35:42.484+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/text"
+                                text="&lt;p>**Macroplan Auckland Airport market potential for outlet retail, April 2021&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
                         </container_copy>
                     </container_copy_2121069323>
                     <container_1332357305
-                        cq:styleIds="[1691571247359,1691571255501,1691075114090]"
-                        jcr:lastModified="{Date}2023-09-03T22:20:12.372+10:00"
+                        cq:styleIds="[1691075114090,1691571247359,1694424543576,1691571260720,1694423870734]"
+                        jcr:lastModified="{Date}2023-10-04T01:38:33.626+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="manawabay/components/container">
                         <title
-                            cq:styleIds="[1693671091862,1692758757237]"
+                            cq:styleIds="[1693671091862,1694161061642,1695200281044,1691754285826]"
                             jcr:lastModified="{Date}2023-09-03T22:18:25.712+10:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
@@ -513,11 +680,26 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/separator"/>
                         <separator_copy
-                            cq:styleIds="[1691752158504]"
+                            cq:styleIds="[1691752213057]"
                             jcr:lastModified="{Date}2023-09-03T22:21:40.062+10:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/separator"/>
+                        <container
+                            cq:styleIds="[1691561100000,1691561200002]"
+                            jcr:created="{Date}2023-10-04T01:39:22.622+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2023-10-04T01:39:52.834+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="manawabay/components/container">
+                            <separator_copy_copy
+                                cq:styleIds="[1691752213057]"
+                                jcr:lastModified="{Date}2023-09-03T22:21:40.062+10:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/separator"/>
+                        </container>
                         <image
                             jcr:lastModified="{Date}2023-09-03T22:20:45.833+10:00"
                             jcr:lastModifiedBy="admin"
@@ -534,15 +716,15 @@
                             titleValueFromDAM="true"/>
                     </container_1332357305>
                     <container_1433161252
-                        cq:styleIds="[1691075114090,1691571247359,1691571255501]"
-                        jcr:lastModified="{Date}2023-09-03T22:57:24.538+10:00"
+                        cq:styleIds="[1691075114090,1691571247359,1694424543576,1691571260720,1694423870734,1694082522705]"
+                        jcr:lastModified="{Date}2023-10-04T02:05:42.997+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="manawabay/components/container"
                         layout="responsiveGrid">
                         <container
-                            cq:styleIds="[1691570144109]"
-                            jcr:lastModified="{Date}2023-09-03T23:02:39.652+10:00"
+                            cq:styleIds="[1691570041224,1694429457086]"
+                            jcr:lastModified="{Date}2023-10-04T02:11:16.574+11:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/container">
@@ -552,38 +734,61 @@
                                     offset="0"
                                     width="4"/>
                             </cq:responsive>
-                            <separator
+                            <separator_copy
+                                cq:styleIds="[1693677760430]"
                                 jcr:lastModified="{Date}2023-09-03T22:58:21.722+10:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
-                            <separator_1570785195
-                                cq:styleIds="[1691752132074]"
-                                jcr:lastModified="{Date}2023-09-03T22:59:06.332+10:00"
+                            <separator
+                                cq:styleIds="[1691752213057,1695198064249]"
+                                jcr:created="{Date}2023-10-04T02:07:32.847+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T02:07:32.847+11:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
                             <text
-                                cq:styleIds="[1691742881444,1691754342038]"
-                                jcr:lastModified="{Date}2023-09-03T23:06:21.991+10:00"
+                                cq:styleIds="[1691754342038,1691742954184]"
+                                jcr:lastModified="{Date}2023-10-04T02:18:27.281+11:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/text"
-                                text="&lt;p>* 23 domestic destinations connect to Auckland Airport*&lt;/p>&#xd;&#xa;&lt;p>* 18 airlines connecting Auckland to 34 international destinations across 21 countries*&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                                text="&lt;p>* 23 domestic destinations connect to Auckland Airport*&lt;/p>&#xd;&#xa;&lt;p>* 18 airlines connecting Auckland to 34 international destinations across 21 countries*&lt;/p>&#xd;&#xa;"
                                 textIsRich="true"/>
-                            <separator_1570785195_437709714
-                                cq:styleIds="[1691752090680]"
-                                jcr:lastModified="{Date}2023-09-03T22:59:06.332+10:00"
+                            <container
+                                cq:styleIds="[1691561100000,1691561200002]"
+                                jcr:created="{Date}2023-10-04T02:06:02.057+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T02:06:28.061+11:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
-                            <separator_copy
-                                jcr:lastModified="{Date}2023-09-03T22:58:21.722+10:00"
+                                sling:resourceType="manawabay/components/container">
+                                <separator_copy
+                                    cq:styleIds="[1691752213057,1695198064249]"
+                                    jcr:created="{Date}2023-10-04T02:07:32.847+11:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2023-10-04T02:07:32.847+11:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator
+                                    cq:styleIds="[1693677760430]"
+                                    jcr:lastModified="{Date}2023-09-03T22:58:21.722+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                            </container>
+                            <separator_copy_copy
+                                cq:styleIds="[1695198064249,1691752158504]"
+                                jcr:created="{Date}2023-10-04T02:07:32.847+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T02:07:32.847+11:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
                             <text_1121465260
-                                cq:styleIds="[1691754342038]"
+                                cq:styleIds="[1691742919161,1694531387262]"
                                 jcr:lastModified="{Date}2023-09-03T23:10:30.842+10:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
@@ -592,8 +797,8 @@
                                 textIsRich="true"/>
                         </container>
                         <container_copy
-                            cq:styleIds="[1691570144109,1691570155538]"
-                            jcr:lastModified="{Date}2023-09-03T23:03:06.633+10:00"
+                            cq:styleIds="[1691570016149,1694429457080,1694423870730]"
+                            jcr:lastModified="{Date}2023-10-04T02:13:34.248+11:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/container">
@@ -604,18 +809,21 @@
                                     width="4"/>
                             </cq:responsive>
                             <separator
+                                cq:styleIds="[1693677760430]"
                                 jcr:lastModified="{Date}2023-09-03T22:58:21.722+10:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
-                            <separator_1570785195
-                                cq:styleIds="[1691752132074]"
-                                jcr:lastModified="{Date}2023-09-03T22:59:06.332+10:00"
+                            <separator_copy
+                                cq:styleIds="[1691752213057,1695198064249]"
+                                jcr:created="{Date}2023-10-04T02:07:32.847+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T02:07:32.847+11:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
                             <text
-                                cq:styleIds="[1691742881444,1691754342038]"
+                                cq:styleIds="[1691754342038,1691742954184]"
                                 jcr:lastModified="{Date}2023-09-03T23:04:47.722+10:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
@@ -628,13 +836,39 @@
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
-                            <separator_copy
-                                jcr:lastModified="{Date}2023-09-03T22:58:21.722+10:00"
+                            <container_copy
+                                cq:styleIds="[1691561100000,1691561200002]"
+                                jcr:created="{Date}2023-10-04T02:06:02.057+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T02:06:28.061+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/container">
+                                <separator_copy
+                                    cq:styleIds="[1691752213057,1695198064249]"
+                                    jcr:created="{Date}2023-10-04T02:07:32.847+11:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2023-10-04T02:07:32.847+11:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator
+                                    cq:styleIds="[1693677760430]"
+                                    jcr:lastModified="{Date}2023-09-03T22:58:21.722+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                            </container_copy>
+                            <separator_copy_copy_
+                                cq:styleIds="[1695198064249,1691752158504]"
+                                jcr:created="{Date}2023-10-04T02:07:32.847+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T02:07:32.847+11:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
                             <text_1121465260_copy
-                                cq:styleIds="[1691754342038]"
+                                cq:styleIds="[1694531387262,1691742919161]"
                                 jcr:lastModified="{Date}2023-09-03T23:10:52.981+10:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
@@ -643,8 +877,8 @@
                                 textIsRich="true"/>
                         </container_copy>
                         <container_copy_366313294
-                            cq:styleIds="[1691570155538]"
-                            jcr:lastModified="{Date}2023-09-03T23:03:27.604+10:00"
+                            cq:styleIds="[1694423870730,1691570053162,1694429457090]"
+                            jcr:lastModified="{Date}2023-10-04T02:14:01.713+11:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="manawabay/components/container">
@@ -655,43 +889,89 @@
                                     width="4"/>
                             </cq:responsive>
                             <separator
+                                cq:styleIds="[1693677760430]"
                                 jcr:lastModified="{Date}2023-09-03T22:58:21.722+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
-                            <separator_1570785195
-                                cq:styleIds="[1691752132074]"
-                                jcr:lastModified="{Date}2023-09-03T22:59:06.332+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/separator"/>
-                            <text
-                                cq:styleIds="[1691742881444,1691754342038]"
-                                jcr:lastModified="{Date}2023-09-03T23:06:32.592+10:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="manawabay/components/text"
-                                text="&lt;p>** 22km from Auckland CBD (25 mins)*&lt;/p>&#xd;&#xa;&lt;p>**&amp;nbsp;5km from SH20 (6 mins)*&lt;/p>&#xd;&#xa;&lt;p>**&amp;nbsp;2km from SH20A/SH20B (2 mins)*&lt;/p>&#xd;&#xa;&lt;p>**&amp;nbsp;125,000 vehicles use SH20 each day**&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;"
-                                textIsRich="true"/>
-                            <separator_1570785195_437709714
-                                cq:styleIds="[1691752090680]"
-                                jcr:lastModified="{Date}2023-09-03T22:59:06.332+10:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
                             <separator_copy
-                                jcr:lastModified="{Date}2023-09-03T22:58:21.722+10:00"
+                                cq:styleIds="[1691752213057,1695198064249]"
+                                jcr:created="{Date}2023-10-04T02:07:32.847+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T02:07:32.847+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/separator"/>
+                            <text
+                                cq:styleIds="[1691754342038,1691742954184]"
+                                jcr:lastModified="{Date}2023-10-04T02:18:02.728+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/text"
+                                text="&lt;p>** 22km from Auckland CBD (25 mins)*&lt;/p>&#xd;&#xa;&lt;p>**&amp;nbsp;5km from SH20 (6 mins)*&lt;/p>&#xd;&#xa;&lt;p>**&amp;nbsp;2km from SH20A/SH20B (2 mins)*&lt;/p>&#xd;&#xa;&lt;p>**&amp;nbsp;125,000 vehicles use SH20 each day**&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <container
+                                cq:styleIds="[1691561100000,1691561200002]"
+                                jcr:created="{Date}2023-10-04T02:15:01.751+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T02:15:01.751+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/container">
+                                <separator_copy_14731
+                                    cq:styleIds="[1691752213057,1695198064249]"
+                                    jcr:created="{Date}2023-10-04T02:07:32.847+11:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2023-10-04T02:07:32.847+11:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_271198043
+                                    cq:styleIds="[1693677760430]"
+                                    jcr:lastModified="{Date}2023-09-03T22:58:21.722+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                            </container>
+                            <separator_copy_copy_
+                                cq:styleIds="[1695198064249,1691752158504]"
+                                jcr:created="{Date}2023-10-04T02:07:32.847+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T02:07:32.847+11:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/separator"/>
                             <text_1121465260_copy
-                                cq:styleIds="[1691754342038]"
+                                cq:styleIds="[1694531387262,1691742919161]"
                                 jcr:lastModified="{Date}2023-09-03T23:11:06.892+10:00"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="manawabay/components/text"
                                 text="&lt;p>*Google Maps&lt;/p>&#xd;&#xa;&lt;p>**NZTA Traffic Counts, 2019&lt;/p>&#xd;&#xa;"
                                 textIsRich="true"/>
+                            <container_copy
+                                cq:styleIds="[1691561100002]"
+                                jcr:created="{Date}2023-10-04T02:15:01.751+11:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-10-04T02:16:44.299+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="manawabay/components/container">
+                                <separator_copy_14731
+                                    cq:styleIds="[1695198064249,1691752158504]"
+                                    jcr:created="{Date}2023-10-04T02:07:32.847+11:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2023-10-04T02:07:32.847+11:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                                <separator_271198043
+                                    cq:styleIds="[1693677760430]"
+                                    jcr:lastModified="{Date}2023-09-03T22:58:21.722+10:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="manawabay/components/separator"/>
+                            </container_copy>
                         </container_copy_366313294>
                     </container_1433161252>
                     <container_copy_739844097

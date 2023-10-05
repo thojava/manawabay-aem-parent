@@ -40,10 +40,10 @@ public class Teaser implements com.adobe.cq.wcm.core.components.models.Teaser {
     //LOGGER
     private static final Logger LOGGER = LoggerFactory.getLogger(Teaser.class);
     public static final String PN_IMAGE_DELEGATE = "imageDelegate";
-    public static  String PN_PAGE_PUBLISHDATE = "publishDate";
+    public static final String PN_PAGE_PUBLISHDATE = "publishDate";
 
-    public static String NN_PAGE_ICON_IMAGE = "icon";
-    public static String NN_PAGE_BRANDIMAGE_IMAGE = "brandimage";
+    public static final String NN_PAGE_ICON_IMAGE = "icon";
+    public static final String NN_PAGE_BRANDIMAGE_IMAGE = "brandimage";
 
     protected ValueMap pageProperties;
 
@@ -128,7 +128,7 @@ public class Teaser implements com.adobe.cq.wcm.core.components.models.Teaser {
 
     @JsonIgnore
     public Resource getIconResource() {
-        if (iconResource == null && component != null) {
+        if (iconResource != null && component != null) {
             String delegateResourceType = component.getProperties().get(PN_IMAGE_DELEGATE, String.class);
             if (StringUtils.isEmpty(delegateResourceType)) {
                 LOGGER.error("In order for list rendering delegation to work correctly you need to set up the teaserDelegate property on" +
@@ -155,7 +155,7 @@ public class Teaser implements com.adobe.cq.wcm.core.components.models.Teaser {
 
     @JsonIgnore
     public Resource getBrandImageResource() {
-        if (brandImageResource == null && component != null) {
+        if (brandImageResource != null && component != null) {
             String delegateResourceType = component.getProperties().get(PN_IMAGE_DELEGATE, String.class);
             if (StringUtils.isEmpty(delegateResourceType)) {
                 LOGGER.error("In order for list rendering delegation to work correctly you need to set up the teaserDelegate property on" +

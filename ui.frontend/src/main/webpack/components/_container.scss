@@ -2,6 +2,7 @@ $container-columns: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
 $container-spaces: ('0':$spacing-0, '2xs':$spacing-2, 'xs':$spacing-8, 'sm':$spacing-12, 'base':$spacing-16, 'md':$spacing-20, 'ml':$spacing-28, 'lg':$spacing-32, '2lg':$spacing-40, '3lg':$spacing-48, '4lg':$spacing-64, '5lg':$spacing-80);
 $container-backgrounds: ('white':$white, 'black':$black, 'darkgrey':$darkgrey, 'midgrey':$midgrey, 'lightgrey':$lightgrey, 'locust':$locust, 'duststorm':$duststorm, 'gulfstream':$gulfstream, 'darksalmon':$darksalmon);
 $container-font-colors: ('white':$black, 'black':$white, 'darkgrey':$white, 'midgrey':$black, 'lightgrey':$black, 'locust':$black, 'duststorm':$black, 'gulfstream':$black, 'darksalmon':$black);
+$orders: ('first':-9999, 'last':9999, '1':1, '2':2, '3':3, '4':4);
 
 @each $name, $background in $container-backgrounds {
   .container--#{$name} {
@@ -289,31 +290,61 @@ html:not(.aem-AuthorLayer-Edit) {
 // Watermark background image
 .watermark-container {
   > .cmp-container {
-    background-image: url("../resources/images/watermark-white.svg");
     background-repeat: no-repeat;
+    background-image: url('../resources/images/watermarks/wm-gray-800.svg');
   }
 
   &--top-left {
     > .cmp-container {
-      background-position: left top;
+      background-position: -15% top;
     }
   }
 
   &--top-right {
     > .cmp-container {
-      background-position: right top;
+      background-position: 115% top;
     }
   }
 
   &--bottom-left {
     > .cmp-container {
-      background-position: left bottom;
+      background-position: -15% bottom;
     }
   }
 
   &--bottom-right {
     > .cmp-container {
-      background-position: right bottom;
+      background-position: 115% bottom;
+    }
+  }
+
+  &--darksalmon {
+    > .cmp-container {
+      background-image: url('../resources/images/watermarks/wm-darksalmon.svg');
+    }
+  }
+
+  &--gray-50 {
+    > .cmp-container {
+      background-image: url('../resources/images/watermarks/wm-gray-50.svg');
+    }
+  }
+
+  &--gray-800 {
+    > .cmp-container {
+      background-image: url('../resources/images/watermarks/wm-gray-800.svg');
+    }
+  }
+
+  &--gray-800--transparent {
+    > .cmp-container {
+      background-image: url('../resources/images/watermarks/wm-gray-800-transparent.svg');
+    }
+  }
+
+  &--locus {
+    > .cmp-container {
+      background-image: url('../resources/images/watermarks/wm-locus.svg');
     }
   }
 }
@@ -336,6 +367,8 @@ html:not(.aem-AuthorLayer-Edit) {
 
         > * {
           width: 100% !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
         }
       }
     }
@@ -353,4 +386,15 @@ html:not(.aem-AuthorLayer-Edit) {
   }
 }
 
-
+// Flex Orders
+html:not(.aem-AuthorLayer-Edit) {
+  @include media-breakpoint-down(md) {
+    @each $name, $order in $orders {
+      .container {
+        &.order-#{$order} {
+          order: $order;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+$sizes: ('xs':$spacing-16, 'sm':$spacing-24, 'md':$spacing-32, 'ml':$spacing-48, 'lg':$spacing-64, 'xl':$spacing-100, '2xl':$spacing-256, 'full':100%);
+
 div.image {
   margin-bottom: 0;
 }
@@ -12,13 +14,43 @@ div.image {
 }
 
 .cmp-image__image {
+  object-fit: cover;
+  object-position: center;
+  width: auto;
 }
 
 .cmp-image__title {
 }
 
-.image--social {
-  .cmp-image__image {
-    width: $spacing-24;
+.image {
+  @each $name, $size in $sizes {
+    &.image--#{$name} {
+      .cmp-image__image {
+        width: $size;
+        height: $size;
+      }
+    }
   }
 }
+
+.image {
+  &.image--center,
+  &.image--right {
+    .cmp-image {
+      display: flex;
+    }
+  }
+
+  &.image--center {
+    .cmp-image {
+      justify-content: center;
+    }
+  }
+
+  &.image--right {
+    .cmp-image {
+      justify-content: flex-end;
+    }
+  }
+}
+

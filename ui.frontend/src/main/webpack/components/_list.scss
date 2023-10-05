@@ -1,5 +1,11 @@
 $action-colors: ('duststorm':$duststorm, 'locus':$locust, 'gulfstream':$gulfstream, 'darksalmon':$darksalmon, 'white':$white);
 $bar-colors: ('duststorm':$gray-600, 'locus':$gray-600, 'gulfstream':$gray-600, 'darksalmon':$gray-600, 'white':$gray-800);
+$fonts: ('typonine': $font-family--typonine, 'thema': $font-family--thema, 'sohne': $font-family--sohne);
+$font-sizes: ('xxs':$font-xxs, 'xs':$font-xs, 'sm':$font-sm, 'md':$font-md, 'ml':$font-ml, 'base':$font-base, 'lg':$font-lg, 'xl':$font-xl, '2xl':$font-2xl, '3xl':$font-3xl, '4xl':$font-4xl, '5xl':$font-5xl, '6xl':$font-6xl, '7xl':$font-7xl, '8xl':$font-8xl);
+$line-height: ('none':$line-height-none, 'snug':$line-height-tighter, 'tight':$line-height-tight, 'normal':$line-height-normal);
+$letter-spacing: ('normal':$tracking-normal, 'sm':$tracking-sm, 'md':$tracking-md, 'ml':$tracking-ml, 'lg':$tracking-lg, 'xl':$tracking-xl, '2xl':$tracking-2xl);
+$font-weight: ('light':$font-weight-light, 'normal':$font-weight-normal, 'medium':$font-weight-medium, 'semibold':$font-weight-semibold, 'bold':$font-weight-bold);
+$colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'darkgrey':$darkgrey, 'white':$white, 'black':$black, 'dark':$dark);
 
 .cmp-list {
   list-style: none;
@@ -124,6 +130,8 @@ $bar-colors: ('duststorm':$gray-600, 'locus':$gray-600, 'gulfstream':$gray-600, 
     line-height: $line-height-normal;
     letter-spacing: $tracking-md;
     text-align: left;
+    font-size: $font-base;
+    font-weight: $font-weight-base;
   }
 
   .cmp-teaser {
@@ -230,6 +238,153 @@ $bar-colors: ('duststorm':$gray-600, 'locus':$gray-600, 'gulfstream':$gray-600, 
       }
     }
   }
+
+  // Publish Date styles
+  @each $name, $font in $fonts {
+    &.publish-date__font--#{$name} {
+      .cmp-list__item-publishdate {
+        font-family: $font;
+      }
+    }
+  }
+
+  @each $name, $font-size in $font-sizes {
+    &.publish-date__text--#{$name} {
+      .cmp-list__item-publishdate {
+        font-size: $font-size;
+      }
+    }
+  }
+
+  @each $name, $leading in $line-height {
+    &.publish-date__leading--#{$name} {
+      .cmp-list__item-publishdate {
+        line-height: $leading;
+      }
+    }
+  }
+
+  @each $name, $spacing in $letter-spacing {
+    &.publish-date__tracking--#{$name} {
+      .cmp-list__item-publishdate {
+        letter-spacing: $spacing;
+      }
+    }
+  }
+
+  @each $name, $weight in $font-weight {
+    &.publish-date__font--#{$name} {
+      .cmp-list__item-publishdate {
+        font-weight: $weight;
+      }
+    }
+  }
+
+  @each $name, $color in $colors {
+    &.publish-date__font--#{$name} {
+      .cmp-list__item-publishdate {
+        color: $color;
+      }
+    }
+  }
+
+  // Title styles
+  @each $name, $font in $fonts {
+    &.list-title__font--#{$name} {
+      .cmp-teaser__title {
+        font-family: $font;
+      }
+    }
+  }
+
+  @each $name, $font-size in $font-sizes {
+    &.list-title__text--#{$name} {
+      .cmp-teaser__title {
+        font-size: $font-size;
+      }
+    }
+  }
+
+  @each $name, $leading in $line-height {
+    &.list-title__leading--#{$name} {
+      .cmp-teaser__title {
+        line-height: $leading;
+      }
+    }
+  }
+
+  @each $name, $spacing in $letter-spacing {
+    &.list-title__tracking--#{$name} {
+      .cmp-teaser__title {
+        letter-spacing: $spacing;
+      }
+    }
+  }
+
+  @each $name, $weight in $font-weight {
+    &.list-title__font--#{$name} {
+      .cmp-teaser__title {
+        font-weight: $weight;
+      }
+    }
+  }
+
+  @each $name, $color in $colors {
+    &.list-title__font--#{$name} {
+      .cmp-teaser__title {
+        color: $color;
+      }
+    }
+  }
+
+  // Description styles
+  @each $name, $font in $fonts {
+    &.list-description__font--#{$name} {
+      .cmp-teaser__description {
+        font-family: $font;
+      }
+    }
+  }
+
+  @each $name, $font-size in $font-sizes {
+    &.list-description__text--#{$name} {
+      .cmp-teaser__description {
+        font-size: $font-size;
+      }
+    }
+  }
+
+  @each $name, $leading in $line-height {
+    &.list-description__leading--#{$name} {
+      .cmp-teaser__description {
+        line-height: $leading;
+      }
+    }
+  }
+
+  @each $name, $spacing in $letter-spacing {
+    &.list-description__tracking--#{$name} {
+      .cmp-teaser__description {
+        letter-spacing: $spacing;
+      }
+    }
+  }
+
+  @each $name, $weight in $font-weight {
+    &.list-description__font--#{$name} {
+      .cmp-teaser__description {
+        font-weight: $weight;
+      }
+    }
+  }
+
+  @each $name, $color in $colors {
+    &.list-description__font--#{$name} {
+      .cmp-teaser__description {
+        color: $color;
+      }
+    }
+  }
 }
 
 // Teaser list as a brand list
@@ -322,27 +477,41 @@ $bar-colors: ('duststorm':$gray-600, 'locus':$gray-600, 'gulfstream':$gray-600, 
     }
   }
 
-  .cmp-list__item-linktag {
-    padding: $spacing-12 $spacing-28;
+  .cmp-list__item {
+    cursor: pointer;
+    padding: $spacing-14 $spacing-28;
     background-color: $gray-50;
     border-radius: $rounded-full;
     display: flex;
     align-items: center;
     justify-content: center;
 
+    &:hover {
+      .cmp-list__item-title {
+        color: $accent-01;
+      }
+    }
+
     @include media-breakpoint-down(sm) {
       padding: $spacing-12 $spacing-12;
     }
   }
 
-  .cmp-list__item-linktag--active {
+  .cmp-list__item-active {
     background-color: $duststorm;
+
+    &:hover {
+      .cmp-list__item-title {
+        color: $dark;
+      }
+    }
 
     .cmp-list__item-title {
       color: $black;
     }
   }
 
+  .cmp-list__item-link,
   .cmp-list__item-title {
     font-size: $font-base;
     letter-spacing: $tracking-md;
@@ -367,24 +536,38 @@ $bar-colors: ('duststorm':$gray-600, 'locus':$gray-600, 'gulfstream':$gray-600, 
     gap: $spacing-2;
   }
 
-  .cmp-list__item-linktag {
+  .cmp-list__item {
+    cursor: pointer;
     padding: $spacing-10 $spacing-20;
     display: flex;
+
+    &:hover {
+      .cmp-list__item-title {
+        color: $accent-01;
+      }
+    }
 
     @include media-breakpoint-down(md) {
       padding: $spacing-8 $spacing-14;
     }
   }
 
-  .cmp-list__item-linktag--active {
+  .cmp-list__item-active {
     background-color: $duststorm;
     border-radius: $rounded-full;
+
+    &:hover {
+      .cmp-list__item-title {
+        color: $dark;
+      }
+    }
 
     .cmp-list__item-title {
       color: $black;
     }
   }
 
+  .cmp-list__item-link,
   .cmp-list__item-title {
     font-size: $font-base;
     letter-spacing: $tracking-md;
@@ -436,7 +619,7 @@ $bar-colors: ('duststorm':$gray-600, 'locus':$gray-600, 'gulfstream':$gray-600, 
   }
 }
 
-// Footer Social list
+// Social list
 .list--social {
   .cmp-list {
     flex-direction: row;
@@ -450,8 +633,8 @@ $bar-colors: ('duststorm':$gray-600, 'locus':$gray-600, 'gulfstream':$gray-600, 
   }
 }
 
-// Footer Simple list
-.list--simple {
+// Row list
+.list--row {
   .cmp-list {
     flex-direction: row;
     flex-wrap: wrap;

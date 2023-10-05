@@ -1,4 +1,10 @@
 $paddings: ('none':$spacing-0, 'xs':$spacing-4, "sm":$spacing-8, 'md':$spacing-16, 'lg':$spacing-24, 'xl':$spacing-48);
+$fonts: ('typonine': $font-family--typonine, 'thema': $font-family--thema);
+$font-sizes: ('xxs':$font-xxs, 'xs':$font-xs, 'sm':$font-sm, 'md':$font-md, 'ml':$font-ml, 'base':$font-base, 'lg':$font-lg, 'xl':$font-xl, '2xl':$font-2xl, '3xl':$font-3xl, '4xl':$font-4xl, '5xl':$font-5xl, '6xl':$font-6xl, '7xl':$font-7xl, '8xl':$font-8xl);
+$line-height: ('none':$line-height-none, 'snug':$line-height-tighter, 'tight':$line-height-tight, 'normal':$line-height-normal);
+$letter-spacing: ('normal':$tracking-normal, 'sm':$tracking-sm, 'md':$tracking-md, 'ml':$tracking-ml, 'lg':$tracking-lg, 'xl':$tracking-xl, '2xl':$tracking-2xl);
+$font-weight: ('light':$font-weight-light, 'normal':$font-weight-normal, 'medium':$font-weight-medium, 'semibold':$font-weight-semibold, 'bold':$font-weight-bold);
+$colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'darkgrey':$darkgrey, 'white':$white, 'black':$black, 'dark':$dark);
 
 .button {
   width: fit-content;
@@ -276,5 +282,71 @@ a.cmp-button:active {
   }
 }
 
+// Button Text Styles
+.button {
+  @each $name, $font in $fonts {
+    &.button__font--#{$name} {
+      .cmp-button__text {
+        font-family: $font;
+      }
+    }
+  }
 
+  @each $name, $font-size in $font-sizes {
+    &.button__text--#{$name} {
+      .cmp-button__text {
+        font-size: $font-size;
+      }
 
+      .cmp-button__icon {
+        i {
+          font-size: $font-size;
+        }
+      }
+    }
+  }
+
+  @each $name, $leading in $line-height {
+    &.button__leading--#{$name} {
+      .cmp-button__text {
+        line-height: $leading;
+      }
+
+      .cmp-button__icon {
+        i {
+          line-height: $leading;
+        }
+      }
+    }
+  }
+
+  @each $name, $spacing in $letter-spacing {
+    &.button__tracking--#{$name} {
+      .cmp-button__text {
+        letter-spacing: $spacing;
+      }
+    }
+  }
+
+  @each $name, $weight in $font-weight {
+    &.button__font--#{$name} {
+      .cmp-button__text {
+        font-weight: $weight;
+      }
+    }
+  }
+
+  @each $name, $color in $colors {
+    &.button__font--#{$name} {
+      .cmp-button__text {
+        color: $color;
+      }
+
+      .cmp-button__icon {
+        i {
+          color: $color;
+        }
+      }
+    }
+  }
+}

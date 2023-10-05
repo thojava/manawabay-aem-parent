@@ -1,3 +1,9 @@
+$font-sizes: ('xxs':$font-xxs, 'xs':$font-xs, 'sm':$font-sm, 'md':$font-md, 'ml':$font-ml, 'base':$font-base, 'lg':$font-lg, 'xl':$font-xl, '2xl':$font-2xl, '3xl':$font-3xl, '4xl':$font-4xl, '5xl':$font-5xl, '6xl':$font-6xl, '7xl':$font-7xl, '8xl':$font-8xl);
+$line-height: ('none':$line-height-none, 'snug':$line-height-tighter, 'tight':$line-height-tight, 'normal':$line-height-normal);
+$letter-spacing: ('normal':$tracking-normal, 'sm':$tracking-sm, 'md':$tracking-md, 'ml':$tracking-ml, 'lg':$tracking-lg, 'xl':$tracking-xl, '2xl':$tracking-2xl);
+$font-weight: ('light':$font-weight-light, 'normal':$font-weight-normal, 'medium':$font-weight-medium, 'semibold':$font-weight-semibold, 'bold':$font-weight-bold);
+$colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'darkgrey':$darkgrey, 'white':$white, 'black':$black, 'dark':$dark);
+
 .cmp-form-options {
   margin-bottom: $spacing-16;
 }
@@ -89,5 +95,48 @@
 .cmp-form-options__field--drop-down--filled {
   .cmp-form-options__label {
     color: $gray-200;
+  }
+}
+
+// Form Options Styles
+.options {
+  @each $name, $font-size in $font-sizes {
+    &.text--#{$name} {
+      .cmp-form-options__field--drop-down {
+        font-size: $font-size;
+      }
+    }
+  }
+
+  @each $name, $spacing in $letter-spacing {
+    &.tracking-#{$name} {
+      .cmp-form-options__field--drop-down {
+        letter-spacing: $spacing;
+      }
+    }
+  }
+
+  @each $name, $height in $line-height {
+    &.line-height--#{$name} {
+      .cmp-form-options__field--drop-down {
+        line-height: $height;
+      }
+    }
+  }
+
+  @each $name, $weight in $font-weight {
+    &.font--#{$name} {
+      .cmp-form-options__field--drop-down {
+        font-weight: $weight;
+      }
+    }
+  }
+
+  @each $name, $color in $colors {
+    &.font--#{$name} {
+      .cmp-form-options__field--drop-down {
+        color: $color;
+      }
+    }
   }
 }

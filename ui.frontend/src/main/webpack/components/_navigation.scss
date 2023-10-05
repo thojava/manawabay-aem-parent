@@ -52,7 +52,7 @@
   transition: background-color, color ease-in .15s;
 
   @media (prefers-color-scheme: light) {
-    //color: $black !important;
+    // color: $black !important; Comment out this line will make the menu working
   }
 }
 

@@ -4,6 +4,7 @@
 //== Font
 $font-family--base: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family--typonine: "Typonine Stenic", sans-serif;
+$font-family--thema: "Thema Std Reg", sans-serif;
 $font-family--sohne: "Sohne Regular", sans-serif;
 
 $font-base: 1rem;
@@ -92,6 +93,8 @@ $spacing-48: ($spacer * 3);
 $spacing-50: ($spacer * 3.125);
 $spacing-64: ($spacer * 4);
 $spacing-80: ($spacer * 5);
+$spacing-100: ($spacer * 6.25);
+$spacing-256: ($spacer * 16);
 
 // Border radius
 $rounded-full: 9999px;

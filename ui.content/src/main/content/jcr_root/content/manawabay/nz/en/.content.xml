@@ -8,7 +8,7 @@
         jcr:title="en"
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:template="/conf/manawabay/settings/wcm/templates/page-content"
+        cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
         sling:resourceType="manawabay/components/page"
     >
         <root

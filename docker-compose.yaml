@@ -313,42 +313,6 @@ services:
   ##########################################################
 
   ##########################################################
-  # SonarQube START
-  ##########################################################
-  sonarqube:
-    image: ahmedmusallam/sonarqube-aem:latest
-    container_name: sonarqube
-    depends_on:
-      - db
-    ports:
-      - "9000:9000"
-    networks:
-      - sonarnet
-    environment:
-      - sonar.jdbc.username=sonar
-      - sonar.jdbc.password=sonar
-      - sonar.jdbc.url=jdbc:postgresql://db:5432/sonar
-      - SONARQUBE_ADMIN_PASSWORD=Welcome1
-    volumes:
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_logs:/opt/sonarqube/logs
-  db:
-    image: postgres:latest
-    container_name: postgres
-    networks:
-      - sonarnet
-    environment:
-      - POSTGRES_USER=sonar
-      - POSTGRES_PASSWORD=sonar
-      - POSTGRES_DB=sonar
-    volumes:
-      - postgresql_data:/var/lib/postgresql/data
-
-  ##########################################################
-  # SonarQube END
-  ##########################################################
-
-  ##########################################################
   # DASHBOARD START
   ##########################################################
   dashboardbuild:
@@ -424,8 +388,6 @@ networks:
   publish-network:
   dispatcher-network:
   mongo-network:
-  sonarnet:
-    driver: bridge
 
 volumes:
   author-data:
@@ -433,6 +395,3 @@ volumes:
   publish-data:
   dispatcher-data:
   selenium-shared:
-  sonarqube_data:
-  sonarqube_logs:
-  postgresql_data:

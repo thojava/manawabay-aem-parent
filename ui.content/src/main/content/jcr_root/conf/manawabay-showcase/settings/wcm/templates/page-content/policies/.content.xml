@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2023-09-12T00:38:52.163+10:00"
+        cq:lastModified="{Date}2023-10-02T18:05:38.010+11:00"
         cq:lastModifiedBy="admin"
         cq:policy="manawabay/components/page/policy"
         jcr:primaryType="nt:unstructured"
@@ -32,6 +32,18 @@
                             <form jcr:primaryType="nt:unstructured">
                                 <container
                                     cq:policy="manawabay/components/form/container/form-container"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/core/components/policies/mapping"/>
+                                <text
+                                    cq:policy="manawabay/components/form/text/policy_1696229808012"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/core/components/policies/mapping"/>
+                                <button
+                                    cq:policy="manawabay/components/form/button/policy_1696230193065"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/core/components/policies/mapping"/>
+                                <options
+                                    cq:policy="manawabay/components/form/options/policy_1696230302366"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="wcm/core/components/policies/mapping"/>
                             </form>

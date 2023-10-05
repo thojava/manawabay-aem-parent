@@ -1,4 +1,3 @@
-
 // Stylesheets
 import "./main.scss";
 
@@ -6,3 +5,4 @@ import "./main.scss";
 import "./**/*.js";
 import "./**/*.ts";
 import '../components/**/*.js';
+import '../events/**/*.js';

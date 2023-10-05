@@ -395,7 +395,12 @@
             const entries = hash.substring(1).split('&');
 
             const filteredHash = entries.filter(entry => entry !== item.id);
-            location.hash = filteredHash.join('&');
+
+            if (filteredHash.length) {
+                location.hash = filteredHash.join('&');
+            } else {
+                containerUtils.removeUrlHash();
+            }
         }
 
         /**

@@ -44,7 +44,8 @@
         active: {
             tab: "cmp-tabs__tab--active",
             tabpanel: "cmp-tabs__tabpanel--active"
-        }
+        },
+        verticalTabs: 'tabs--vertical'
     };
 
     /**
@@ -129,7 +130,10 @@
                         const hashId = entries[entries.length - 1];
                         if (hashId) {
                             var hashItem = document.querySelector("[id='" + hashId + "']");
-                            if (hashItem) {
+
+                            const isVerticalTabs = that._elements.self.parentElement.classList.contains(selectors.verticalTabs);
+
+                            if (!isVerticalTabs && hashItem) {
                                 hashItem.scrollIntoView();
                             }
                         }

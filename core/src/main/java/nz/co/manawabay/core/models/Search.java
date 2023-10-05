@@ -1,6 +1,5 @@
 package nz.co.manawabay.core.models;
 
-import com.adobe.cq.wcm.core.components.util.AbstractComponentImpl;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -24,7 +23,7 @@ import static nz.co.manawabay.core.models.ActivationModule.CONFIG_ITEMS_PATH;
         adapters = com.adobe.cq.wcm.core.components.models.Search.class,
         resourceType = "manawabay/components/search",
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class Search extends AbstractComponentImpl implements com.adobe.cq.wcm.core.components.models.Search {
+public class Search implements com.adobe.cq.wcm.core.components.models.Search {
 
     //LOGGER
     private static final Logger LOGGER = LoggerFactory.getLogger(Search.class);

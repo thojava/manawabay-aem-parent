@@ -35,17 +35,17 @@ $separator-thickness: ('xs':$spacing-2, 'sm':$spacing-4, 'md':$spacing-8);
 }
 
 @each $name, $spacing in $spacer-variants {
-  @include media-breakpoint-up(sm) {
-    .spacer--#{$name} {
-      height: $spacing;
+  .spacer--#{$name} {
+    height: $spacing;
 
-      .cmp-separator__horizontal-rule {
-        opacity: 0;
-        margin: 0;
-      }
+    .cmp-separator__horizontal-rule {
+      opacity: 0;
+      margin: 0;
     }
   }
+}
 
+@each $name, $spacing in $spacer-variants {
   @include media-breakpoint-down(sm) {
     .spacer-sm--#{$name} {
       height: $spacing;

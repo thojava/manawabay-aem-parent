@@ -552,7 +552,7 @@ public class ListImpl extends AbstractComponentImpl implements List {
          * Comparator for comparing pages.
          */
         @NotNull
-        private final Comparator<Page> pageComparator;
+        private transient final Comparator<Page> pageComparator;
 
         /**
          * Construct a page sorting comparator.

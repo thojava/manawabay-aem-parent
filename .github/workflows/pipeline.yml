@@ -1,0 +1,170 @@
+name: pipeline
+
+on:
+  push:
+    branches:
+      - "*"
+    tags:
+      - "*"
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    runs-on: ubuntu-latest
+
+    strategy:
+      max-parallel: 4
+      matrix:
+        java-version: [ 11 ]
+        python-version: [ 3.6 ]
+
+    env:
+      ADOBE_GIT_REMOTE: ${{ secrets.ADOBE_GIT_REMOTE }}
+      AZURE_GIT_REMOTE: ${{ secrets.AZURE_GIT_REMOTE }}
+      GIT_COMMITTER_NAME: ${{ secrets.GIT_COMMITTER_NAME }}
+      GIT_COMMITTER_EMAIL: ${{ secrets.GIT_COMMITTER_EMAIL }}
+      PERSONAL_ADMIN_TOKEN: ${{ secrets.PERSONAL_ADMIN_TOKEN }}
+      DOCKER_HOST_IP: 172.17.0.1
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: true
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Set up jdk ${{ matrix.java-version }}
+        uses: actions/setup-java@v3.4.1
+        with:
+          distribution: 'adopt'
+          java-version: ${{ matrix.java-version }}
+
+      - name: Cache maven packages
+        uses: actions/cache@v3.0.8
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+      - name: Clean Package
+        run: mvn clean package
+#
+#      - name: Start Docker Stack
+#        if: github.ref == 'refs/heads/develop'
+#        run: |
+#          docker-compose up -d
+#
+##      - name: Find Docker Host IP
+##        uses: addnab/docker-run-action@v1
+##        id: docker_host_ip
+##        with:
+##          image: ubuntu:latest
+##          run: |
+##            apt-get update -y
+##            apt-get install iproute2 -y
+##            echo "DOCKER_HOST_IP=$(ip -4 route show default | cut -d' ' -f3)" >> $GITHUB_OUTPUT
+#
+#      - name: Wait for Docker Stack to be ready
+#        if: github.ref == 'refs/heads/develop'
+#        run: |
+#          chmod +x ./services/aem/wait-for-aem.sh
+#          ./services/aem/wait-for-aem.sh
+#        env:
+#          STARTUP_TIMEOUT: 600
+#          AEM_URL: http://${{ env.DOCKER_HOST_IP }}:4502
+#
+#      - name: Docker Status
+#        if: github.ref == 'refs/heads/develop'
+#        run: |
+#          docker ps -a
+#
+#      - name: Deploy Latest Package
+#        if: github.ref == 'refs/heads/develop'
+#        run: |
+#          mvn clean install -PautoInstallSinglePackage -DskipTests=true -Daem.host=${DOCKER_HOST_IP} -Daem.port=4502 -Daem.username=admin -Daem.password=admin
+#          mvn clean install -PautoInstallSinglePackagePublish -DskipTests=true -Daem.host=${DOCKER_HOST_IP} -Daem.port=4502 -Daem.username=admin -Daem.password=admin
+##        env:
+##          DOCKER_HOST_IP: ${{ steps.docker_host_ip.outputs.DOCKER_HOST_IP }}
+##      - name: Run MVN Deploy using Docker
+##        if: github.ref == 'refs/heads/develop'
+##        uses: addnab/docker-run-action@v1
+##        with:
+##          image: maven:3.6.3-jdk-11
+##          run: |
+##            mvn clean install -PautoInstallSinglePackage -DskipTests=true -Daem.host=$DOCKER_HOST_IP -Daem.port=4502 -Daem.username=admin -Daem.password=admin
+##            mvn clean install -PautoInstallSinglePackagePublish -DskipTests=true  -Daem.host=$DOCKER_HOST_IP -Daem.port=4502 -Daem.username=admin -Daem.password=admin
+#
+#      - name: Run UI Tests
+#        if: github.ref == 'refs/heads/develop'
+#        run: |
+#          mvn verify -Pui-tests-docker-execution -DAEM_AUTHOR_URL=http://${DOCKER_HOST_IP}:4502
+#
+#      - name: Deploy docs
+#        if: github.ref == 'refs/heads/develop'
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          personal_token: ${{ secrets.PERSONAL_ADMIN_TOKEN }}
+#          publish_dir: ./ui.tests/target/reports/wdio-chrome/html-reports
+#          enable_jekyll: false
+#          external_repository: anchoraorg/manawabay-aem-parent-reports
+
+      - name: Squash and Push develop to feature/develop-update
+        if: github.ref == 'refs/heads/develop'
+        run: |
+          git config --global user.email "${GIT_COMMITTER_EMAIL}"
+          git config --global user.name "${GIT_COMMITTER_NAME}"
+          git remote add azure ${AZURE_GIT_REMOTE}
+          git remote -v
+          git fetch azure
+          git checkout -b develop-update --track azure/feature/develop-update
+          git merge origin/develop
+          git commit -m "merge updates."
+          git push azure HEAD:feature/develop-update
+
+#      - name: Push to Adobe SaaS Develop Branch
+#        if: github.ref == 'refs/heads/develop'
+#        run: |
+#          git remote add adobe $ADOBE_GIT_REMOTE
+#          git push adobe develop
+
+#      - name: Start the stack
+#        run: |
+#          docker-compose up -d
+#
+#      - name: Wait for aem using ansible
+#        run: |
+#          docker ps
+#          ls ~/.m2
+#          ls /home/runner/.m2
+#          docker-compose up automationtestprep
+#
+#      - name: Start automation tests using docker-compose
+#        run: |
+#          docker-compose up automationtest
+
+      - name: Stop the stack
+        if: github.ref == 'refs/heads/develop'
+        run: docker-compose down
+
+      - name: Automation test if failure
+        if: github.ref == 'refs/heads/develop' && failure()
+        run: |
+          df
+          docker ps -a
+          docker-compose down
+

@@ -126,9 +126,11 @@ public class ListItem implements com.adobe.cq.wcm.core.components.models.ListIte
         } else {
             this.page = page;
         }
-        properties = resource.getValueMap();
+        if(resource != null) {
+            properties = resource.getValueMap();
+            linkText = properties.get(List.PN_LINK_TEXT, String.class);
+        }
 
-        linkText = properties.get(List.PN_LINK_TEXT, String.class);
         showDescription = list.showDescription();
         showPublishDate = list.showPublishDate();
         publishDateFormatString = list.getPublishDateFormatString();

@@ -19,6 +19,15 @@ Include conf.d/variables/custom.vars
     <IfDefine ENVIRONMENT_DEV>
         ServerName ${DEV_MANAWABAY_FQDN}
     </IfDefine>
+    <IfDefine ENVIRONMENT_TEST>
+        ServerName ${TEST_MANAWABAY_FQDN}
+    </IfDefine>
+    <IfDefine ENVIRONMENT_UAT>
+        ServerName ${UAT_MANAWABAY_FQDN}
+    </IfDefine>
+    <IfDefine ENVIRONMENT_PPD>
+        ServerName ${PPD_MANAWABAY_FQDN}
+    </IfDefine>
     <IfDefine ENVIRONMENT_STAGE>
         ServerName ${STAGE_MANAWABAY_FQDN}
     </IfDefine>
