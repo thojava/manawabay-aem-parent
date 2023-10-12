@@ -3559,6 +3559,32 @@
                                         jcr:primaryType="nt:unstructured"/>
                             </cq:styles>
                         </item24>
+                        <item25
+                                cq:styleGroupLabel="Justify Content"
+                                jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                        cq:styleClasses="justify-start"
+                                        cq:styleId="1696499884117"
+                                        cq:styleLabel="Justify Start"
+                                        jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                        cq:styleClasses="justify-end"
+                                        cq:styleId="1696499888628"
+                                        cq:styleLabel="Justify End"
+                                        jcr:primaryType="nt:unstructured"/>
+                                <item2
+                                        cq:styleClasses="justify-center"
+                                        cq:styleId="1696499893788"
+                                        cq:styleLabel="Justify Center"
+                                        jcr:primaryType="nt:unstructured"/>
+                                <item3
+                                        cq:styleClasses="justify-between"
+                                        cq:styleId="1696499898275"
+                                        cq:styleLabel="Justify Between"
+                                        jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item25>
                     </cq:styleGroups>
                 </policy_29001236716157>
             </container>

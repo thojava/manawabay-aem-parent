@@ -16,6 +16,9 @@ div.image {
 .cmp-image__image {
   object-fit: cover;
   object-position: center;
+}
+
+.image .cmp-image__image {
   width: auto;
 }
 

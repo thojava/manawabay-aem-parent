@@ -2,6 +2,7 @@
   > .cmp-navigation {
     z-index: 3;
     position: relative;
+    margin-left: -$spacing-16;
 
     @include media-breakpoint-down(md) {
       display: none;
@@ -17,7 +18,7 @@
   }
 
   .cmp-navigation__toggle-button {
-    background: url("../resources/images/menu-black.svg") no-repeat center;
+    background: url("../resources/images/menu-white.svg") no-repeat center;
     background-size: cover;
     width: $spacing-24;
     height: $spacing-24;
@@ -103,7 +104,7 @@
 .cmp-navigation__menu-container {
   display: none;
   position: absolute;
-  top: 180px;
+  top: 146px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -185,7 +186,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: $color-background;
+  background: $color-background-dark;
   z-index: 9999;
   padding: $spacing-20;
   flex-direction: column;
@@ -199,7 +200,7 @@
   }
 
   .cmp-navigation {
-    border-top: 1px solid $gray-200;
+    border-top: 1px solid $white;
     padding-top: $spacing-28;
     position: relative;
 
@@ -233,7 +234,7 @@
     }
 
     .cmp-navigation__item-button {
-      background: url("../resources/images/arrow-black.svg") no-repeat center;
+      background: url("../resources/images/arrow-white.svg") no-repeat center;
       background-size: cover;
       padding: 0;
       border: none;
@@ -265,7 +266,7 @@
 
   .cmp-navigation__mobile-header--logo {
     img {
-      content: url("../resources/images/mob-logo-black.svg");
+      content: url("../resources/images/mob-logo-white.svg");
       object-fit: cover;
       object-position: center;
 
@@ -276,7 +277,7 @@
   }
 
   .cmp-navigation__mobile-header--close {
-    background: url("../resources/images/close-black.svg") no-repeat center;
+    background: url("../resources/images/close-white.svg") no-repeat center;
     background-size: cover;
     width: $spacing-32;
     height: $spacing-32;
@@ -326,7 +327,7 @@
     &:before {
       content: "";
       display: block;
-      background: url("../resources/images/arrow-black.svg") no-repeat center;
+      background: url("../resources/images/arrow-white.svg") no-repeat center;
       background-size: cover;
       width: $spacing-20;
       height: $spacing-20;
@@ -347,7 +348,7 @@
   }
 
   .cmp-navigation__menu-bottom {
-    border-top: 1px solid $gray-200;
+    border-top: 1px solid $white;
     padding-top: $spacing-28;
   }
 }

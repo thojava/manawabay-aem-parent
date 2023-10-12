@@ -1,3 +1,25 @@
+.cmp-audio {
+  .cmp-audio__audio {
+    display: none;
+  }
+
+  .cmp-audio__icon {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("../resources/images/volume.svg");
+  }
+
+  .cmp-audio__text {
+    padding-top: 2px;
+    margin-left: 2rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+  }
+}
+
 .audio--full {
   audio {
     width: 100%;

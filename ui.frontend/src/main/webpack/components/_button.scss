@@ -41,6 +41,10 @@ a.cmp-button:active {
   border: 1px solid transparent;
   padding: $spacing-8;
 
+  .cmp-link__screen-reader-only {
+    display: none;
+  }
+
   &:has(.cmp-button__text) {
     padding: $spacing-12 $spacing-22;
     border-radius: $rounded-full;

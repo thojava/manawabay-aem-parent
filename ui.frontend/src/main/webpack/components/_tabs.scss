@@ -29,7 +29,7 @@ $font-weight: ('light':$font-weight-light, 'normal':$font-weight-normal, 'medium
 }
 
 .cmp-tabs__tab--active {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .cmp-tabs__tabpanel {
@@ -64,9 +64,13 @@ $font-weight: ('light':$font-weight-light, 'normal':$font-weight-normal, 'medium
     background-color: $gray-50;
     border-radius: $rounded-full;
     gap: $spacing-2;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
   }
 
   .cmp-tabs__tab {
+    white-space: nowrap;
     padding: $spacing-10 $spacing-20;
 
     @include media-breakpoint-down(md) {

@@ -3,6 +3,7 @@ $container-spaces: ('0':$spacing-0, '2xs':$spacing-2, 'xs':$spacing-8, 'sm':$spa
 $container-backgrounds: ('white':$white, 'black':$black, 'darkgrey':$darkgrey, 'midgrey':$midgrey, 'lightgrey':$lightgrey, 'locust':$locust, 'duststorm':$duststorm, 'gulfstream':$gulfstream, 'darksalmon':$darksalmon);
 $container-font-colors: ('white':$black, 'black':$white, 'darkgrey':$white, 'midgrey':$black, 'lightgrey':$black, 'locust':$black, 'duststorm':$black, 'gulfstream':$black, 'darksalmon':$black);
 $orders: ('first':-9999, 'last':9999, '1':1, '2':2, '3':3, '4':4);
+$flex-justify: ('start':flex-start, 'end':flex-end, 'center':center, 'berween':space-between);
 
 @each $name, $background in $container-backgrounds {
   .container--#{$name} {
@@ -378,7 +379,7 @@ html:not(.aem-AuthorLayer-Edit) {
 html:not(.aem-AuthorLayer-Edit) {
   .container--flex {
     .cmp-container {
-      display: flex;
+      display: flex !important;
       align-items: center;
       flex-wrap: wrap;
       gap: $spacing-8;
@@ -394,6 +395,17 @@ html:not(.aem-AuthorLayer-Edit) {
         &.order-#{$order} {
           order: $order;
         }
+      }
+    }
+  }
+}
+
+// Justify Flex
+html:not(.aem-AuthorLayer-Edit) {
+  @each $name, $value in $flex-justify {
+    .justify-#{$name} {
+      > .cmp-container {
+        justify-content: $value;
       }
     }
   }

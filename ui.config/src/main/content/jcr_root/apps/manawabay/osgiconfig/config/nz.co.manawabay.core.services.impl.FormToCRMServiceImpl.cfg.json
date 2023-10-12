@@ -1,0 +1,4 @@
+{
+  "crm.endpoint": "$[env:CRM_API_URL]",
+  "crm.apikey": "$[secret:CRM_API_KEY]"
+}

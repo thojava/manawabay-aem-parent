@@ -36,6 +36,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <aem.sdk.api>2023.8.13206.20230821T124823Z-230800</aem.sdk.api>
+    <lombok.version>1.18.28</lombok.version>
     <aemanalyser.version>1.4.10</aemanalyser.version>
     <componentGroupName>Manawa Bay</componentGroupName>
   </properties>
@@ -586,6 +587,12 @@ Bundle-DocURL:
         <groupId>commons-collections</groupId>
         <artifactId>commons-collections</artifactId>
         <version>3.2.2</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>

@@ -18,13 +18,11 @@
      data-sly-test.hasContent="${download.filename}"
      id="${download.id}"
      class="cmp-audio${!wcmmode.disabled ? ' cq-dd-file' : ''}">
-    <audio controls>
+    <audio class="cmp-audio__audio" id="${download.id}-audio" controls>
         <source src="${download.url}" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
-    <a data-sly-test="${download.url && download.actionText}" class="cmp-audio__action" href="${download.url}">
-        <span class="cmp-audio__action-text">${download.actionText}</span>
-    </a>
+    <i class="cmp-audio__icon" data-cmp-hook-search="icon"></i>
+    <p class="cmp-audio__text"><a>${download.actionText}</a></p>
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-download cq-dd-file'}"></sly>
