@@ -13,6 +13,7 @@
           "listFrom": "nonExisting"
         },
         "staticListType": {
+          "id": "staticListType",
           "jcr:primaryType": "nt:unstructured",
           "sling:resourceType": "manawabay/components/list",
           "listFrom": "static",
@@ -20,9 +21,11 @@
           "linkItems": "true",
           "showDescription": "true",
           "showModificationDate": "true",
+          "publishDateFormat": "yyyyMMdd",
           "hideTitle": "true",
           "hideImage": "true",
           "hideDescription": "false",
+          "tags": ["tag1", "tag2"],
           "pages": [
             "/content/list/pages/page_1",
             "/content/list/pages/page_2"
@@ -202,6 +205,7 @@
           "jcr:primaryType": "nt:unstructured",
           "sling:resourceType": "manawabay/components/list",
           "listFrom": "tags",
+          "listType": "tags",
           "tagsSearchRoot": "/content/list/pages/page_1",
           "tags": [
             "list:test_category/test_tag"
@@ -211,6 +215,7 @@
           "jcr:primaryType": "nt:unstructured",
           "sling:resourceType": "manawabay/components/list",
           "listFrom": "search",
+          "orderBy": "title",
           "query": "Page 1.2"
         }
       }

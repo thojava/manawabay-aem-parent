@@ -20,7 +20,13 @@
             "showDescription"   : "true",
             "jcr:description"   : "Description",
             "linkURL"           : "https://www.adobe.com",
-            "sling:resourceType": "manawabay/components/teaser"
+            "sling:resourceType": "manawabay/components/teaser",
+            "showPublishDate": "true",
+            "showIcon": "true",
+            "showBrandImage": "true",
+            "hideImage": "false",
+            "hideTitle": "false",
+            "publishDateFormatString": "YYYYmmdd"
           },
           "teaser-2"          : {
             "jcr:primaryType"   : "nt:unstructured",

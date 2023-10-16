@@ -56,6 +56,10 @@ public class LayoutContainerTest {
         };
         assert containerResource != null;
         verifyContainerItems(containerResource, expectedItems, container.getItems());
+        assertEquals(2, container.getExportedItems().size());
+        assertEquals(2, container.getExportedItemsOrder().length);
+        assertNull(container.getAccessibilityLabel());
+        assertNull(container.getRoleAttribute());
     }
 
     @Test

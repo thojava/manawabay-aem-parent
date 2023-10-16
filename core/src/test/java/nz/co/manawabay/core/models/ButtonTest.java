@@ -36,9 +36,17 @@ public class ButtonTest {
     }
 
     @Test
-    public void testGetText() {
+    void testGetText() {
         Button button = getButtonUnderTest();
         assertEquals("Adobe", button.getText());
+        assertNull(button.getAccessibilityLabel());
+
+    }
+
+    @Test
+    void testActivationData() {
+        Button button = getButtonUnderTest();
+        assertEquals("", button.getActivationData());
     }
 
     @Test

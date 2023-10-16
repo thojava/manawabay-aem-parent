@@ -1,10 +1,12 @@
 package nz.co.manawabay.core.models;
 
+import com.adobe.cq.wcm.core.components.models.ListItem;
 import com.day.cq.search.SimpleSearch;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.wcm.api.Page;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import nz.co.manawabay.core.internal.models.v1.PageListItemImpl;
 import nz.co.manawabay.core.utils.ModelUtils;
 import nz.co.manawabay.core.testcontext.AppAemContext;
 import org.apache.sling.api.resource.Resource;
@@ -14,8 +16,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.jcr.Session;
-import java.util.Collections;
-import java.util.Objects;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
@@ -71,6 +74,17 @@ public class ListTest {
         assertFalse(list.getHideDescription());
         assertFalse(list.showIcon());
         assertFalse(list.showPublishDate());
+        assertEquals("yyyyMMdd", list.getPublishDateFormatString());
+        assertEquals("staticListType", list.getId());
+        assertNull(list.getAppliedCssClasses());
+        assertEquals("core/wcm/components/list", list.getExportedType());
+        assertEquals("pages", list.getType());
+        assertEquals("children", list.getListFromTags());
+        assertArrayEquals(new String[]{"tag1", "tag2"}, list.getListTags());
+        assertTrue(list.getDisplayAsPages());
+        assertFalse(list.getDisplayAsTags());
+        assertNotNull(list.getData());
+        assertEquals("", list.getActivationData());
     }
 
     @Test
@@ -80,6 +94,17 @@ public class ListTest {
                 "/content/list/pages/page_1",
                 "/content/list/pages/page_2",
         });
+    }
+
+    @Test
+    public void testListItems() {
+        List list = getListUnderTest(LIST_2);
+        Collection<ListItem> listItems = list.getListItems();
+        assertEquals(2, listItems.size());
+        for (ListItem listItem : listItems) {
+            nz.co.manawabay.core.models.ListItem teaserResource = (nz.co.manawabay.core.models.ListItem) listItem.getTeaserResource();
+            assertNull(teaserResource);
+        }
     }
 
 
@@ -108,6 +133,8 @@ public class ListTest {
     @Test
     protected void testTagsListType() {
         List list = getListUnderTest(LIST_5);
+        Collection<ListItem> listItems = list.getListItems();
+        assertEquals(0, listItems.size());
         checkListConsistencyByPaths(list, new String[]{"/content/list/pages/page_1/page_1_3"});
     }
 
@@ -215,6 +242,11 @@ public class ListTest {
     }
 
     private void checkListConsistencyByPaths(List list, String[] expectedPagePaths) {
-        assertArrayEquals(expectedPagePaths, list.getItems().stream().map(Page::getPath).toArray());
+        java.util.List<Page> pages = new ArrayList<>(list.getItems());
+        for (Page page : pages) {
+            assertNotNull(PageListItemImpl.getTitle(page));
+        }
+        Object[] array = pages.stream().map(Page::getPath).toArray();
+        assertArrayEquals(expectedPagePaths, array);
     }
 }

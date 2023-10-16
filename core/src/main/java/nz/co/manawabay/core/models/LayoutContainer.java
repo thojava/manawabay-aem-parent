@@ -25,10 +25,11 @@ import static nz.co.manawabay.core.models.ActivationModule.CONFIG_ITEMS_PATH;
 
 @Model(adaptables = SlingHttpServletRequest.class,
         adapters = com.adobe.cq.wcm.core.components.models.LayoutContainer.class,
-        resourceType = "manawabay/components/container",
+        resourceType = LayoutContainer.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class LayoutContainer implements com.adobe.cq.wcm.core.components.models.LayoutContainer {
 
+    public static final String RESOURCE_TYPE = "manawabay/components/container";
     //LOGGER
     private static final Logger LOGGER = LoggerFactory.getLogger(LayoutContainer.class);
 

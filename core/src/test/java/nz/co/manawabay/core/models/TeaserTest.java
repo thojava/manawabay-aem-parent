@@ -19,37 +19,37 @@ import java.util.Objects;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(AemContextExtension.class)
-public class TeaserTest {
+class TeaserTest {
 
     private static final String TEST_BASE = "/teaser";
-    protected static final String CONF_ROOT = "/conf";
-    protected static final String PNG_IMAGE_BINARY_NAME = "Adobe_Systems_logo_and_wordmark.png";
-    protected static final String PNG_ASSET_PATH = "/content/dam/core/images/" + PNG_IMAGE_BINARY_NAME;
-    protected static final String CONTEXT_PATH = "/core";
-    protected static final String TEST_ROOT_PAGE = "/content/teasers";
-    protected static final String TEST_ROOT_PAGE_GRID = "/jcr:content/root/responsivegrid";
-    protected static final String TITLE = "Teaser";
-    protected static final String PRETITLE = "Teaser's Pretitle";
-    protected static final String DESCRIPTION = "Description";
-    protected static final String TEASER_1 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-1";
-    protected static final String TEASER_2 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-2";
-    protected static final String TEASER_3 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-3";
-    protected static final String TEASER_4 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-4";
-    protected static final String TEASER_5 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-5";
-    protected static final String TEASER_6 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-6";
-    protected static final String TEASER_7 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-7";
-    protected static final String TEASER_8 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-8";
-    protected static final String TEASER_9 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-9";
-    protected static final String TEASER_10 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-10";
-    protected static final String TEASER_11 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-11";
-    protected static final String TEASER_12 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-12";
-    protected static final String TEASER_13 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-13";
-    protected static final String TEASER_14 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-14";
-    protected static final String TEASER_15 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-15";
+    static final String CONF_ROOT = "/conf";
+    static final String PNG_IMAGE_BINARY_NAME = "Adobe_Systems_logo_and_wordmark.png";
+    static final String PNG_ASSET_PATH = "/content/dam/core/images/" + PNG_IMAGE_BINARY_NAME;
+    static final String CONTEXT_PATH = "/core";
+    static final String TEST_ROOT_PAGE = "/content/teasers";
+    static final String TEST_ROOT_PAGE_GRID = "/jcr:content/root/responsivegrid";
+    static final String TITLE = "Teaser";
+    static final String PRETITLE = "Teaser's Pretitle";
+    static final String DESCRIPTION = "Description";
+    static final String TEASER_1 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-1";
+    static final String TEASER_2 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-2";
+    static final String TEASER_3 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-3";
+    static final String TEASER_4 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-4";
+    static final String TEASER_5 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-5";
+    static final String TEASER_6 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-6";
+    static final String TEASER_7 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-7";
+    static final String TEASER_8 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-8";
+    static final String TEASER_9 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-9";
+    static final String TEASER_10 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-10";
+    static final String TEASER_11 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-11";
+    static final String TEASER_12 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-12";
+    static final String TEASER_13 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-13";
+    static final String TEASER_14 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-14";
+    static final String TEASER_15 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-15";
 
-    protected final AemContext context = AppAemContext.newAemContext();
+    final AemContext context = AppAemContext.newAemContext();
 
-    protected String testBase;
+    String testBase;
 
     @BeforeEach
     void setUp() {
@@ -57,7 +57,7 @@ public class TeaserTest {
         internalSetup();
     }
 
-    protected void internalSetup() {
+    void internalSetup() {
         context.load().json(testBase + AppAemContext.TEST_CONTENT_JSON, AppAemContext.CONTENT_ROOT);
         context.load().json(testBase + AppAemContext.TEST_CONTENT_DAM_JSON, "/content/dam/core/images");
         context.load().json(testBase + AppAemContext.TEST_APPS_JSON, AppAemContext.TEST_APPS_ROOT);
@@ -66,7 +66,7 @@ public class TeaserTest {
     }
 
     @Test
-    protected void testFullyConfiguredTeaser() {
+    void testFullyConfiguredTeaser() {
         Teaser teaser = getTeaserUnderTest(TEASER_1);
         if (teaser.getImageResource() != null) {
             // let's verify the ValueMap wrapping here
@@ -77,10 +77,18 @@ public class TeaserTest {
         assertEquals(PRETITLE, teaser.getPretitle());
         assertEquals(TITLE, teaser.getTitle());
         assertEquals(DESCRIPTION, teaser.getDescription());
+        assertTrue(teaser.getShowPublishDate());
+        assertTrue(teaser.getShowIcon());
+        assertFalse(teaser.getHideImage());
+        assertFalse(teaser.getHideTitle());
+        assertTrue(teaser.getShowDescription());
+        assertTrue(teaser.getShowBrandImage());
+        assertFalse(teaser.isImageLinkHidden());
+        assertEquals("YYYYmmdd", teaser.getPublishDateFormatString());
     }
 
     @Test
-    protected void testFullyConfiguredTeaserVanityPath() {
+    void testFullyConfiguredTeaserVanityPath() {
         Teaser teaser = getTeaserUnderTest(TEASER_5);
         if (teaser.getImageResource() != null) {
             // let's verify the ValueMap wrapping here
@@ -93,7 +101,7 @@ public class TeaserTest {
     }
 
     @Test
-    protected void testPageInheritedProperties() {
+    void testPageInheritedProperties() {
         Teaser teaser = getTeaserUnderTest(TEASER_6);
         assertEquals("Teasers Test", teaser.getTitle());
         // < and > are expected escaped, because the page properties provide only a plain text field for the page description
@@ -101,45 +109,45 @@ public class TeaserTest {
     }
 
     @Test
-    protected void testInvalidFileReference() {
+    void testInvalidFileReference() {
         Teaser teaser = getTeaserUnderTest(TEASER_2);
         assertNull(teaser.getImageResource());
     }
 
     @Test
-    protected void testEmptyFileReference() {
+    void testEmptyFileReference() {
         Teaser teaser = getTeaserUnderTest(TEASER_3);
         assertNull(teaser.getImageResource());
     }
 
     @Test
     @SuppressWarnings("deprecation")
-    protected void testTeaserWithoutLink() {
+    void testTeaserWithoutLink() {
         Teaser teaser = getTeaserUnderTest(TEASER_4);
         assertNull(teaser.getLinkURL());
     }
 
     @Test
-    protected void testTeaserWithHiddenLinks() {
+    void testTeaserWithHiddenLinks() {
         getTeaserUnderTest(TEASER_5,
                 Teaser.PN_TITLE_LINK_HIDDEN, true,
                 Teaser.PN_IMAGE_LINK_HIDDEN, true);
     }
 
     @Test
-    protected void testTeaserWithHiddenElements() {
+    void testTeaserWithHiddenElements() {
         getTeaserUnderTest(TEASER_5,
                 Teaser.PN_TITLE_HIDDEN, true,
                 Teaser.PN_DESCRIPTION_HIDDEN, true);
     }
 
     @Test
-    protected void testTeaserWithoutImage() {
+    void testTeaserWithoutImage() {
         getTeaserUnderTest(TEASER_9);
     }
 
     @Test
-    protected void testTeaserWithActions() {
+    void testTeaserWithActions() {
         Teaser teaser = getTeaserUnderTest(TEASER_7);
         assertTrue(teaser.isActionsEnabled(), "Expected teaser with actions");
         assertEquals(2, teaser.getActions().size(), "Expected to find two actions");
@@ -149,12 +157,12 @@ public class TeaserTest {
     }
 
     @Test
-    protected void testTeaserWithActionsDisabled() {
+    void testTeaserWithActionsDisabled() {
         getTeaserUnderTest(TEASER_7, Teaser.PN_ACTIONS_DISABLED, true);
     }
 
     @Test
-    protected void testTeaserWithTitleAndDescriptionFromActions() {
+    void testTeaserWithTitleAndDescriptionFromActions() {
         Teaser teaser = getTeaserUnderTest(TEASER_8);
         assertTrue(teaser.isActionsEnabled(), "Expected teaser with actions");
         assertEquals(2, teaser.getActions().size(), "Expected to find two Actions");
@@ -164,13 +172,13 @@ public class TeaserTest {
     }
 
     @Test
-    protected void testTeaserWithTitleType() {
+    void testTeaserWithTitleType() {
         Teaser teaser = getTeaserUnderTest(TEASER_1, Teaser.PN_TITLE_TYPE, "h5");
         assertEquals("h5", teaser.getTitleType(), "Expected title type is not correct");
     }
 
     @Test
-    protected void testTeaserWithDefaultTitleType() {
+    void testTeaserWithDefaultTitleType() {
         Teaser teaser = getTeaserUnderTest(TEASER_1);
         assertNull(teaser.getTitleType(), "Expected the default title type is not correct");
     }
@@ -225,13 +233,13 @@ public class TeaserTest {
     }
 
     @Test
-    protected void testTeaserWithLinkToAsset() {
+    void testTeaserWithLinkToAsset() {
         Teaser teaser = getTeaserUnderTest(TEASER_15);
         List<ListItem> actions = teaser.getActions();
         assertEquals(CONTEXT_PATH + "/content/dam/core/images/Adobe_Systems_logo_and_wordmark.png", actions.get(0).getPath());
     }
 
-    protected Teaser getTeaserUnderTest(String resourcePath, Object... properties) {
+    Teaser getTeaserUnderTest(String resourcePath, Object... properties) {
         ModelUtils.enableDataLayer(context, true);
         MockSlingHttpServletRequest request = context.request();
         Resource resource = context.currentResource(resourcePath);
@@ -242,7 +250,7 @@ public class TeaserTest {
         return request.adaptTo(Teaser.class);
     }
 
-    protected void testImageResourceValueMap(ValueMap valueMap) {
+    void testImageResourceValueMap(ValueMap valueMap) {
         assertFalse(valueMap.containsKey(JcrConstants.JCR_TITLE));
         assertFalse(valueMap.containsKey(JcrConstants.JCR_DESCRIPTION));
     }
