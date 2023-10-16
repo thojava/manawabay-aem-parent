@@ -8,11 +8,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 @ExtendWith(AemContextExtension.class)
-public class SearchTest {
+class SearchTest {
 
     private static final String TEST_BASE = "/search";
     private static final String SEARCH_PAGE = "/content/en/search/page";
@@ -38,10 +37,11 @@ public class SearchTest {
         assertEquals("/jcr:content/search", search.getRelativePath());
         assertEquals("/content/en/search", search.getSearchRootPagePath());
         assertSame(search.getSearchRootPagePath(), search.getSearchRootPagePath());
+        assertEquals("", search.getActivationData());
     }
 
     @Test
-    protected void testSearchProperties_noPath() {
+    void testSearchProperties_noPath() {
         Search search = getSearchUnderTest(SEARCH_PAGE_DE + "/jcr:content/search");
         assertEquals(10, search.getResultsSize());
         assertEquals(3, search.getSearchTermMinimumLength());
