@@ -60,6 +60,8 @@ public class LayoutContainerTest {
         assertEquals(2, container.getExportedItemsOrder().length);
         assertNull(container.getAccessibilityLabel());
         assertNull(container.getRoleAttribute());
+        assertEquals("", container.getActivationData());
+        assertEquals(2, container.getChildren().size());
     }
 
     @Test
