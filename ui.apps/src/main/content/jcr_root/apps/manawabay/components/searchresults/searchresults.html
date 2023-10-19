@@ -1,0 +1,7 @@
+<div data-sly-use.searchResults="nz.co.manawabay.core.models.SearchResults">
+    <h1>${searchResults.header}
+        <sly data-sly-test="${searchResults.queryString != null}">'${searchResults.queryString}'</sly>
+    </h1>
+    <p>Search root: ${searchResults.searchRootPagePath}</p>
+    <p>Results size: ${searchResults.pageNumber}</p>
+</div>

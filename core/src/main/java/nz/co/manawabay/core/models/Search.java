@@ -6,6 +6,7 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Via;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.via.ResourceSuperType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -38,13 +39,13 @@ public class Search implements com.adobe.cq.wcm.core.components.models.Search {
     @Nullable
     private List<ActivationModule> activationconfig;
 
+    @ValueMapValue
+    private String resultsHeader;
+
     @PostConstruct
     protected void init(){
-
         LOGGER.info("Search init");
-
     }
-
 
     @NotNull
     public String getActivationData() {
@@ -81,4 +82,7 @@ public class Search implements com.adobe.cq.wcm.core.components.models.Search {
         return search.getSearchRootPagePath();
     }
 
+    public String getResultsHeader() {
+        return resultsHeader;
+    }
 }

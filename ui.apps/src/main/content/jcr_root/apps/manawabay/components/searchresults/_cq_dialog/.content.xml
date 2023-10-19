@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Quick Search"
-    sling:resourceType="cq/gui/components/authoring/dialog"
-    helpPath="https://www.adobe.com/go/aem_cmp_search_v2"
-    trackingFeature="core-components:search:v2">
+    jcr:title="Search Results"
+    sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -32,51 +30,33 @@
                                             <searchRoot
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="cq/gui/components/coral/common/form/pagefield"
-                                                fieldDescription="The root page from which to search in. Can be a blueprint master, language master or regular page."
                                                 fieldLabel="Search Root"
                                                 name="./searchRoot"
+                                                required="{Boolean}true"
                                                 rootPath="/content"
                                                 value="${not empty cqDesign.searchRoot ? cqDesign.searchRoot : ''}"/>
-                                            <searchlandingpage
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="cq/gui/components/coral/common/form/pagefield"
-                                                fieldDescription="Search landing page when pressing enter."
-                                                fieldLabel="Landing Page"
-                                                name="./searchlandingpage"
-                                                rootPath="/content"/>
-                                            <id
+                                            <header
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldDescription="HTML ID attribute to apply to the component."
-                                                fieldLabel="ID"
-                                                name="./id"
-                                                validation="html-unique-id-validator"/>
-                                            <placeholdertext
+                                                fieldLabel="Header"
+                                                name="./header"
+                                                required="{Boolean}true"
+                                                value="Search results for"/>
+                                            <resultSize
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldDescription="Text to show on search box."
-                                                fieldLabel="Placeholder Text"
-                                                name="./placeholdertext"/>
-                                            <resultsHeader
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldDescription="Text to show on search results header."
-                                                fieldLabel="Results Header"
-                                                name="./resultsHeader"/>
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldLabel="Result size"
+                                                min="{Double}10.0"
+                                                name="./resultSize"
+                                                required="{Boolean}true"
+                                                step="10"
+                                                value="{Long}10"/>
                                         </items>
                                     </column>
                                 </items>
                             </columns>
                         </items>
                     </properties>
-                    <advanced
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/include"
-                        path="/apps/manawabay/tabs/advanced/tab"/>
-                    <styletab
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/include"
-                        path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_edit/styletab"/>
                 </items>
             </tabs>
         </items>
