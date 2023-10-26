@@ -60,6 +60,12 @@
             transform: function(value) {
                 return value;
             }
+        },
+
+        searchLandingPage: {
+            transform: function (value) {
+                return value;
+            }
         }
     };
 
@@ -211,8 +217,11 @@
                     var focused = self._elements.results.querySelector(selectors.item.focused);
                     if (focused) {
                         focused.click();
+                        break;
                     }
                 }
+
+                location.href = self._properties.searchLandingPage + '.html?query=' + encodeURIComponent(self._elements.input.value);
                 break;
             case keyCodes.ESCAPE:
                 self._cancelResults();
