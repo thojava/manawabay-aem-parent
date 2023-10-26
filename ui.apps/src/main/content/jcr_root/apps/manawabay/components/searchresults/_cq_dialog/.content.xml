@@ -35,6 +35,13 @@
                                                 required="{Boolean}true"
                                                 rootPath="/content"
                                                 value="${not empty cqDesign.searchRoot ? cqDesign.searchRoot : ''}"/>
+                                            <id
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="HTML ID attribute to apply to the component."
+                                                fieldLabel="ID"
+                                                name="./id"
+                                                validation="html-unique-id-validator"/>
                                             <header
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

@@ -60,6 +60,10 @@ public class SearchResultsImpl implements nz.co.manawabay.core.models.SearchResu
     @Default(longValues = 10)
     private long pageNumber;
 
+    @ValueMapValue
+    @Default(values = "search-results-section")
+    private String id;
+
     private String searchRootPagePath;
 
     @PostConstruct
@@ -148,5 +152,10 @@ public class SearchResultsImpl implements nz.co.manawabay.core.models.SearchResu
     @Override
     public long getPageNumber() {
         return pageNumber;
+    }
+
+    @Override
+    public String getId() {
+        return id;
     }
 }
