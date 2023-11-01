@@ -16,13 +16,11 @@ import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.api.Template;
 import com.day.cq.wcm.api.constants.NameConstants;
 import com.day.cq.wcm.msm.api.LiveRelationshipManager;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import nz.co.manawabay.core.internal.models.v1.PageListItemImpl;
 import nz.co.manawabay.core.models.SearchResults;
 import nz.co.manawabay.core.services.SearchService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.factory.ModelFactory;
@@ -31,8 +29,6 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 import javax.jcr.Session;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.StreamSupport;
 
@@ -58,12 +54,10 @@ public class SearchServiceImpl implements SearchService {
 
 
     @Override
-    public void doSearch(@NotNull Page currentPage, @NotNull SlingHttpServletRequest request, @NotNull SlingHttpServletResponse response) throws IOException {
+    public List<ListItem> doSearch(@NotNull Page currentPage, @NotNull SlingHttpServletRequest request) {
         SearchResults searchComponent = getSearchComponent(request, currentPage);
-        List<ListItem> results = getResults(request, searchComponent, currentPage.getPageManager());
-        response.setContentType("application/json");
-        response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-        new ObjectMapper().writeValue(response.getWriter(), results);
+
+        return getResults(request, searchComponent, currentPage.getPageManager());
     }
 
     @NotNull

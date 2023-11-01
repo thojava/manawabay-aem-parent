@@ -1,7 +1,9 @@
 package nz.co.manawabay.core.servlets;
 
+import com.adobe.cq.wcm.core.components.models.ListItem;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import nz.co.manawabay.core.services.SearchService;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -19,17 +21,11 @@ import org.osgi.service.component.annotations.Reference;
 import javax.servlet.Servlet;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Optional;
 
-@Component(
-        service = Servlet.class/*,
-        property = {
-                "sling.servlet.selectors=" + SearchResultsLandingPageServlet.DEFAULT_SELECTOR,
-                "sling.servlet.resourceTypes=cq/Page",
-                "sling.servlet.extensions=json",
-                "sling.servlet.methods=GET"
-        }*/
-)
+@Component(service = Servlet.class)
 @SlingServletResourceTypes(
         methods = HttpConstants.METHOD_GET,
         resourceTypes = "cq/Page",
@@ -64,7 +60,10 @@ public class SearchResultsServlet extends SlingSafeMethodsServlet {
             request.setAttribute(SlingBindings.class.getName(), bindings);
 
             try {
-                searchService.doSearch(currentPage, request, response);
+                List<ListItem> results = searchService.doSearch(currentPage, request);
+                response.setContentType("application/json");
+                response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+                new ObjectMapper().writeValue(response.getWriter(), results);
             } catch (NumberFormatException e) {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST);
             }

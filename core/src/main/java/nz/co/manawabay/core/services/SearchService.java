@@ -1,12 +1,12 @@
 package nz.co.manawabay.core.services;
 
+import com.adobe.cq.wcm.core.components.models.ListItem;
 import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.SlingHttpServletResponse;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
+import java.util.List;
 
 public interface SearchService {
-    void doSearch(@NotNull Page currentPage, @NotNull final SlingHttpServletRequest request, @NotNull final SlingHttpServletResponse response) throws IOException;
+    List<ListItem> doSearch(@NotNull Page currentPage, @NotNull final SlingHttpServletRequest request);
 }
