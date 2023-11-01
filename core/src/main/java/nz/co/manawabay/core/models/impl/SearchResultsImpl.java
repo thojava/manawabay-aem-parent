@@ -7,6 +7,7 @@ import com.day.cq.wcm.api.WCMException;
 import com.day.cq.wcm.api.designer.Style;
 import com.day.cq.wcm.msm.api.LiveRelationship;
 import com.day.cq.wcm.msm.api.LiveRelationshipManager;
+import lombok.Getter;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -50,18 +51,22 @@ public class SearchResultsImpl implements nz.co.manawabay.core.models.SearchResu
     @OSGiService
     private LiveRelationshipManager relationshipManager;
 
+    @Getter
     private String queryString;
 
     @ValueMapValue
     @Default(values = "Search results for")
+    @Getter
     private String header;
 
     @ValueMapValue
     @Default(longValues = 10)
+    @Getter
     private long pageNumber;
 
     @ValueMapValue
     @Default(values = "search-results-section")
+    @Getter
     private String id;
 
     private String searchRootPagePath;
@@ -69,16 +74,6 @@ public class SearchResultsImpl implements nz.co.manawabay.core.models.SearchResu
     @PostConstruct
     void init() {
         queryString = request.getParameter("query");
-    }
-
-    @Override
-    public String getHeader() {
-        return header;
-    }
-
-    @Override
-    public String getQueryString() {
-        return queryString;
     }
 
     @Override
@@ -147,15 +142,5 @@ public class SearchResultsImpl implements nz.co.manawabay.core.models.SearchResu
             return child.getPath().substring(root.getPath().length() + 1);
         }
         return null;
-    }
-
-    @Override
-    public long getPageNumber() {
-        return pageNumber;
-    }
-
-    @Override
-    public String getId() {
-        return id;
     }
 }

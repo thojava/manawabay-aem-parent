@@ -2,12 +2,14 @@ package nz.co.manawabay.core.servlets;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
-import nz.co.manawabay.core.services.SearchResultsLandingPage;
+import nz.co.manawabay.core.services.SearchService;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.scripting.SlingBindings;
+import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.scripting.core.ScriptHelper;
+import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
 import org.jetbrains.annotations.NotNull;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.component.annotations.Activate;
@@ -20,21 +22,27 @@ import java.io.IOException;
 import java.util.Optional;
 
 @Component(
-        service = Servlet.class,
+        service = Servlet.class/*,
         property = {
                 "sling.servlet.selectors=" + SearchResultsLandingPageServlet.DEFAULT_SELECTOR,
                 "sling.servlet.resourceTypes=cq/Page",
                 "sling.servlet.extensions=json",
                 "sling.servlet.methods=GET"
-        }
+        }*/
 )
-public class SearchResultsLandingPageServlet extends SlingSafeMethodsServlet {
+@SlingServletResourceTypes(
+        methods = HttpConstants.METHOD_GET,
+        resourceTypes = "cq/Page",
+        selectors = SearchResultsServlet.DEFAULT_SELECTOR,
+        extensions = "json"
+)
+public class SearchResultsServlet extends SlingSafeMethodsServlet {
     protected static final String DEFAULT_SELECTOR = "searchresultslandingpage";
 
     private BundleContext bundleContext;
 
     @Reference
-    private SearchResultsLandingPage searchResultsLandingPage;
+    private SearchService searchService;
 
     @Activate
     protected void activate(final BundleContext bundleContext) {
@@ -56,7 +64,7 @@ public class SearchResultsLandingPageServlet extends SlingSafeMethodsServlet {
             request.setAttribute(SlingBindings.class.getName(), bindings);
 
             try {
-                searchResultsLandingPage.doSearch(currentPage, request, response);
+                searchService.doSearch(currentPage, request, response);
             } catch (NumberFormatException e) {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST);
             }

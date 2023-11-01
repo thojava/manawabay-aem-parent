@@ -19,7 +19,7 @@ import com.day.cq.wcm.msm.api.LiveRelationshipManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import nz.co.manawabay.core.internal.models.v1.PageListItemImpl;
 import nz.co.manawabay.core.models.SearchResults;
-import nz.co.manawabay.core.services.SearchResultsLandingPage;
+import nz.co.manawabay.core.services.SearchService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -38,8 +38,8 @@ import java.util.stream.StreamSupport;
 
 import static com.adobe.cq.wcm.core.components.models.ExperienceFragment.PN_FRAGMENT_VARIATION_PATH;
 
-@Component(service = SearchResultsLandingPage.class)
-public class SearchResultsLandingPageImpl implements SearchResultsLandingPage {
+@Component(service = SearchService.class)
+public class SearchServiceImpl implements SearchService {
     private static final String PARAM_FULLTEXT = "fulltext";
     private static final String PARAM_RESULTS_OFFSET = "resultsOffset";
     private static final String NN_STRUCTURE = "structure";

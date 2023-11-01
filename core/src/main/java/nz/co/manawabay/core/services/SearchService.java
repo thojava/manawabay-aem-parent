@@ -7,6 +7,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
-public interface SearchResultsLandingPage {
+public interface SearchService {
     void doSearch(@NotNull Page currentPage, @NotNull final SlingHttpServletRequest request, @NotNull final SlingHttpServletResponse response) throws IOException;
 }
