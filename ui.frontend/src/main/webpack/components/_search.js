@@ -193,52 +193,49 @@
     };
 
     Search.prototype._onInput = function(event) {
-        var self = this;
-        self._cancelResults();
+        this._cancelResults();
         // start searching when the search term reaches the minimum length
         this._timeout = setTimeout(function() {
-            self._displayResults();
+            this._displayResults();
         }, DELAY);
     };
 
     Search.prototype._onKeydown = function(event) {
-        var self = this;
-
         switch (event.keyCode) {
             case keyCodes.TAB:
-                if (self._resultsOpen()) {
-                    toggleShow(self._elements.results, false);
-                    self._elements.input.setAttribute("aria-expanded", "false");
+                if (this._resultsOpen()) {
+                    toggleShow(this._elements.results, false);
+                    this._elements.input.setAttribute("aria-expanded", "false");
                 }
                 break;
             case keyCodes.ENTER:
                 event.preventDefault();
-                if (self._resultsOpen()) {
-                    var focused = self._elements.results.querySelector(selectors.item.focused);
+                if (this._resultsOpen()) {
+                    var focused = this._elements.results.querySelector(selectors.item.focused);
                     if (focused) {
                         focused.click();
                         break;
                     }
                 }
 
-                location.href = self._properties.searchLandingPage + '.html?query=' + encodeURIComponent(self._elements.input.value);
+                location.href = this._properties.searchLandingPage + '.html?query=' + encodeURIComponent(this._elements.input.value);
                 break;
             case keyCodes.ESCAPE:
-                self._cancelResults();
+                this._cancelResults();
                 break;
             case keyCodes.ARROW_UP:
-                if (self._resultsOpen()) {
+                if (this._resultsOpen()) {
                     event.preventDefault();
-                    self._stepResultFocus(true);
+                    this._stepResultFocus(true);
                 }
                 break;
             case keyCodes.ARROW_DOWN:
-                if (self._resultsOpen()) {
+                if (this._resultsOpen()) {
                     event.preventDefault();
-                    self._stepResultFocus();
+                    this._stepResultFocus();
                 } else {
                     // test the input and if necessary fetch and display the results
-                    self._onInput();
+                    this._onInput();
                 }
                 break;
             default:
@@ -276,8 +273,6 @@
     };
 
     Search.prototype._generateItems = function(data, results) {
-        var self = this;
-
         if (data) {
             var resultsHeader = document.createElement("span");
             resultsHeader.classList.add('results-header');
@@ -287,7 +282,7 @@
 
         data.forEach(function(item) {
             var el = document.createElement("span");
-            el.innerHTML = self._elements.itemTemplate.innerHTML;
+            el.innerHTML = this._elements.itemTemplate.innerHTML;
             el.querySelectorAll(selectors.item.title)[0].appendChild(document.createTextNode(item.title));
             el.querySelectorAll(selectors.item.self)[0].setAttribute("href", item.url);
             results.innerHTML += el.innerHTML;
@@ -359,41 +354,40 @@
     };
 
     Search.prototype._updateResults = function() {
-        var self = this;
-        if (self._hasMoreResults) {
+        if (this._hasMoreResults) {
             var request = new XMLHttpRequest();
-            var url = self._action + "?" + serialize(self._elements.form) + "&" + PARAM_RESULTS_OFFSET + "=" + self._resultsOffset;
+            var url = this._action + "?" + serialize(this._elements.form) + "&" + PARAM_RESULTS_OFFSET + "=" + this._resultsOffset;
 
             request.open("GET", url, true);
             request.onload = function() {
                 // when the results are loaded: hide the loading indicator and display the search icon after a minimum period
                 setTimeout(function() {
-                    toggleShow(self._elements.loadingIndicator, false);
-                    toggleShow(self._elements.icon, true);
+                    toggleShow(this._elements.loadingIndicator, false);
+                    toggleShow(this._elements.icon, true);
                 }, LOADING_DISPLAY_DELAY);
                 if (request.status >= 200 && request.status < 400) {
                     // success status
                     var data = JSON.parse(request.responseText);
                     if (data.length > 0) {
-                        self._generateItems(data, self._elements.results);
-                        self._markResults();
-                        toggleShow(self._elements.results, true);
-                        self._elements.input.setAttribute("aria-expanded", "true");
+                        this._generateItems(data, this._elements.results);
+                        this._markResults();
+                        toggleShow(this._elements.results, true);
+                        this._elements.input.setAttribute("aria-expanded", "true");
                     } else {
-                        self._hasMoreResults = false;
+                        this._hasMoreResults = false;
                     }
                     // the total number of results is not a multiple of the fetched results:
                     // -> we reached the end of the query
-                    if (self._elements.results.querySelectorAll(selectors.item.self).length % self._properties.resultsSize > 0) {
-                        self._hasMoreResults = false;
+                    if (this._elements.results.querySelectorAll(selectors.item.self).length % this._properties.resultsSize > 0) {
+                        this._hasMoreResults = false;
                     }
                 } else {
                     // error status
                 }
             };
             // when the results are loading: display the loading indicator and hide the search icon
-            toggleShow(self._elements.loadingIndicator, true);
-            toggleShow(self._elements.icon, false);
+            toggleShow(this._elements.loadingIndicator, true);
+            toggleShow(this._elements.icon, false);
             request.send();
         }
     };
