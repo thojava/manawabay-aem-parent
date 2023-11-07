@@ -6,4 +6,5 @@
     <filter root="/apps/manawabay/tabs"/>
     <filter root="/apps/sling" />
     <filter root="/apps/msm/manawabay_blueprint" mode="merge"/>
+    <filter root="/oak:index" mode="update"/> <!--https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/operations/indexing.html?lang=en-->
 </workspaceFilter>

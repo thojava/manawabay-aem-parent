@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
+    <download/>
+    <container/>
+    <accordion/>
+    <breadcrumb/>
+    <separator/>
+    <teaser/>
+    <form/>
+    <tabs/>
     <jcr:content
         cq:lastModified="{Date}2023-07-31T12:50:34.067+10:00"
         cq:lastModifiedBy="admin"
@@ -26,4 +34,14 @@
             </container>
         </root>
     </jcr:content>
+    <title/>
+    <text/>
+    <button/>
+    <image/>
+    <search/>
+    <embed/>
+    <navigation/>
+    <video/>
+    <audio/>
+    <list/>
 </jcr:root>

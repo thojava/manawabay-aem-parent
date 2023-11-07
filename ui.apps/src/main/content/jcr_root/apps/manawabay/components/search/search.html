@@ -1,12 +1,13 @@
-<section data-sly-use.search="com.adobe.cq.wcm.core.components.models.Search"
+<section data-sly-use.search="nz.co.manawabay.core.models.Search"
          id="${properties.id}"
          class="cmp-search"
          role="search"
          data-activation="${search.activationData}"
-         data-search-landingpage="${properties.searchlandingpage}"
          data-cmp-is="search"
          data-cmp-min-length="${search.searchTermMinimumLength}"
-         data-cmp-results-size="${search.resultsSize}">
+         data-cmp-results-size="${search.resultsSize}"
+         data-cmp-results-header="${search.resultsHeader}"
+         data-cmp-search-landing-page="${properties.searchlandingpage}">
     <div class="cmp_search__info" aria-live="polite" role="status"></div>
     <form class="cmp-search__form" data-cmp-hook-search="form"
           method="get" action="${currentPage.path @ addSelectors=['searchresults'], extension='json', suffix = search.relativePath}"
