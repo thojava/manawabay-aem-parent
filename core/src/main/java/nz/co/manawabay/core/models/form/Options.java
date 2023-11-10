@@ -1,9 +1,8 @@
-package nz.co.manawabay.core.models;
+package nz.co.manawabay.core.models.form;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import nz.co.manawabay.core.models.form.OptionItemImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.HttpGet;
@@ -13,7 +12,6 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Via;
-import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.via.ResourceSuperType;
@@ -45,17 +43,17 @@ public class Options implements com.adobe.cq.wcm.core.components.models.form.Opt
 
     private List<com.adobe.cq.wcm.core.components.models.form.OptionItem> optionItems;
 
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL, name = "source")
+    @ValueMapValue(name = "source")
     @Nullable
-    private String sourceString;
+    private String source;
 
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    @ValueMapValue
     @Nullable
     private String datasourceRT;
 
     @Override
     public List<com.adobe.cq.wcm.core.components.models.form.OptionItem> getItems() {
-        if (StringUtils.equalsIgnoreCase(sourceString, "datasource")) {
+        if (StringUtils.equalsIgnoreCase(source, "datasource")) {
             if (optionItems == null) {
                 populateOptionItemsFromDatasource();
             }
@@ -86,7 +84,7 @@ public class Options implements com.adobe.cq.wcm.core.components.models.form.Opt
                 return response;
             });
         } catch (IOException e) {
-            LOGGER.error(String.format("Cannot get items from resource: %s", sourceString), e);
+            LOGGER.error(String.format("Cannot get items from resource: %s", source), e);
         }
     }
 
