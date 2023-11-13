@@ -3,6 +3,7 @@ package nz.co.manawabay.core.models.form;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.HttpGet;
@@ -16,8 +17,6 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.via.ResourceSuperType;
 import org.jetbrains.annotations.Nullable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,6 +27,7 @@ import java.util.List;
         adapters = com.adobe.cq.wcm.core.components.models.form.Options.class,
         resourceType = "manawabay/components/form/options",
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Slf4j
 public class Options implements com.adobe.cq.wcm.core.components.models.form.Options {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
@@ -35,15 +35,13 @@ public class Options implements com.adobe.cq.wcm.core.components.models.form.Opt
         OBJECT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Options.class);
-
     @Self
     @Via(type = ResourceSuperType.class)
     private com.adobe.cq.wcm.core.components.models.form.Options options;
 
     private List<com.adobe.cq.wcm.core.components.models.form.OptionItem> optionItems;
 
-    @ValueMapValue(name = "source")
+    @ValueMapValue
     @Nullable
     private String source;
 
@@ -84,7 +82,7 @@ public class Options implements com.adobe.cq.wcm.core.components.models.form.Opt
                 return response;
             });
         } catch (IOException e) {
-            LOGGER.error(String.format("Cannot get items from resource: %s", source), e);
+            log.error(String.format("Cannot get items from resource: %s", source), e);
         }
     }
 
