@@ -77,7 +77,7 @@ public class ListTest {
         assertEquals("yyyyMMdd", list.getPublishDateFormatString());
         assertEquals("staticListType", list.getId());
         assertNull(list.getAppliedCssClasses());
-        assertEquals("core/wcm/components/list", list.getExportedType());
+        assertEquals("core/wcm/components/list/v4/list", list.getExportedType());
         assertEquals("pages", list.getType());
         assertEquals("children", list.getListFromTags());
         assertArrayEquals(new String[]{"tag1", "tag2"}, list.getListTags());

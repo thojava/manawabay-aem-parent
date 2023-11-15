@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
-    <borders/>
-    <columns/>
-    <notification/>
     <jcr:content
         cq:lastModified="{Date}2023-09-04T11:16:55.555+10:00"
         cq:lastModifiedBy="admin"
@@ -174,37 +171,37 @@
                             sling:resourceType="manawabay/components/container">
                             <activationconfig jcr:primaryType="nt:unstructured">
                                 <item0
-                                    jcr:primaryType="nt:unstructured"
-                                    module="toggleComponent"
-                                    tags="[manawabay-showcase:category/shop]"
-                                    topic="test"
-                                    type="emit">
+                                        jcr:primaryType="nt:unstructured"
+                                        module="toggleComponent"
+                                        tags="[manawabay-showcase:category/shop]"
+                                        topic="test"
+                                        type="emit">
                                     <options jcr:primaryType="nt:unstructured">
                                         <item0
-                                            jcr:primaryType="nt:unstructured"
-                                            key="aa"
-                                            value="aa"/>
+                                                jcr:primaryType="nt:unstructured"
+                                                key="aa"
+                                                value="aa"/>
                                         <item1
-                                            jcr:primaryType="nt:unstructured"
-                                            key="bb"
-                                            value="bb"/>
+                                                jcr:primaryType="nt:unstructured"
+                                                key="bb"
+                                                value="bb"/>
                                     </options>
                                 </item0>
                                 <item1
-                                    jcr:primaryType="nt:unstructured"
-                                    module="toggleComponentOnTag"
-                                    tags="[manawabay-showcase:category/dine]"
-                                    topic="gggg"
-                                    type="consume">
+                                        jcr:primaryType="nt:unstructured"
+                                        module="toggleComponentOnTag"
+                                        tags="[manawabay-showcase:category/dine]"
+                                        topic="gggg"
+                                        type="consume">
                                     <options jcr:primaryType="nt:unstructured">
                                         <item0
-                                            jcr:primaryType="nt:unstructured"
-                                            key="cc"
-                                            value="cc"/>
+                                                jcr:primaryType="nt:unstructured"
+                                                key="cc"
+                                                value="cc"/>
                                         <item1
-                                            jcr:primaryType="nt:unstructured"
-                                            key="dd"
-                                            value="dd"/>
+                                                jcr:primaryType="nt:unstructured"
+                                                key="dd"
+                                                value="dd"/>
                                     </options>
                                 </item1>
                             </activationconfig>
@@ -237,37 +234,37 @@
                             sling:resourceType="manawabay/components/container">
                             <activationconfig jcr:primaryType="nt:unstructured">
                                 <item0
-                                    jcr:primaryType="nt:unstructured"
-                                    module="toggleComponent"
-                                    tags="[manawabay-showcase:category/shop]"
-                                    topic="test"
-                                    type="emit">
+                                        jcr:primaryType="nt:unstructured"
+                                        module="toggleComponent"
+                                        tags="[manawabay-showcase:category/shop]"
+                                        topic="test"
+                                        type="emit">
                                     <options jcr:primaryType="nt:unstructured">
                                         <item0
-                                            jcr:primaryType="nt:unstructured"
-                                            key="aa"
-                                            value="aa"/>
+                                                jcr:primaryType="nt:unstructured"
+                                                key="aa"
+                                                value="aa"/>
                                         <item1
-                                            jcr:primaryType="nt:unstructured"
-                                            key="bb"
-                                            value="bb"/>
+                                                jcr:primaryType="nt:unstructured"
+                                                key="bb"
+                                                value="bb"/>
                                     </options>
                                 </item0>
                                 <item1
-                                    jcr:primaryType="nt:unstructured"
-                                    module="toggleComponentOnTag"
-                                    tags="[manawabay-showcase:category/dine]"
-                                    topic="gggg"
-                                    type="consume">
+                                        jcr:primaryType="nt:unstructured"
+                                        module="toggleComponentOnTag"
+                                        tags="[manawabay-showcase:category/dine]"
+                                        topic="gggg"
+                                        type="consume">
                                     <options jcr:primaryType="nt:unstructured">
                                         <item0
-                                            jcr:primaryType="nt:unstructured"
-                                            key="cc"
-                                            value="cc"/>
+                                                jcr:primaryType="nt:unstructured"
+                                                key="cc"
+                                                value="cc"/>
                                         <item1
-                                            jcr:primaryType="nt:unstructured"
-                                            key="dd"
-                                            value="dd"/>
+                                                jcr:primaryType="nt:unstructured"
+                                                key="dd"
+                                                value="dd"/>
                                     </options>
                                 </item1>
                             </activationconfig>

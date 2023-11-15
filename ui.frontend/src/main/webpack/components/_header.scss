@@ -19,9 +19,20 @@ header.experiencefragment.experiencefragment--reset {
   a {
     color: currentColor;
 
-    &:hover {
-      text-decoration: none;
-      color: $accent-01;
+    &:not(.cmp-button) {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $accent-01;
+      }
+    }
+
+    &.cmp-button {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: currentColor;
+      }
     }
   }
 
@@ -32,6 +43,62 @@ header.experiencefragment.experiencefragment--reset {
 
   .cmp-search__input {
     height: 100%;
+  }
+}
+
+header {
+  .cmp-container,
+  .cmp-container > div.aem-Grid {
+    > .container {
+      > .cmp-container {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .container-header {
+    > .cmp-container {
+      display: flex !important;
+      align-items: center;
+      gap: $spacing-8;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      > .container:first-child,
+      > .container:last-child {
+        flex: 1;
+      }
+    }
+
+    .search--popup {
+      input.cmp-search__input {
+        background: transparent;
+        border: none;
+        padding-left: $spacing-12;
+        padding-right: $spacing-12;
+      }
+
+      .cmp-search__icon {
+        left: 0;
+        background-image: url("../resources/images/search-white.svg");
+      }
+
+      &-active {
+        input.cmp-search__input {
+          padding-left: $spacing-40;
+        }
+
+        &:after {
+          opacity: 1;
+          content: 'Back to menu';
+          text-decoration: underline;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
   }
 }
 

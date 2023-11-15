@@ -97,3 +97,46 @@ $colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'da
     }
   }
 }
+
+.email-icon__button {
+  .cmp-form-button {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    transition: all .15s ease-out;
+
+    &:before {
+      content: '';
+      opacity: 0;
+      width: 0;
+      height: 0;
+      transition: all .15s ease-out;
+      background-image: url("../resources/images/email-black.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    @include media-breakpoint-up(md) {
+      &:hover {
+        gap: $spacing-12;
+
+        &:before {
+          opacity: 1;
+          width: $spacing-16;
+          height: $spacing-16;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      gap: $spacing-12;
+
+      &:before {
+        opacity: 1;
+        width: $spacing-16;
+        height: $spacing-16;
+      }
+    }
+  }
+}

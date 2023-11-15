@@ -32,7 +32,7 @@
             that._config = config;
 
             cacheElements(config.element);
-            createFormListener();
+            //createFormListener();
         }
 
         function createFormListener() {

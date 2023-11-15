@@ -191,7 +191,7 @@ public class ListImpl extends AbstractComponentImpl implements List {
         if (listItems == null) {
             this.listItems = getPages();
         }
-        return listItems;
+        return Collections.unmodifiableCollection (listItems);
     }
 
     @Override

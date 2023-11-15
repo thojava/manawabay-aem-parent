@@ -27,6 +27,9 @@ $include "./default_filters.any"
 # Allow google recaptcha selector
 /0206 { /type "allow" /method "GET" /extension 'json' /selectors 'recaptcha' /path "/content/*" }
 
+# Allow mpga file
+/0207 { /type "allow" /path "/content/dam/*" /extension "mpga" }
+
 # Disable scraping of paths
 /blockanyjsonsuffix { /type "deny"  /suffix '/.*.json' }
 

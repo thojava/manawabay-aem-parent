@@ -27,4 +27,5 @@
 @import 'variables';
 @import 'base';
 @import '../components/**/*.scss';
+@import '../components/**/css/*.scss';
 @import './styles/*.scss';

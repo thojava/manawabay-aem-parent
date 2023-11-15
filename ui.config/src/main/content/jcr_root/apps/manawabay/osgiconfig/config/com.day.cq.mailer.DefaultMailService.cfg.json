@@ -1,0 +1,12 @@
+{
+  "smtp.host": "$[env:AEM_PROXY_HOST;default=proxy.tunnel]",
+  "smtp.port": "$[env:AEM_PROXY_PORT;default=465]",
+  "smtp.user": "$[env:EMAIL_USERNAME;default=myApiKey]",
+  "smtp.password": "$[secret:EMAIL_PASSWORD]",
+  "from.address": "",
+  "smtp.ssl": false,
+  "smtp.starttls": true,
+  "smtp.requiretls": true,
+  "debug.email": false,
+  "oauth.flow": false
+}

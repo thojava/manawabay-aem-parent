@@ -51,7 +51,8 @@
         panel: {
             hidden: "cmp-accordion__panel--hidden",
             expanded: "cmp-accordion__panel--expanded"
-        }
+        },
+        buttonIcon: 'cmp-accordion__icon'
     };
 
     var dataAttributes = {
@@ -76,6 +77,8 @@
             }
         }
     };
+
+    const ButtonIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path id="Vector" d="M12 5V19" stroke="white" stroke-linecap="round" stroke-linejoin="round"/> <path id="Vector_2" d="M5 12H19" stroke="white" stroke-linecap="round" stroke-linejoin="round"/> </svg>`;
 
     /**
      * Accordion Configuration.
@@ -122,6 +125,16 @@
                 that._elements["button"] = Array.isArray(that._elements["button"]) ? that._elements["button"] : [that._elements["button"]];
                 that._elements["panel"] = Array.isArray(that._elements["panel"]) ? that._elements["panel"] : [that._elements["panel"]];
 
+                if (Object.values(that._elements["button"]).length) {
+                    for (let i = 0; i < Object.values(that._elements["button"]).length; i++) {
+                        const accordionButtonIcon = Object.values(that._elements["button"][i].children).find(child => child.classList.contains(cssClasses.buttonIcon));
+
+                        if (accordionButtonIcon) {
+                            accordionButtonIcon.innerHTML = ButtonIcon;
+                        }
+                    }
+                }
+
                 if (that._properties.singleExpansion) {
                     var expandedItems = getExpandedItems();
                     // multiple expanded items annotated, display the last item open.
@@ -132,7 +145,6 @@
 
                 refreshItems();
                 bindEvents();
-                scrollToDeepLinkIdInAccordion();
             }
             if (window.Granite && window.Granite.author && window.Granite.author.MessageChannel) {
                 /*
@@ -264,7 +276,6 @@
          * @private
          */
         function bindEvents() {
-            window.addEventListener("hashchange", scrollToDeepLinkIdInAccordion, false);
             var buttons = that._elements["button"];
             if (buttons) {
                 for (var i = 0; i < buttons.length; i++) {
@@ -415,7 +426,8 @@
             if (expanded) {
                 item.setAttribute(dataAttributes.item.expanded, "");
 
-                if (!keepHash && containerUtils) {
+                // Temporary disable the update url hash functionality for the demo purposes
+                if (!keepHash && containerUtils && false) {
                     updateUrlHash(item);
                 }
                 if (dataLayerEnabled) {

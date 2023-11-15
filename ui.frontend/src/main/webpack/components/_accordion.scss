@@ -12,14 +12,9 @@ $colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'da
 
 .cmp-accordion__item {
   border-top: 1px solid $black;
-  padding: $spacing-32 0;
   display: flex;
   flex-direction: column;
   gap: $spacing-12;
-
-  @include media-breakpoint-down(md) {
-    padding: $spacing-16 0;
-  }
 
   &:last-of-type {
     border-bottom: 1px solid $black;
@@ -35,6 +30,7 @@ $colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'da
 }
 
 .cmp-accordion__header {
+  margin-bottom: 0;
 }
 
 .cmp-accordion__button {
@@ -44,30 +40,54 @@ $colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'da
   align-items: center;
   justify-content: space-between;
   gap: $spacing-20;
-  padding: 0;
   color: $black;
   width: 100%;
+  padding: $spacing-32 0;
+
+  @include media-breakpoint-down(md) {
+    padding: $spacing-16 0;
+  }
 
   @media (prefers-color-scheme: dark) {
     color: $color-black-dark;
   }
 
-  .cmp-accordion__icon {
-    background-image: url('../resources/images/plus-black.svg');
+  &[aria-expanded="true"] {
+    .cmp-accordion__icon {
+      svg {
+        path {
+          transform: rotate(180deg);
 
-    @media (prefers-color-scheme: dark) {
-      background-image: url('../resources/images/plus-white.svg');
+          &:first-child {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+
+  .cmp-accordion__icon {
+    background-image: none;
+
+    svg {
+      path {
+        transition: all .2s ease-out;
+        transform-origin: center;
+        transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
+        @media (prefers-color-scheme: light) {
+          stroke: $black;
+        }
+      }
     }
   }
 }
 
 .cmp-accordion__button--expanded {
-  .cmp-accordion__icon {
-    background-image: url('../resources/images/minus-black.svg');
+  padding-bottom: 0;
 
-    @media (prefers-color-scheme: dark) {
-      background-image: url('../resources/images/minus-white.svg');
-    }
+  .cmp-accordion__icon {
+    background-image: none;
   }
 }
 
@@ -100,6 +120,11 @@ $colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'da
 
 .cmp-accordion__panel--expanded {
   display: block;
+  padding-bottom: $spacing-32;
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: $spacing-16;
+  }
 }
 
 .cmp-accordion__panel--hidden {
@@ -121,13 +146,11 @@ $colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'da
     color: $black;
 
     .cmp-accordion__icon {
-      background-image: url('../resources/images/plus-black.svg');
-    }
-  }
-
-  .cmp-accordion__button--expanded {
-    .cmp-accordion__icon {
-      background-image: url('../resources/images/minus-black.svg');
+      svg {
+        path {
+          stroke: $black;
+        }
+      }
     }
   }
 
@@ -146,13 +169,11 @@ $colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'da
     color: $white;
 
     .cmp-accordion__icon {
-      background-image: url('../resources/images/plus-white.svg');
-    }
-  }
-
-  .cmp-accordion__button--expanded {
-    .cmp-accordion__icon {
-      background-image: url('../resources/images/minus-white.svg');
+      svg {
+        path {
+          stroke: $white;
+        }
+      }
     }
   }
 
@@ -181,11 +202,6 @@ $colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'da
     &.accordion-title__text--#{$name} {
       .cmp-accordion__title {
         font-size: $font-size;
-      }
-
-      .cmp-accordion__icon {
-        width: $font-size;
-        height: $font-size;
       }
     }
   }

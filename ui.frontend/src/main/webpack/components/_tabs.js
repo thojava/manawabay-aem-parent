@@ -45,7 +45,8 @@
             tab: "cmp-tabs__tab--active",
             tabpanel: "cmp-tabs__tabpanel--active"
         },
-        verticalTabs: 'tabs--vertical'
+        verticalTabs: 'tabs--vertical',
+        carousel: 'flickity-viewport'
     };
 
     /**
@@ -89,7 +90,6 @@
             if (that._elements.tabpanel) {
                 refreshActive();
                 bindEvents();
-                scrollToDeepLinkIdInTabs();
             }
 
             if (window.Granite && window.Granite.author && window.Granite.author.MessageChannel) {
@@ -195,7 +195,6 @@
          * @private
          */
         function bindEvents() {
-            window.addEventListener("hashchange", scrollToDeepLinkIdInTabs, false);
             var tabs = that._elements["tab"];
             if (tabs) {
                 for (var i = 0; i < tabs.length; i++) {
@@ -336,7 +335,9 @@
         function navigateAndFocusTab(index, keepHash) {
             var exActive = that._active;
 
-            if (!keepHash && containerUtils) {
+            // Temporary disable the update url hash functionality for the demo purposes
+            // TODO: fix deeplinking but without scrolling
+            if (!keepHash && containerUtils && false) {
                 updateUrlHash(index);
             }
             navigate(index);
@@ -371,6 +372,8 @@
                 dataLayer.push(removePayload);
                 dataLayer.push(uploadPayload);
             }
+
+            window.dispatchEvent(new Event('resize'));
         }
     }
 

@@ -51,7 +51,7 @@
                         <!-- DAM folder root, will be created via repoinit -->
                         <filter><root>/content/dam/manawabay</root></filter>
 
-                        <!-- /oka:index root -->
+                        <!-- Oak indexes root -->
                         <filter><root>/oak:index</root></filter>
                     </filters>
                 </configuration>

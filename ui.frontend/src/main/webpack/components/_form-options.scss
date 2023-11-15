@@ -25,6 +25,11 @@ $colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'da
 .cmp-form-options__field {
 }
 
+.cmp-form-options__messageContainer{
+  display: none;
+  color:red;
+}
+
 .cmp-form-options--drop-down {
   &:has(.cmp-form-options__field--drop-down) {
     display: flex;

@@ -1,12 +1,23 @@
 package nz.co.manawabay.core.services;
 
-import com.adobe.cq.wcm.core.components.models.ListItem;
-import com.day.cq.wcm.api.Page;
+import nz.co.manawabay.core.models.search.SearchResultItem;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Map;
 
 public interface SearchService {
-    List<ListItem> doSearch(@NotNull Page currentPage, @NotNull final SlingHttpServletRequest request);
+
+    /**
+     * Get Search results based on search term and tag filter.
+     */
+    List<SearchResultItem> getResults(SlingHttpServletRequest request, String storePageRoot,
+                                      String articlePageRoot, String fulltextParam,
+                                      String filterParam, long offset, long limit);
+
+    /**
+     * Get count of search results based on filter tags.
+     */
+    Map<String, String> getFilteredResultsCount(SlingHttpServletRequest request, String storePageRoot,
+                                                String articlePageRoot, String fulltextParam);
 }

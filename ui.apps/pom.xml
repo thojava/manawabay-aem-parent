@@ -49,7 +49,6 @@
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <configuration>
                     <allowIndexDefinitions>true</allowIndexDefinitions>
-                    <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
                     <properties>
                         <cloudManagerTarget>none</cloudManagerTarget>
                         <noIntermediateSaves>true</noIntermediateSaves>
@@ -57,12 +56,14 @@
                     <group>nz.co.manawabay</group>
                     <name>manawabay.ui.apps</name>
                     <packageType>application</packageType>
-                    <repositoryStructurePackages>
+                                        <repositoryStructurePackages>
                         <repositoryStructurePackage>
                             <groupId>nz.co.manawabay</groupId>
                             <artifactId>manawabay.ui.apps.structure</artifactId>
                         </repositoryStructurePackage>
                     </repositoryStructurePackages>
+                    <dependencies>
+                    </dependencies>
                 </configuration>
             </plugin>
             <plugin>

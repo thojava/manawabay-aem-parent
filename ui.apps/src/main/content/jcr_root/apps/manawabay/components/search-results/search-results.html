@@ -1,0 +1,35 @@
+
+
+<section data-cmp-results-size="${properties.resultsSize}"
+	data-cmp-endpoint="${properties.endpoint}"
+	data-cmp-limit="${properties.limit}"
+	data-cmp-relative-path="${properties.relativePath}"
+	class="search__field--view" id="js-display-diff-view">
+	
+	<div class="title text--7xl text-sm--6xl font--bold typography--typonine line-height--none tracking-ml cmp-store-title  hidden">
+		<h3 class="cmp-title__text">${properties.storeTitle}</h3>
+	</div>
+	
+	<ul class="cmp-search-list__item-group typography--typonine" id="cmp-store-list">
+
+	</ul>
+
+	<div class="title text--7xl text-sm--6xl font--bold typography--typonine line-height--none tracking-ml cmp-article-title hidden">
+		<div class="separator spacer--4xl"></div>
+		<h3 class="cmp-title__text">${properties.articleTitle}</h3>
+	</div>
+	
+
+	<ul class="cmp-search-list__item-group typography--typonine" id="cmp-article-list">
+
+	</ul>
+	<div class="noresultmessage title text--7xl text-sm--6xl font--bold typography--typonine line-height--none tracking-ml title--center">
+		<p>${properties.noResultsText}</p>
+	</div>
+</section>
+
+<!-- <section class="search__results--footer">
+	<div class="cmp-search__total-records"></div>
+	<button>${properties.loadMoreLabel}</button>
+</section> -->
+<!-- <sly data-sly-call="${templates.placeholder}"><h3>Search Results</h3></sly> -->

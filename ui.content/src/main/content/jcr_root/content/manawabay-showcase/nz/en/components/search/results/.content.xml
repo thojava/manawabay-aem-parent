@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2023-09-04T12:18:01.565+10:00"
+        cq:lastModified="{Date}2023-10-30T21:02:30.718+11:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
@@ -22,7 +22,33 @@
                 <container
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="manawabay/components/container"
-                    layout="responsiveGrid"/>
+                    layout="responsiveGrid">
+                    <search_results
+                        cq:styleIds="[1660378775426]"
+                        jcr:created="{Date}2023-10-27T21:56:29.750+11:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-30T21:02:30.713+11:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="manawabay/components/search-results"
+                        articlesSearchRoot="/content/manawabay/nz/en/Whats_Happening"
+                        filesSearchRoot="/content/dam/manawabay-showcase"
+                        limit="10"
+                        noResultsText="No result"
+                        pageSearchRoot="/content/manawabay/nz/en/Shop/brands"
+                        storesSearchRoot="/content/manawabay/nz/en/Shop/brands"
+                        textIsRich="true">
+                        <defaultImage
+                            jcr:lastModified="{Date}2023-10-30T21:02:30.713+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"/>
+                        <imageLink
+                            jcr:lastModified="{Date}2023-10-30T21:02:30.713+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            reference="/content/dam/manawabay-showcase/icons/AucklandAirport.jpeg"/>
+                    </search_results>
+                </container>
             </container>
         </root>
     </jcr:content>

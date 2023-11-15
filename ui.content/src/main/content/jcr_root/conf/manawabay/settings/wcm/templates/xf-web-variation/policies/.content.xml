@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        cq:isDelivered="{Boolean}true"
+        cq:lastReplicated="{Date}2023-10-09T00:57:25.042Z"
+        cq:lastReplicated_publish="{Date}2023-10-09T00:57:25.042Z"
+        cq:lastReplicatedBy="girish.rathor@anchora.com.au"
+        cq:lastReplicatedBy_publish="girish.rathor@anchora.com.au"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
         cq:policy="manawabay/components/page/policy"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2,mix:versionable]"
         jcr:primaryType="nt:unstructured"
+        jcr:uuid="004270fc-79b6-4476-8af0-7301d911cd26"
         sling:resourceType="wcm/core/components/policies/mappings">
         <root
             cq:policy="manawabay/components/container/policy_1575040440977"

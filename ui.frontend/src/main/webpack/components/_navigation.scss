@@ -1,6 +1,49 @@
+$fonts: (
+        'typonine': $font-family--typonine,
+        'thema': $font-family--thema
+);
+$font-sizes: (
+        'xxs':$font-xxs,
+        'xs':$font-xs,
+        'sm':$font-sm,
+        'md':$font-md,
+        'ml':$font-ml,
+        'base':$font-base,
+        'lg':$font-lg,
+        'xl':$font-xl,
+        '2xl':$font-2xl,
+        '3xl':$font-3xl,
+        '4xl':$font-4xl,
+        '5xl':$font-5xl,
+        '6xl':$font-6xl,
+        '7xl':$font-7xl,
+        '8xl':$font-8xl
+);
+$line-height: (
+        'none':$line-height-none,
+        'snug':$line-height-tighter,
+        'tight':$line-height-tight,
+        'normal':$line-height-normal
+);
+$letter-spacing: (
+        'normal':$tracking-normal,
+        'sm':$tracking-sm,
+        'md':$tracking-md,
+        'ml':$tracking-ml,
+        'lg':$tracking-lg,
+        'xl':$tracking-xl,
+        '2xl':$tracking-2xl
+);
+$font-weight: (
+        'light':$font-weight-light,
+        'normal':$font-weight-normal,
+        'medium':$font-weight-medium,
+        'semibold':$font-weight-semibold,
+        'bold':$font-weight-bold
+);
+
 .navigation {
   > .cmp-navigation {
-    z-index: 3;
     position: relative;
     margin-left: -$spacing-16;
 
@@ -51,10 +94,6 @@
   color: $white !important;
   text-decoration: none;
   transition: background-color, color ease-in .15s;
-
-  @media (prefers-color-scheme: light) {
-    // color: $black !important; Comment out this line will make the menu working
-  }
 }
 
 .cmp-navigation__item--level-0 {
@@ -67,6 +106,8 @@
       padding: $spacing-14 $spacing-16;
       border-radius: $rounded-full;
       display: block;
+      background-color: $black;
+      color: $white !important;
     }
   }
 
@@ -79,9 +120,11 @@
       @include media-breakpoint-up(md) {
         background-color: $locust;
         color: $black !important;
+        transition: all 0.6s ease-out;
 
         &:hover {
           color: $black !important;
+          transition: all 0.6s ease-out;
         }
       }
     }
@@ -94,25 +137,47 @@
     font-weight: $font-weight-bold;
     letter-spacing: $tracking-ml;
     font-family: $font-family--typonine;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-16;
+
+    &:after {
+      content: '';
+      background-image: url("../resources/images/arrow-black.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: $rounded-full;
+      background-color: $locust;
+      width: $spacing-40;
+      min-width: $spacing-40;
+      height: $spacing-40;
+      display: block;
+      opacity: 0;
+      transform: scale(0);
+      transition: all .15s ease-out;
+    }
 
     &:hover {
       color: $gray-600 !important;
+
+      &:after {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   }
 }
 
-.cmp-navigation__menu-container {
-  display: none;
+.cmp-navigation__menu {
   position: absolute;
-  top: 146px;
+  top: initial;
   left: 0;
   right: 0;
-  bottom: 0;
-  padding: $spacing-64 $spacing-10 $spacing-10 $spacing-40 !important;
-  gap: $spacing-80;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 2;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-50px);
 
   &:before {
     content: '';
@@ -129,8 +194,32 @@
   }
 
   &--active {
-    display: flex;
+    display: block;
+    transform: translateY(0);
+    z-index: 2;
+    opacity: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   }
+
+  &--show-nav-list {
+    .cmp-navigation__menu-left,
+    .cmp-navigation__menu-right {
+      transform: translateY(0px);
+      opacity: 1;
+      transition: transform 0.3s ease-out 0.1s, opacity 0.3s ease-out 0.2s;
+    }
+  }
+}
+
+.cmp-navigation__menu-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: $spacing-64 $spacing-10 $spacing-10 $spacing-40 !important;
+  display: flex;
+  gap: $spacing-80;
+  align-items: center;
+  justify-content: space-between;
 }
 
 // Left side of the navigation overlay
@@ -159,17 +248,52 @@
     gap: $spacing-16;
     padding: 0;
     margin-bottom: 0;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    animation-name: groupFadeIn;
+    animation-duration: .2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+  }
+
+  $navigationGroupRows: 1, 2, 3, 4, 5, 6;
+
+  @each $row in $navigationGroupRows {
+    .cmp-navigation__group--narrow-#{$row} {
+      grid-template-rows: repeat($row, minmax(0, 1fr));
+    }
+  }
+
+  @keyframes groupFadeIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   .xfpage {
-    border-top: 1px solid $gray-200;
-    padding-top: $spacing-40;
+    display: flex;
+    flex-direction: column;
+
+    &:before {
+      content: '';
+      display: block;
+      border-top: 1px solid $gray-200;
+      padding-top: $spacing-40;
+      max-width: 80%;
+    }
   }
 }
 
 .cmp-navigation__menu-left,
 .cmp-navigation__menu-right {
   z-index: 1;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .cmp-navigation__menu-right {
@@ -186,14 +310,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: $color-background-dark;
+  background: $black;
   z-index: 9999;
   padding: $spacing-20;
   flex-direction: column;
-
-  @media (prefers-color-scheme: dark) {
-    background: $color-background-dark;
-  }
 
   &.active {
     display: flex;
@@ -276,19 +396,6 @@
     }
   }
 
-  .cmp-navigation__mobile-header--close {
-    background: url("../resources/images/close-white.svg") no-repeat center;
-    background-size: cover;
-    width: $spacing-32;
-    height: $spacing-32;
-    border: none;
-    padding: 0;
-
-    @media (prefers-color-scheme: dark) {
-      background: url("../resources/images/close-white.svg") no-repeat center;
-    }
-  }
-
   .cmp-navigation__mobile-navigation {
     flex-grow: 1;
   }
@@ -350,5 +457,61 @@
   .cmp-navigation__menu-bottom {
     border-top: 1px solid $white;
     padding-top: $spacing-28;
+  }
+}
+
+.cmp-navigation__close-action {
+  background: url("../resources/images/close-white.svg") no-repeat center;
+  background-size: cover;
+  width: $spacing-32;
+  height: $spacing-32;
+  border: none;
+  padding: 0;
+
+  @media (prefers-color-scheme: dark) {
+    background: url("../resources/images/close-white.svg") no-repeat center;
+  }
+}
+
+.cmp-navigation__close-action--desktop {
+  position: absolute;
+  right: $spacing-32;
+  top: $spacing-32;
+  z-index: 1;
+}
+
+.navigation {
+  @include media-breakpoint-up(md) {
+    @each $name, $font-size in $font-sizes {
+      &.navigation-text--#{$name} {
+        .cmp-navigation__item--level-0 .cmp-navigation__item-link {
+          font-size: $font-size;
+        }
+      }
+    }
+
+    @each $name, $spacing in $letter-spacing {
+      &.navigation-tracking-#{$name} {
+        .cmp-navigation__item--level-0 .cmp-navigation__item-link {
+          letter-spacing: $spacing;
+        }
+      }
+    }
+
+    @each $name, $height in $line-height {
+      &.navigation-line-height--#{$name} {
+        .cmp-navigation__item--level-0 .cmp-navigation__item-link {
+          line-height: $height;
+        }
+      }
+    }
+
+    @each $name, $weight in $font-weight {
+      &.navigation-font--#{$name} {
+        .cmp-navigation__item--level-0 .cmp-navigation__item-link {
+          font-weight: $weight;
+        }
+      }
+    }
   }
 }

@@ -1,16 +1,15 @@
-<section data-sly-use.search="nz.co.manawabay.core.models.Search"
+<section data-sly-use.search="com.adobe.cq.wcm.core.components.models.Search"
          id="${properties.id}"
          class="cmp-search"
          role="search"
          data-activation="${search.activationData}"
+         data-search-landingpage="${properties.searchlandingpage}"
          data-cmp-is="search"
          data-cmp-min-length="${search.searchTermMinimumLength}"
-         data-cmp-results-size="${search.resultsSize}"
-         data-cmp-results-header="${search.resultsHeader}"
-         data-cmp-search-landing-page="${properties.searchlandingpage}">
+         data-cmp-results-size="${search.resultsSize}">
     <div class="cmp_search__info" aria-live="polite" role="status"></div>
     <form class="cmp-search__form" data-cmp-hook-search="form"
-          method="get" action="${currentPage.path @ addSelectors=['searchresults'], extension='json', suffix = search.relativePath}"
+          method="get" action="${properties.searchlandingpage}.html"
           autocomplete="off">
         <div class="cmp-search__field">
             <i class="cmp-search__icon" data-cmp-hook-search="icon"></i>
@@ -18,8 +17,15 @@
             <sly data-sly-set.placeholder="${properties.placeholdertext || 'Search'}"></sly>
             <input class="cmp-search__input" data-cmp-hook-search="input" type="text" name="fulltext" placeholder="${placeholder}"
                    role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-invalid="false" aria-expanded="false">
+            <button type="submit" class="cmp-search__submitIcon cmp-search__input">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </button>
             <button class="cmp-search__clear" data-cmp-hook-search="clear" aria-label="${'Clear' @ i18n}">
-                <i class="cmp-search__clear-icon"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
             </button>
         </div>
     </form>

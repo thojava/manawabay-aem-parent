@@ -37,6 +37,9 @@ import { EVENT_TYPE } from "./_utils";
         }
 
         function onSearchEvent({ topic }) {
+            const form = config.element.querySelector('form');
+            form.addEventListener('submit', e => e.preventDefault());
+
             const inputElement = config.element.querySelector('input');
 
             inputElement.addEventListener('input', e => onChangeInputValue(e, topic));
@@ -58,7 +61,9 @@ import { EVENT_TYPE } from "./_utils";
 
         function filterList({ payload }) {
             for (let i = 0; i < config.element.children.length; i++) {
-                const isIncluded = config.element.children[i].innerText.trim().toLowerCase().includes(payload.toLowerCase());
+                const title = config.element.children[i].querySelector('.cmp-teaser__title').textContent;
+
+                const isIncluded = title.trim().toLowerCase().includes(payload.trim().toLowerCase());
 
                 if (isIncluded) {
                     config.element.children[i].classList.remove('d-none');

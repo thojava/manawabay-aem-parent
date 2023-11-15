@@ -44,7 +44,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import static nz.co.manawabay.core.JsonUtils.getJsonString;
+import static nz.co.manawabay.core.utils.JsonUtils.getJsonString;
 import static nz.co.manawabay.core.models.ActivationModule.CONFIG_ITEMS_PATH;
 import static nz.co.manawabay.core.models.Teaser.NN_PAGE_BRANDIMAGE_IMAGE;
 import static nz.co.manawabay.core.models.Teaser.NN_PAGE_ICON_IMAGE;
@@ -307,7 +307,7 @@ public class List implements com.adobe.cq.wcm.core.components.models.List {
                 LOGGER.warn("Could not locate the AEM WCM Core Components List SlingModel via this component's ResourceSuperType. Returning an empty list.");
                 listItems = Collections.EMPTY_LIST;
             } else {
-                 if (type.equals(PN_TYPE_TAGS)) {
+                if (type.equals(PN_TYPE_TAGS)) {
                     listItems = new ArrayList<>();
                     TagManager tagManager = resource.getResourceResolver().adaptTo(TagManager.class);
                     if (tagManager != null) {
@@ -335,17 +335,19 @@ public class List implements com.adobe.cq.wcm.core.components.models.List {
                         LOGGER.error("Could not get TagManager.");
                     }
                 } else {
-                     if (listFrom.equals(PN_LIST_FROM_SEARCH)) {
-                         this.listItems = getItems().stream()
-                                 .filter(Objects::nonNull)
-                                 .map(page -> newListItem(linkManager, page, getId(), component, this))
-                                 .collect(Collectors.toList());
-                     } else {
-                         this.listItems = list.getItems().stream()
-                                 .filter(Objects::nonNull)
-                                 .map(page -> newListItem(linkManager, page, getId(), component, this))
-                                 .collect(Collectors.toList());
-                     }
+                    if (listFrom.equals(PN_LIST_FROM_SEARCH)) {
+                        this.listItems = getItems().stream()
+                                .filter(Objects::nonNull)
+                                .map(page -> newListItem(linkManager, page, getId(), component, this))
+                                .collect(Collectors.toList());
+                    } else {
+                        this.listItems = list.getListItems().stream()
+                                .filter(Objects::nonNull)
+                                .map(com.adobe.cq.wcm.core.components.models.ListItem::getPath)
+                                .map(this.currentPage.getPageManager()::getContainingPage)
+                                .map(page -> newListItem(linkManager, page, getId(), component, this))
+                                .collect(Collectors.toList());
+                    }
                 }
             }
 

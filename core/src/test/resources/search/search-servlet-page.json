@@ -1,0 +1,316 @@
+{
+  "personal-loans": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "cq:lastModified": "Tue Aug 16 2022 14:11:15 GMT+0530",
+      "jcr:title": "Personal loans",
+      "cq:template": "/conf/manawabay/settings/wcm/templates/landing-page",
+      "jcr:description": "Lorem ipsum dolor sit amet.",
+      "cq:tags": [
+        "manawabay:search/product"
+      ],
+      "sling:resourceType": "manawabay/components/structure/landing-page",
+      "root": {
+        "jcr:primaryType": "nt:unstructured",
+        "layout": "responsiveGrid",
+        "sling:resourceType": "manawabay/components/content/container",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "manawabay/components/content/container"
+        }
+      },
+      "cq:featuredimage": {
+        "jcr:primaryType": "nt:unstructured",
+        "fileName": "1280px-Wm_Morrison_Supermarkets_logo.svg.png",
+        "cq:lastModified": "Tue Aug 16 2022 14:11:15 GMT+0530",
+        "sling:resourceType": "core/wcm/components/image/v3/image",
+        "altValueFromDAM": "false",
+        "file": {
+          "jcr:primaryType": "nt:file",
+          "jcr:content": {
+            "jcr:primaryType": "nt:resource",
+            "jcr:mimeType": "image/png",
+            ":jcr:data": 54655,
+            "jcr:uuid": "86ac643f-ffde-49ff-8a2b-58b7bea9bb00"
+          }
+        }
+      },
+      "brandimage": {
+        "jcr:primaryType": "nt:unstructured",
+        "fileName": "1280px-Wm_Morrison_Supermarkets_logo.svg.png",
+        "cq:lastModified": "Tue Aug 16 2022 14:11:15 GMT+0530",
+        "sling:resourceType": "core/wcm/components/image/v3/image",
+        "altValueFromDAM": "false",
+        "file": {
+          "jcr:primaryType": "nt:file",
+          "jcr:content": {
+            "jcr:primaryType": "nt:resource",
+            "jcr:mimeType": "image/png",
+            ":jcr:data": 54655,
+            "jcr:uuid": "86ac643f-ffde-49ff-8a2b-58b7bea9bb00"
+          }
+        }
+      }
+    }
+  },
+  "loan-application-process": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "publishDate": "Tue Aug 16 2022 14:11:15 GMT+0530",
+      "jcr:title": "Home Loan Application Process",
+      "cq:template": "/conf/manawabay/settings/wcm/templates/article-page",
+      "labelClassName": "manawabay-purple",
+      "label": "Customer Service",
+      "jcr:description": "Applying for a home loan is easier than you might think. We'll guide you through the step-by-step process of applying for a home loan with manawabay Money.",
+      "pageTitle": "Applying for a manawabay Money home loan: a step-by-step guide",
+      "cq:tags": [
+        "manawabay:search/article"
+      ],
+      "sling:resourceType": "manawabay/components/structure/article-page",
+      "root": {
+        "jcr:primaryType": "nt:unstructured",
+        "layout": "responsiveGrid",
+        "sling:resourceType": "manawabay/components/content/container",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "manawabay/components/content/container",
+          "header": {
+            "jcr:primaryType": "nt:unstructured",
+            "mobileLoginTarget": "_self",
+            "loginLabel": "Login",
+            "contactPageUrl": "#",
+            "cq:lastModifiedBy": "admin",
+            "fileTag": "manawabay:search/file",
+            "searchPage": "/content/manawabay/test/content-page/components/custom-components/search-results",
+            "phone": "137 377",
+            "articleTag": "manawabay:search/article",
+            "logoUrl": "/content/manawabay/home",
+            "cq:lastModified": "Tue Aug 16 2022 14:36:11 GMT+0530",
+            "articlesSearchRoot": "/content/manawabay/home/personal-loans",
+            "sling:resourceType": "manawabay/components/structure/header",
+            "contactLabel": "Contact",
+            "storesSearchRoot": "/content/manawabay/home",
+            "productTag": "manawabay:search/product",
+            "logoImage": {
+              "jcr:primaryType": "nt:unstructured",
+              "cq:lastModifiedBy": "admin",
+              "reference": "/content/dam/mondelez-foundation/qa-images/1280px-Wm_Morrison_Supermarkets_logo.svg.png",
+              "alt": "manawabay Money",
+              "cq:lastModified": "Tue Aug 16 2022 14:36:11 GMT+0530"
+            },
+            "navItems": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "/content/manawabay/home",
+                  "label": "Home Loans"
+                }
+              },
+              "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "/content/manawabay/home/test/article-page",
+                  "label": "Car Loans"
+                }
+              },
+              "item2": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "/content/manawabay/home/test/content-page",
+                  "label": "Personal Loans"
+                }
+              },
+              "item3": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "#",
+                  "label": "Business"
+                }
+              },
+              "item4": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "/content/manawabay/home",
+                  "label": "Resources"
+                }
+              },
+              "item5": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "/content/manawabay/home",
+                  "label": "About Us"
+                }
+              }
+            },
+            "loginItems": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "https://www.manawabay.com.au/home-loan-customers",
+                  "label": "My home login"
+                }
+              },
+              "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "https://my.manawabaymoney.com.au/",
+                  "label": "my.manawabaymoney"
+                }
+              },
+              "item2": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "https://www.manawabay.com.au/personal-loan-customers",
+                  "label": "My personal loan"
+                }
+              },
+              "item3": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "https://www.myloanportal.com/loginpage",
+                  "label": "My car & equipment loan"
+                }
+              },
+              "item4": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "https://www.manawabay.com.au/broker/login",
+                  "label": "Broker Portal"
+                }
+              },
+              "item5": {
+                "jcr:primaryType": "nt:unstructured",
+                "link": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "url": "https://investor.manawabay.com.au/",
+                  "label": "Debt investors"
+                }
+              }
+            }
+          },
+          "search_results": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "admin",
+            "cq:lastModifiedBy": "admin",
+            "fileTag": "manawabay:search/file",
+            "limit": "10",
+            "articleTag": "manawabay:search/article",
+            "noResultsText": "It doesn't look like we have any articles about that.",
+            "recommendationTitle": "Why not read these?",
+            "articlesSearchRoot": "/content/manawabay/home/personal-loans",
+            "sling:resourceType": "manawabay/components/content/search-results",
+            "storesSearchRoot": "/content/manawabay/home",
+            "textIsRich": "true",
+            "productTag": "manawabay:search/product",
+            "defaultImage": {
+              "jcr:primaryType": "nt:unstructured",
+              "fileReference": "/content/dam/wknd-shared/en/magazine/alaska-adventure/plane.jpg"
+            },
+            "imageLink": {
+              "jcr:primaryType": "nt:unstructured",
+              "reference": "/content/dam/manawabay/site-admin/logos/manawabay Money Logo.svg"
+            },
+            "filters": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "tag": "manawabay:search/article",
+                "type": "page",
+                "label": "Articles"
+              },
+              "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "tag": "manawabay:search/product",
+                "label": "Products"
+              },
+              "item2": {
+                "jcr:primaryType": "nt:unstructured",
+                "tag": "manawabay:search/file",
+                "type": "file",
+                "label": "Files"
+              }
+            },
+            "recommendationArticles": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "articlePage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "external": "false",
+                  "url": "/content/manawabay/test/news/article-1"
+                }
+              },
+              "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "articlePage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "external": "true",
+                  "url": "/content/manawabay/test/news/article-2"
+                }
+              },
+              "item2": {
+                "jcr:primaryType": "nt:unstructured",
+                "articlePage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "external": "false",
+                  "url": "/content/manawabay/test/news/article-3"
+                }
+              },
+              "item3": {
+                "jcr:primaryType": "nt:unstructured",
+                "articlePage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "external": "true",
+                  "url": "/content/manawabay/test/news/article-4"
+                }
+              }
+            }
+          }
+        }
+      },
+      "cq:featuredimage": {
+        "jcr:primaryType": "nt:unstructured",
+        "fileName": "test 2.jpeg",
+        "sling:resourceType": "core/wcm/components/image/v3/image",
+        "altValueFromDAM": "true",
+        "file": {
+          "jcr:primaryType": "nt:file",
+          "jcr:content": {
+            "jcr:primaryType": "nt:resource",
+            "jcr:mimeType": "image/jpeg",
+            ":jcr:data": 550874
+          }
+        }
+      },
+      "brandimage": {
+        "jcr:primaryType": "nt:unstructured",
+        "fileName": "test 2.jpeg",
+        "sling:resourceType": "core/wcm/components/image/v3/image",
+        "altValueFromDAM": "true",
+        "file": {
+          "jcr:primaryType": "nt:file",
+          "jcr:content": {
+            "jcr:primaryType": "nt:resource",
+            "jcr:mimeType": "image/jpeg",
+            ":jcr:data": 550874
+          }
+        }
+      }
+    }
+  }
+}

@@ -100,6 +100,15 @@ html:not(.aem-AuthorLayer-Edit) {
 
     .cmp-tabs__tabpanel {
       overflow: hidden;
+      width: 100%;
+    }
+
+    .cmp-tabs__tablist {
+      flex-direction: column;
+    }
+
+    .cmp-tabs__tab {
+      border: none;
     }
 
     @include media-breakpoint-up(md) {
@@ -109,17 +118,12 @@ html:not(.aem-AuthorLayer-Edit) {
         gap: $spacing-64;
       }
 
-      .cmp-tabs__tablist {
-        flex-direction: column;
-      }
-
       .cmp-tabs__tab {
         font-size: $font-7xl;
         font-weight: $font-weight-bold;
         line-height: $line-height-none;
         letter-spacing: $tracking-ml;
         padding: 0;
-        border: none;
       }
 
       .cmp-tabs__tab--active {
@@ -139,6 +143,32 @@ html:not(.aem-AuthorLayer-Edit) {
         font-size: $font-lg;
         font-weight: $font-weight-bold;
         padding: 0 0 $spacing-8;
+        display: flex;
+        align-items: center;
+        gap: 0;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 0;
+          opacity: 0;
+          height: $spacing-24;
+          background-image: url("../resources/images/arrow-locust.svg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          transition: opacity .15s ease-in, width .15s ease-in;
+        }
+
+        &--active {
+          color: $locust;
+          gap: $spacing-8;
+
+          &:before {
+            opacity: 1;
+            width: $spacing-24;
+          }
+        }
       }
     }
   }
@@ -183,10 +213,22 @@ html:not(.aem-AuthorLayer-Edit) {
 }
 
 html:not(.aem-AuthorLayer-Edit) {
+  // Font sizes
   @each $name, $font-size in $font-sizes {
     .text--#{$name} {
       &.tabs--vertical .cmp-tabs__tab {
         font-size: $font-size;
+      }
+    }
+  }
+
+  // Mobile Font sizes
+  @each $name, $font-size in $font-sizes {
+    @include media-breakpoint-down(md) {
+      .text-sm--#{$name} {
+        &.tabs--vertical .cmp-tabs__tab {
+          font-size: $font-size;
+        }
       }
     }
   }

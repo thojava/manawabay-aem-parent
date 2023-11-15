@@ -2,7 +2,7 @@
   "list": {
     "jcr:primaryType": "cq:Component",
     "jcr:title": "List",
-    "sling:resourceSuperType": "core/wcm/components/list",
+    "sling:resourceSuperType": "core/wcm/components/list/v4/list",
     "jcr:description": "List Component",
     "cq:icon": "list"
   }

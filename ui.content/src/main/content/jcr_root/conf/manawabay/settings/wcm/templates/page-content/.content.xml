@@ -2,10 +2,18 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
+        cq:isDelivered="{Boolean}true"
         cq:lastModified="{Date}2019-12-02T17:37:24.544+01:00"
         cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2023-10-05T10:32:44.715Z"
+        cq:lastReplicated_publish="{Date}2023-10-05T10:32:44.715Z"
+        cq:lastReplicatedBy="girish.rathor@anchora.com.au"
+        cq:lastReplicatedBy_publish="girish.rathor@anchora.com.au"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
         cq:templateType="/conf/manawabay/settings/wcm/template-types/page"
         jcr:description="My Site Page Template"
+        jcr:mixinTypes="[cq:ReplicationStatus2]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Content Page"
         status="enabled"/>

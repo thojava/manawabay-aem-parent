@@ -27,9 +27,14 @@ div.image {
 
 .image {
   @each $name, $size in $sizes {
-    &.image--#{$name} {
+    &.image__w-#{$name} {
       .cmp-image__image {
         width: $size;
+      }
+    }
+
+    &.image__h-#{$name} {
+      .cmp-image__image {
         height: $size;
       }
     }

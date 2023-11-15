@@ -17,7 +17,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import java.util.List;
 
-import static nz.co.manawabay.core.JsonUtils.getJsonString;
+import static nz.co.manawabay.core.utils.JsonUtils.getJsonString;
 import static nz.co.manawabay.core.models.ActivationModule.CONFIG_ITEMS_PATH;
 
 @Model(adaptables = SlingHttpServletRequest.class,

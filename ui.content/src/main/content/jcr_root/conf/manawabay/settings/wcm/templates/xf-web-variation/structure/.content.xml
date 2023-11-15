@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
+        cq:isDelivered="{Boolean}true"
+        cq:lastReplicated="{Date}2023-10-09T00:57:25.042Z"
+        cq:lastReplicated_publish="{Date}2023-10-09T00:57:25.042Z"
+        cq:lastReplicatedBy="girish.rathor@anchora.com.au"
+        cq:lastReplicatedBy_publish="girish.rathor@anchora.com.au"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
         cq:template="/conf/manawabay/settings/wcm/templates/xf-web-variation"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:ReplicationStatus2,mix:versionable]"
         jcr:primaryType="cq:PageContent"
+        jcr:uuid="aee1ec45-5b56-4182-9b2b-96a83c58dc3d"
         sling:resourceType="manawabay/components/xfpage">
         <root
             jcr:primaryType="nt:unstructured"

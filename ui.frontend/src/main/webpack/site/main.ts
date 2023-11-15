@@ -5,4 +5,5 @@ import "./main.scss";
 import "./**/*.js";
 import "./**/*.ts";
 import '../components/**/*.js';
+import '../components/**/js/*.js';
 import '../events/**/*.js';

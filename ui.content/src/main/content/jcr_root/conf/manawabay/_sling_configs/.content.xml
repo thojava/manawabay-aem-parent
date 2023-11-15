@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="nt:unstructured">
     <rep:policy/>
     <com.adobe.cq.wcm.core.components.internal.DataLayerConfig
+        cq:isDelivered="{Boolean}true"
+        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
         jcr:primaryType="nt:unstructured"
         enabled="{Boolean}true"/>
     <com.adobe.cq.wcm.core.components.internal.services.pdfviewer.PdfViewerCaConfig
+        cq:isDelivered="{Boolean}true"
+        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
         jcr:primaryType="nt:unstructured"
         clientId="28b07c6be4d544f188dc2f36e33b196b"
         reportSuiteId="\0"/>

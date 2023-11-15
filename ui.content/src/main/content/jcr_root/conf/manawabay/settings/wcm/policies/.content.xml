@@ -15,7 +15,16 @@
                         jcr:title="Content Form"
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="[/apps/manawabay/components/form/button,/apps/manawabay/components/form/hidden,/apps/manawabay/components/form/options,/apps/manawabay/components/form/text]">
-                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <jcr:content
+                            cq:isDelivered="{Boolean}true"
+                            cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                            cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                            cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                            cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                            cq:lastReplicationAction="Activate"
+                            cq:lastReplicationAction_publish="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                            jcr:primaryType="nt:unstructured"/>
                         <cq:styleGroups jcr:primaryType="nt:unstructured">
                             <item0
                                 cq:styleGroupLabel="Button Types"
@@ -58,7 +67,16 @@
                     jpegQuality="{Long}85"
                     titleValueFromDAM="true"
                     uuidDisabled="true">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <plugins jcr:primaryType="nt:unstructured">
                         <crop
                             jcr:primaryType="nt:unstructured"
@@ -99,7 +117,16 @@
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Content Text"
                     sling:resourceType="wcm/core/components/policy/policy">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <rtePlugins jcr:primaryType="nt:unstructured">
                         <paraformat
                             jcr:primaryType="nt:unstructured"
@@ -293,7 +320,16 @@
                     allowedTypes="h1"
                     linkDisabled="true"
                     type="h1">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                 </policy_641475696923109>
                 <policy_641528232375303
                     jcr:description="Allows all sizes, but not H1, which is reserved for the main page title."
@@ -305,7 +341,16 @@
                     allowedTypes="[h1,h2,h3,h4,h5,h6]"
                     linkDisabled="false"
                     type="h2">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <cq:styleGroups jcr:primaryType="nt:unstructured">
                         <item0
                             cq:styleGroupLabel="Typography Font"
@@ -338,7 +383,16 @@
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Header"
                     sling:resourceType="wcm/core/components/policy/policy">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                 </policy_header>
                 <policy_footer
                     cq:styleDefaultElement="footer"
@@ -346,7 +400,16 @@
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Footer"
                     sling:resourceType="wcm/core/components/policy/policy">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                 </policy_footer>
             </experiencefragment>
             <container jcr:primaryType="nt:unstructured">
@@ -356,7 +419,16 @@
                     jcr:title="Page Root"
                     sling:resourceType="wcm/core/components/policy/policy"
                     components="[group:Manawa Bay - Content,/apps/manawabay/components/form/container,group:Manawa Bay - Structure]">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
                             <mapping_1575024218483
@@ -386,7 +458,16 @@
                     jcr:title="Page Content"
                     sling:resourceType="wcm/core/components/policy/policy"
                     components="[group:Manawa Bay - Content,/apps/manawabay/components/form/container]">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
                             <mapping_1575030255082
@@ -416,7 +497,16 @@
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Main"
                     sling:resourceType="wcm/core/components/policy/policy">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                 </policy_649128221558427>
                 <policy_1575040440977
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
@@ -424,7 +514,16 @@
                     jcr:title="XF Root"
                     sling:resourceType="wcm/core/components/policy/policy"
                     components="[group:Manawa Bay - Content,/apps/manawabay/components/form/container]">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-09T00:57:25.042Z"
+                        cq:lastReplicated_publish="{Date}2023-10-09T00:57:25.042Z"
+                        cq:lastReplicatedBy="girish.rathor@anchora.com.au"
+                        cq:lastReplicatedBy_publish="girish.rathor@anchora.com.au"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
                             <mapping_1575024218483
@@ -456,7 +555,16 @@
                     sling:resourceType="wcm/core/components/policy/policy"
                     components="[group:Manawa Bay - Content,group:Manawa Bay - Form,group:Manawa Bay - Structure]"
                     layoutDisabled="false">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <cq:styleGroups jcr:primaryType="nt:unstructured">
                         <item0
                             cq:styleGroupLabel="Colors"
@@ -1398,7 +1506,16 @@
                     jcr:title="Content Teaser"
                     sling:resourceType="wcm/core/components/policy/policy"
                     titleType="h3">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                 </policy_1575031387650>
             </teaser>
             <download jcr:primaryType="nt:unstructured">
@@ -1412,7 +1529,16 @@
                     displayFormat="true"
                     displaySize="true"
                     titleType="h3">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                 </policy_1575032193319>
             </download>
             <page jcr:primaryType="nt:unstructured">
@@ -1423,7 +1549,16 @@
                     sling:resourceType="wcm/core/components/policy/policy"
                     clientlibs="[manawabay.base,manawabay.dependencies,manawabay.site]"
                     clientlibsJsHead="manawabay.dependencies">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                 </policy>
             </page>
             <button jcr:primaryType="nt:unstructured">
@@ -1433,7 +1568,16 @@
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Button"
                     sling:resourceType="wcm/core/components/policy/policy">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <cq:styleGroups jcr:primaryType="nt:unstructured">
                         <item0
                             cq:styleGroupLabel="Types"
@@ -1472,7 +1616,16 @@
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Separator"
                     sling:resourceType="wcm/core/components/policy/policy">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <cq:styleGroups jcr:primaryType="nt:unstructured">
                         <item0
                             cq:styleGroupLabel="Separator Variants"
@@ -1566,7 +1719,16 @@
                     hideCurrent="false"
                     showHidden="false"
                     startLevel="2">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <cq:styleGroups jcr:primaryType="nt:unstructured">
                         <item0
                             cq:styleGroupLabel="Colors"
@@ -1600,7 +1762,16 @@
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Tabs"
                     sling:resourceType="wcm/core/components/policy/policy">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <jcr:content
+                        cq:isDelivered="{Boolean}true"
+                        cq:lastReplicated="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicated_publish="{Date}2023-10-04T22:41:54.844Z"
+                        cq:lastReplicatedBy="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicatedBy_publish="gennady.shifris@datacom.co.nz"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+                        jcr:primaryType="nt:unstructured"/>
                     <cq:styleGroups jcr:primaryType="nt:unstructured">
                         <item0
                             cq:styleGroupLabel="Variants"

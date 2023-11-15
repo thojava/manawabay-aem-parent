@@ -1,7 +1,7 @@
 <template data-sly-template.simple="${ @ container}">
     <sly data-sly-test="${wcmmode.edit}" data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"></sly>
     <div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-         id="${container.id}"
+         id="${container.id || properties.id}"
          class="cmp-container${wcmmode.edit ? ' {0}': '' @ format=[allowed.cssClass]}"
          aria-label="${container.accessibilityLabel}"
          role="${container.roleAttribute}"

@@ -2,15 +2,15 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        publishDate="{Date}2023-09-07T14:53:54.496+10:00"
         cq:lastModified="{Date}2023-09-07T14:53:54.496+10:00"
         cq:lastModifiedBy="admin"
-        cq:tags="[manawabay-showcase:category/shop,manawabay-showcase:category/dine,manawabay-showcase:category/home]"
         cq:template="/conf/manawabay-showcase/settings/wcm/templates/page-content"
         jcr:description="Page with title that should appear first when ordered by title."
         jcr:primaryType="cq:PageContent"
         jcr:title="Page0"
         sling:resourceType="manawabay/components/page"
-        publishDate="{Date}2023-09-07T14:53:54.496+10:00"
+        cq:tags="[manawabay-showcase:category/shop,manawabay-showcase:category/dine,manawabay-showcase:category/home]"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
         pwaOrientation="any">

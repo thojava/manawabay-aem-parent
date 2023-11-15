@@ -25,22 +25,28 @@
       letter-spacing: $tracking-md;
     }
 
-    a,
-    a .cmp-link__screen-reader-only {
+    a {
       color: currentColor;
       font-size: $font-xl;
       line-height: $font-5xl;
       text-decoration: none;
     }
+
+    a .cmp-link__screen-reader-only {
+      display: none;
+    }
   }
 
-  a,
-  a .cmp-link__screen-reader-only {
+  a {
     color: currentColor;
     font-size: $font-base;
     line-height: $line-height-tight;
     letter-spacing: $tracking-md;
     text-decoration: none;
+  }
+
+  a .cmp-link__screen-reader-only {
+    display: none;
   }
 
   caption {

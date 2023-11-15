@@ -2,15 +2,19 @@
     <button class="cmp-navigation__toggle-button"></button>
 </div>
 <sly data-sly-include="navigation.html"></sly>
-<div class="cmp-navigation__menu-container">
-    <div class="cmp-navigation__menu-left">
-        <div class="cmp-navigation__menu-list"></div>
-        <sly data-sly-test="${properties.bottomcolumnpath}"
-             data-sly-resource="${@path=properties.bottomcolumnpath, selectors='content', wcmmode='disabled'}"></sly>
-    </div>
-    <div class="cmp-navigation__menu-right">
-        <sly data-sly-test="${properties.rightcolumnpath}"
-             data-sly-resource="${@path=properties.rightcolumnpath, selectors='content', wcmmode='disabled'}"></sly>
+<div class="cmp-navigation__menu">
+    <div class="cmp-navigation__menu-container">
+        <button class="cmp-navigation__close-action cmp-navigation__close-action--desktop" type="button"
+                aria-roledescription="close"></button>
+        <div class="cmp-navigation__menu-left">
+            <div class="cmp-navigation__menu-list"></div>
+            <sly data-sly-test="${properties.bottomcolumnpath}"
+                 data-sly-resource="${@path=properties.bottomcolumnpath, selectors='content', wcmmode='disabled'}"></sly>
+        </div>
+        <div class="cmp-navigation__menu-right">
+            <sly data-sly-test="${properties.rightcolumnpath}"
+                 data-sly-resource="${@path=properties.rightcolumnpath, selectors='content', wcmmode='disabled'}"></sly>
+        </div>
     </div>
 </div>
 
@@ -21,7 +25,8 @@
                 <img src="" alt="Mobile logo">
             </a>
         </div>
-        <button class="cmp-navigation__mobile-header--close"></button>
+        <button class="cmp-navigation__close-action cmp-navigation__close-action--mobile" type="button"
+                aria-roledescription="close"></button>
     </div>
     <div class="cmp-navigation__mobile-navigation">
         <div class="cmp-navigation__mobile-back d-none">

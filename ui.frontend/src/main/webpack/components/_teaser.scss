@@ -6,10 +6,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include media-breakpoint-down(md) {
+    height: 460px;
+  }
 }
 
 .cmp-teaser__image {
   width: 100%;
+
+}
+
+.cmp-teaser__image,
+.cmp-teaser__image .cmp-image,
+.cmp-teaser__image .cmp-image__image {
+  @include media-breakpoint-down(md) {
+    height: 100%;
+  }
 }
 
 .cmp-teaser__content {
@@ -81,35 +94,57 @@
   padding: $spacing-12 $spacing-22;
   border: 1px solid $white;
   border-radius: $rounded-full;
-  transition: color, background-color ease-in 0.15s;
-  gap: $spacing-16;
+  transition: all ease-in 0.15s;
+  gap: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: $font-lg;
-  font-weight: $font-weight-bold;
-  font-family: $font-family--typonine;
+  font-size: $font-base;
+  letter-spacing: $tracking-lg;
   text-transform: capitalize;
   color: $white;
   text-decoration: none;
+  position: relative;
 
   &:after {
     content: '';
     background-image: url('../resources/images/arrow-black.svg');
-    display: none;
-    visibility: hidden;
-    transition: visibility ease-in 0.15s;
-    width: $spacing-24;
+    display: block;
     height: $spacing-24;
+    width: 0;
+    opacity: 0;
+    transition: all ease-in 0.15s;
   }
 
   &:hover {
     background: $white;
     color: $black;
 
+    @include media-breakpoint-up(md) {
+      gap: $spacing-16;
+
+      &:after {
+        opacity: 1;
+        width: $spacing-24;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    gap: $spacing-16;
+    width: 100%;
+    max-width: 256px;
+    justify-content: space-between;
+
     &:after {
-      display: block;
-      visibility: visible;
+      opacity: 1;
+      width: $spacing-24;
+      background-image: url('../resources/images/arrow-white.svg');
+    }
+
+    &:hover,
+    &:active {
+      background-image: url('../resources/images/arrow-black.svg');
     }
   }
 }

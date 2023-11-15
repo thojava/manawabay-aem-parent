@@ -1,14 +1,20 @@
 $container-columns: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
-$container-spaces: ('0':$spacing-0, '2xs':$spacing-2, 'xs':$spacing-8, 'sm':$spacing-12, 'base':$spacing-16, 'md':$spacing-20, 'ml':$spacing-28, 'lg':$spacing-32, '2lg':$spacing-40, '3lg':$spacing-48, '4lg':$spacing-64, '5lg':$spacing-80);
+$container-spaces: ('null':$spacing-0, '2xs':$spacing-2, 'xs':$spacing-8, 'sm':$spacing-12, 'base':$spacing-16, 'md':$spacing-20, 'ml':$spacing-28, 'lg':$spacing-32, '2lg':$spacing-40, '3lg':$spacing-48, '4lg':$spacing-64, '5lg':$spacing-80);
 $container-backgrounds: ('white':$white, 'black':$black, 'darkgrey':$darkgrey, 'midgrey':$midgrey, 'lightgrey':$lightgrey, 'locust':$locust, 'duststorm':$duststorm, 'gulfstream':$gulfstream, 'darksalmon':$darksalmon);
 $container-font-colors: ('white':$black, 'black':$white, 'darkgrey':$white, 'midgrey':$black, 'lightgrey':$black, 'locust':$black, 'duststorm':$black, 'gulfstream':$black, 'darksalmon':$black);
 $orders: ('first':-9999, 'last':9999, '1':1, '2':2, '3':3, '4':4);
-$flex-justify: ('start':flex-start, 'end':flex-end, 'center':center, 'berween':space-between);
+$flex-justify: ('start':flex-start, 'end':flex-end, 'center':center, 'between':space-between);
 
 @each $name, $background in $container-backgrounds {
   .container--#{$name} {
-    > .cmp-container {
+    &.container {
       background-color: $background;
+
+      &.container--notification-popup {
+        > .cmp-container {
+          background-color: $background;
+        }
+      }
     }
   }
 }
@@ -27,6 +33,7 @@ html:not(.aem-AuthorLayer-Edit) {
     top: 0;
     right: 0;
     left: 0;
+    z-index: 99999;
 
     .cmp-container {
       display: flex;
@@ -50,11 +57,6 @@ html:not(.aem-AuthorLayer-Edit) {
       p {
         margin: 0;
       }
-
-      a,
-      .cmp-link__screen-reader-only {
-        font-size: $font-md;
-      }
     }
   }
 
@@ -65,7 +67,7 @@ html:not(.aem-AuthorLayer-Edit) {
     bottom: 0;
     left: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background-color: rgba($black, 0.3);
     z-index: 9999;
@@ -185,45 +187,45 @@ html:not(.aem-AuthorLayer-Edit) {
 
   @each $name, $spacing in $container-spaces {
     .p-#{$name} {
-      > .cmp-container {
+      &.container {
         padding: $spacing;
       }
     }
 
     .px-#{$name} {
-      > .cmp-container {
+      &.container {
         padding-left: $spacing;
         padding-right: $spacing;
       }
     }
 
     .py-#{$name} {
-      > .cmp-container {
+      &.container {
         padding-top: $spacing;
         padding-bottom: $spacing;
       }
     }
 
     .pt-#{$name} {
-      > .cmp-container {
+      &.container {
         padding-top: $spacing;
       }
     }
 
     .pr-#{$name} {
-      > .cmp-container {
+      &.container {
         padding-right: $spacing;
       }
     }
 
     .pb-#{$name} {
-      > .cmp-container {
+      &.container {
         padding-bottom: $spacing;
       }
     }
 
     .pl-#{$name} {
-      > .cmp-container {
+      &.container {
         padding-left: $spacing;
       }
     }
@@ -232,55 +234,37 @@ html:not(.aem-AuthorLayer-Edit) {
 
 // Mobile Paddings
 html:not(.aem-AuthorLayer-Edit) {
-  @each $name, $spacing in $container-spaces {
-    .p-md-#{$name} {
-      > .cmp-container {
-        @include media-breakpoint-down(md) {
+  .container {
+    @include media-breakpoint-down(md) {
+
+      @each $name, $spacing in $container-spaces {
+        &.p-md-#{$name} {
           padding: $spacing;
         }
-      }
-    }
 
-    .px-md-#{$name} {
-      > .cmp-container {
-        @include media-breakpoint-down(md) {
+        &.px-md-#{$name} {
           padding-left: $spacing;
           padding-right: $spacing;
         }
-      }
-    }
-    .py-md-#{$name} {
-      > .cmp-container {
-        @include media-breakpoint-down(md) {
+
+        &.py-md-#{$name} {
           padding-top: $spacing;
           padding-bottom: $spacing;
         }
-      }
-    }
-    .pt-md-#{$name} {
-      > .cmp-container {
-        @include media-breakpoint-down(md) {
+
+        &.pt-md-#{$name} {
           padding-top: $spacing;
         }
-      }
-    }
-    .pr-md-#{$name} {
-      > .cmp-container {
-        @include media-breakpoint-down(md) {
+
+        &.pr-md-#{$name} {
           padding-right: $spacing;
         }
-      }
-    }
-    .pb-md-#{$name} {
-      > .cmp-container {
-        @include media-breakpoint-down(md) {
+
+        &.pb-md-#{$name} {
           padding-bottom: $spacing;
         }
-      }
-    }
-    .pl-md-#{$name} {
-      > .cmp-container {
-        @include media-breakpoint-down(md) {
+
+        &.pl-md-#{$name} {
           padding-left: $spacing;
         }
       }
@@ -290,62 +274,64 @@ html:not(.aem-AuthorLayer-Edit) {
 
 // Watermark background image
 .watermark-container {
-  > .cmp-container {
-    background-repeat: no-repeat;
-    background-image: url('../resources/images/watermarks/wm-gray-800.svg');
-  }
-
-  &--top-left {
+  @include media-breakpoint-up(md) {
     > .cmp-container {
-      background-position: -15% top;
-    }
-  }
-
-  &--top-right {
-    > .cmp-container {
-      background-position: 115% top;
-    }
-  }
-
-  &--bottom-left {
-    > .cmp-container {
-      background-position: -15% bottom;
-    }
-  }
-
-  &--bottom-right {
-    > .cmp-container {
-      background-position: 115% bottom;
-    }
-  }
-
-  &--darksalmon {
-    > .cmp-container {
-      background-image: url('../resources/images/watermarks/wm-darksalmon.svg');
-    }
-  }
-
-  &--gray-50 {
-    > .cmp-container {
-      background-image: url('../resources/images/watermarks/wm-gray-50.svg');
-    }
-  }
-
-  &--gray-800 {
-    > .cmp-container {
+      background-repeat: no-repeat;
       background-image: url('../resources/images/watermarks/wm-gray-800.svg');
     }
-  }
 
-  &--gray-800--transparent {
-    > .cmp-container {
-      background-image: url('../resources/images/watermarks/wm-gray-800-transparent.svg');
+    &--top-left {
+      > .cmp-container {
+        background-position: -15% top;
+      }
     }
-  }
 
-  &--locus {
-    > .cmp-container {
-      background-image: url('../resources/images/watermarks/wm-locus.svg');
+    &--top-right {
+      > .cmp-container {
+        background-position: 115% top;
+      }
+    }
+
+    &--bottom-left {
+      > .cmp-container {
+        background-position: -15% bottom;
+      }
+    }
+
+    &--bottom-right {
+      > .cmp-container {
+        background-position: 115% bottom;
+      }
+    }
+
+    &--darksalmon {
+      > .cmp-container {
+        background-image: url('../resources/images/watermarks/wm-darksalmon.svg');
+      }
+    }
+
+    &--gray-50 {
+      > .cmp-container {
+        background-image: url('../resources/images/watermarks/wm-gray-50.svg');
+      }
+    }
+
+    &--gray-800 {
+      > .cmp-container {
+        background-image: url('../resources/images/watermarks/wm-gray-800.svg');
+      }
+    }
+
+    &--gray-800--transparent {
+      > .cmp-container {
+        background-image: url('../resources/images/watermarks/wm-gray-800-transparent.svg');
+      }
+    }
+
+    &--locus {
+      > .cmp-container {
+        background-image: url('../resources/images/watermarks/wm-locus.svg');
+      }
     }
   }
 }
@@ -377,12 +363,22 @@ html:not(.aem-AuthorLayer-Edit) {
 }
 
 html:not(.aem-AuthorLayer-Edit) {
-  .container--flex {
-    .cmp-container {
+  .container--flex,
+  .container-flex__wrap {
+    > .cmp-container {
       display: flex !important;
       align-items: center;
       flex-wrap: wrap;
       gap: $spacing-8;
+    }
+  }
+
+  .container-flex__wrap {
+    > .cmp-container {
+      > * {
+        width: auto;
+        margin: 0;
+      }
     }
   }
 }
@@ -407,6 +403,15 @@ html:not(.aem-AuthorLayer-Edit) {
       > .cmp-container {
         justify-content: $value;
       }
+    }
+  }
+}
+
+// Animation
+html:not(.aem-AuthorLayer-Edit) {
+  .container {
+    .container-animation__light-off {
+      transition: background-color .5s ease-in-out, color .3s ease-in-out;
     }
   }
 }

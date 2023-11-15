@@ -1,16 +1,43 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const Flickity = require('flickity');
+
 (function () {
     'use strict';
 
     const selectors = {
         self: 'list--teaser',
+        wrapper: 'list-wrapper',
         slides: 'cmp-list__item',
-        buttonPrev: 'cmp-list__button-prev',
-        buttonNext: 'cmp-list__button-next',
-        buttonImg: 'cmp-list__button-image',
+        cursorButton: 'cmp-list__button-cursor',
+        listItemImage: 'cmp-teaser__image',
         progressBar: 'cmp-list__progress-bar',
         barItem: 'cmp-list__progress-bar--item',
         barItemActive: 'cmp-list__progress-bar--item-active',
     };
+
+    const classNames = {
+        iconContainer: 'list-icon--container',
+        iconElem: 'list-icon--element',
+        iconElemActive: 'list-icon--element-active',
+        iconImg: 'list-icon--element-image',
+    };
+
+    let carouselHeight = 0;
+
+    function CreateIconCursor() {
+        const iconImg = document.createElement('img');
+        iconImg.classList.add(classNames.iconImg);
+
+        const iconElem = document.createElement('div');
+        iconElem.classList.add(classNames.iconElem);
+        iconElem.appendChild(iconImg);
+
+        const iconContainer = document.createElement('div');
+        iconContainer.classList.add(classNames.iconContainer);
+        iconContainer.appendChild(iconElem);
+
+        document.body.prepend(iconContainer);
+    }
 
     /**
      * TeaserCarousel Configuration.
@@ -37,31 +64,113 @@
             that._config = config;
             that._state = {};
             that._state.currentSlide = 0;
+            that._state.initialScrollPosition = window.scrollY;
 
             cacheElements(config.element);
-            createSliderButtons();
             createSliderProgressBar();
+            initFlickityCarousel();
+            initCarouselItemHovering();
+            window.addEventListener("scroll", onWindowScroll);
         }
 
+        function initCarouselItemHovering() {
+            for (let i = 0; i < Object.values(that._elements.listItems).length; i++) {
+                const listItemImage = that._elements.listItems[i].getElementsByClassName(selectors.listItemImage)[0];
 
-        function moveToNext() {
-            const temporarySlide = that._state.currentSlide + 1;
-
-            if (temporarySlide > that._elements.listItems.length - 1) {
-                getFirstSlide();
-            } else {
-                getCurrentSlide(temporarySlide);
+                if (listItemImage) {
+                    listItemImage.addEventListener('mouseenter', onMouseEnter);
+                    listItemImage.addEventListener('mousemove', onMouseMove);
+                    listItemImage.addEventListener('mouseleave', onMouseLeave);
+                }
             }
         }
 
-        function getFirstSlide() {
-            that._state.currentSlide = 0;
-            that._elements.listItems[that._state.currentSlide].scrollIntoView({
-                behavior: 'smooth',
-                inline: 'nearest',
-                block: 'nearest'
+        function onWindowScroll() {
+            const currentScrollPosition = window.scrollY;
+            const scrollDifference = currentScrollPosition - that._state.initialScrollPosition;
+            that._state.initialScrollPosition = currentScrollPosition;
+
+            if (!that._state.pageY) {
+                return;
+            }
+
+            const newPageY = Number(that._state.pageY) + Number(scrollDifference);
+            that._state.pageY = newPageY;
+
+            const coords = {
+                pageX: that._state.pageX,
+                pageY: newPageY,
+            };
+
+            onTranslateIcon(coords);
+        }
+
+        function onMouseEnter(e) {
+            that._state.pageX = e.pageX;
+            that._state.pageY = e.pageY;
+
+            onTranslateIcon(e);
+            that._elements.iconElem.classList.add(classNames.iconElemActive);
+        }
+
+        function onMouseMove(e) {
+            that._state.pageX = e.pageX;
+            that._state.pageY = e.pageY;
+
+            onTranslateIcon(e);
+        }
+
+        function onTranslateIcon({ pageX, pageY }) {
+            if (!pageX && !pageY) {
+                return;
+            }
+
+            const x = pageX - 22;
+            const y = pageY - 22;
+
+            that._elements.iconElem.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function onMouseLeave() {
+            that._elements.iconElem.classList.remove(classNames.iconElemActive);
+        }
+
+        function initFlickityCarousel() {
+            const elem = that._elements.list;
+            const flkty = new Flickity(elem, {
+                // options
+                cellAlign: 'left',
+                prevNextButtons: false,
+                pageDots: false,
+                accessibility: false,
+                resize: true,
+                wrapAround: true,
+                imagesLoaded: true,
+                // events
+                on: {
+                    change: function (index) {
+                        getCurrentSlidePosition(index);
+                    },
+                    dragMove: function (e) {
+                        onMouseMove(e);
+                    },
+                    ready: function () {
+                        if (carouselHeight === 0) {
+                            let height = carouselHeight;
+
+                            for (let i = 0; i < Object.values(that._elements.listItems).length; i++) {
+                                height = that._elements.listItems[i].clientHeight > height ? that._elements.listItems[i].clientHeight : height;
+                            }
+
+                            carouselHeight = height;
+                        }
+                    }
+                }
             });
-            getCurrentSlidePosition(0);
+
+            flkty.viewport.style.minHeight = `${carouselHeight}px`;
+
+            that._flkty = flkty;
         }
 
         function getCurrentSlide(temporarySlide) {
@@ -71,6 +180,7 @@
                 inline: 'start',
                 block: 'nearest'
             });
+            that._flkty.select(temporarySlide);
             getCurrentSlidePosition(temporarySlide);
         }
 
@@ -82,22 +192,6 @@
             }
 
             that._elements.progressBarItems[slide].classList.add(selectors.barItemActive);
-        }
-
-        function createSliderButtons() {
-            const buttonNext = document.createElement('button');
-            buttonNext.type = 'button';
-            buttonNext.classList.add(selectors.buttonNext);
-            buttonNext.addEventListener('click', moveToNext);
-
-            const buttonImg = document.createElement('img');
-            buttonImg.classList.add(selectors.buttonImg);
-
-            buttonNext.appendChild(buttonImg.cloneNode(true));
-
-            that._elements.self.appendChild(buttonNext);
-
-            that._elements.button = Object.values(that._elements.list.querySelectorAll('button'));
         }
 
         function createSliderProgressBar() {
@@ -133,12 +227,18 @@
             that._elements = {};
             that._elements.self = wrapper;
             that._elements.list = wrapper.children[0];
-            that._elements.listItems = Object.values(that._elements.list.querySelectorAll('li'));
+            that._elements.listItems = that._elements.list.querySelectorAll('li');
+            that._elements.iconElem = document.body.getElementsByClassName(classNames.iconElem)[0];
         }
     }
 
     function onDocumentReady() {
         const elements = document.getElementsByClassName(selectors.self);
+
+        if (Object.values(elements).length > 0) {
+            CreateIconCursor();
+        }
+
         for (let i = 0; i < elements.length; i++) {
             new TeaserCarousel({ element: elements[i] });
         }
@@ -153,6 +253,11 @@
                     nodesArray.forEach(function (addedNode) {
                         if (addedNode.querySelectorAll) {
                             const elementsArray = [].slice.call(addedNode.getElementsByClassName(selectors.self));
+
+                            if (elementsArray.length > 0) {
+                                CreateIconCursor();
+                            }
+
                             elementsArray.forEach(function (element) {
                                 new TeaserCarousel({ element: element });
                             });

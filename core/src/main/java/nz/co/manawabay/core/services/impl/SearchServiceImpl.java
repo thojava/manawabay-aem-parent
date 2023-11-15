@@ -1,7 +1,5 @@
 package nz.co.manawabay.core.services.impl;
 
-import com.adobe.cq.wcm.core.components.commons.link.LinkManager;
-import com.adobe.cq.wcm.core.components.models.ListItem;
 import com.day.cq.search.PredicateConverter;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
@@ -9,154 +7,132 @@ import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.eval.FulltextPredicateEvaluator;
 import com.day.cq.search.eval.PathPredicateEvaluator;
 import com.day.cq.search.eval.TypePredicateEvaluator;
+import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
-import com.day.cq.wcm.api.LanguageManager;
-import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
-import com.day.cq.wcm.api.Template;
 import com.day.cq.wcm.api.constants.NameConstants;
-import com.day.cq.wcm.msm.api.LiveRelationshipManager;
-import nz.co.manawabay.core.internal.models.v1.PageListItemImpl;
-import nz.co.manawabay.core.models.SearchResults;
+import lombok.extern.slf4j.Slf4j;
+import nz.co.manawabay.core.models.search.SearchResultItem;
 import nz.co.manawabay.core.services.SearchService;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.jackrabbit.util.Text;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.models.factory.ModelFactory;
-import org.jetbrains.annotations.NotNull;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import java.util.*;
-import java.util.stream.StreamSupport;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
-import static com.adobe.cq.wcm.core.components.models.ExperienceFragment.PN_FRAGMENT_VARIATION_PATH;
+import static java.util.stream.Collectors.toList;
+import static nz.co.manawabay.core.constants.CommonConstants.REGEX_HYPHENATED;
+import static nz.co.manawabay.core.constants.CommonConstants.TEXT_ALL;
 
-@Component(service = SearchService.class)
+@Slf4j
+@Component(immediate = true, service = SearchService.class)
 public class SearchServiceImpl implements SearchService {
-    private static final String PARAM_FULLTEXT = "fulltext";
-    private static final String PARAM_RESULTS_OFFSET = "resultsOffset";
-    private static final String NN_STRUCTURE = "structure";
-
+    /**
+     * Query builder service.
+     */
     @Reference
     private QueryBuilder queryBuilder;
 
-    @Reference
-    private LanguageManager languageManager;
+    @Override
+    public List<SearchResultItem> getResults(final SlingHttpServletRequest request, String storePageRoot,
+                                             String articlePageRoot, String fulltextParam,
+                                             String filterParam, long offset, long limit) {
+        Map<String, String> predicatesMap = this.getPredicatesMap(storePageRoot, articlePageRoot, fulltextParam);
+        List<Hit> filteredResults = this.executeQuery(request, offset, limit, predicatesMap);
 
-    @Reference
-    private LiveRelationshipManager relationshipManager;
-
-    @Reference
-    private ModelFactory modelFactory;
-
+        return filteredResults.stream()
+                .map(hit -> processSearchResult(hit, articlePageRoot))
+                .filter(Objects::nonNull)
+                .collect(toList());
+    }
 
     @Override
-    public List<ListItem> doSearch(@NotNull Page currentPage, @NotNull SlingHttpServletRequest request) {
-        SearchResults searchComponent = getSearchComponent(request, currentPage);
-
-        return getResults(request, searchComponent, currentPage.getPageManager());
+    public Map<String, String> getFilteredResultsCount(SlingHttpServletRequest request, String storePageRoot,
+                                                       String articlePageRoot, String fulltextParam) {
+        Map<String, String> filteredResultsCount = new HashMap<>();
+        filteredResultsCount.put(TEXT_ALL,
+                this.getResultsCount(request, storePageRoot, articlePageRoot, fulltextParam));
+        return filteredResultsCount;
     }
 
-    @NotNull
-    private SearchResults getSearchComponent(@NotNull final SlingHttpServletRequest request, @NotNull final Page currentPage) {
-        String suffix = request.getRequestPathInfo().getSuffix();
-        String relativeContentResourcePath = Optional.ofNullable(suffix)
-                .filter(path -> StringUtils.startsWith(path, "/"))
-                .map(path -> StringUtils.substring(path, 1))
-                .orElse(suffix);
-
-        return Optional.ofNullable(relativeContentResourcePath)
-                .filter(StringUtils::isNotEmpty)
-                .map(rcrp -> getSearchComponentResourceFromPage(request.getResource(), rcrp)
-                        .orElse(getSearchComponentResourceFromTemplate(currentPage, rcrp)
-                                .orElse(null)))
-                .map(resource -> modelFactory.getModelFromWrappedRequest(request, resource, SearchResults.class))
-                .orElseThrow(() -> new RuntimeException("The search is invalid"));
-    }
-
-    private Optional<Resource> getSearchComponentResourceFromPage(@NotNull final Resource pageResource, final String relativeContentResourcePath) {
-        return Optional.ofNullable(Optional.ofNullable(pageResource.getChild(relativeContentResourcePath))
-                .orElse(getSearchComponentResourceFromFragments(pageResource.getChild(NameConstants.NN_CONTENT), relativeContentResourcePath)
-                        .orElse(null)));
-    }
-
-    private Optional<Resource> getSearchComponentResourceFromTemplate(@NotNull final Page currentPage, final String relativeContentResourcePath) {
-        return Optional.ofNullable(currentPage.getTemplate())
-                .map(Template::getPath)
-                .map(currentPage.getContentResource().getResourceResolver()::getResource)
-                .map(templateResource -> Optional.ofNullable(templateResource.getChild(NN_STRUCTURE + "/" + relativeContentResourcePath))
-                        .orElse(getSearchComponentResourceFromFragments(templateResource, relativeContentResourcePath)
-                                .orElse(null)));
-    }
-
-    private Optional<Resource> getSearchComponentResourceFromFragments(Resource resource, String relativeContentResourcePath) {
-        return Optional.ofNullable(resource)
-                .map(res -> getSearchComponentResourceFromFragment(res, relativeContentResourcePath)
-                        .orElse(StreamSupport.stream(res.getChildren().spliterator(), false)
-                                .map(child -> getSearchComponentResourceFromFragments(child, relativeContentResourcePath).orElse(null))
-                                .filter(Objects::nonNull)
-                                .findFirst()
-                                .orElse(null)));
-    }
-
-    private Optional<Resource> getSearchComponentResourceFromFragment(Resource candidate, String relativeContentResourcePath) {
-        return Optional.ofNullable(candidate)
-                .map(Resource::getValueMap)
-                .map(properties -> properties.get(PN_FRAGMENT_VARIATION_PATH, String.class))
-                .map(path -> candidate.getResourceResolver().getResource(path + "/" + relativeContentResourcePath));
-    }
-
-    @NotNull
-    private List<ListItem> getResults(@NotNull final SlingHttpServletRequest request,
-                                      @NotNull final SearchResults searchComponent,
-                                      @NotNull final PageManager pageManager) {
-
-        List<ListItem> results = new ArrayList<>();
-        String fulltext = request.getParameter(PARAM_FULLTEXT);
-
-        long resultsOffset = Optional.ofNullable(request.getParameter(PARAM_RESULTS_OFFSET)).map(Long::parseLong).orElse(0L);
-        Map<String, String> predicatesMap = new HashMap<>();
-        predicatesMap.put(FulltextPredicateEvaluator.FULLTEXT, fulltext);
-        predicatesMap.put(PathPredicateEvaluator.PATH, searchComponent.getSearchRootPagePath());
-        predicatesMap.put(TypePredicateEvaluator.TYPE, NameConstants.NT_PAGE);
-        PredicateGroup predicates = PredicateConverter.createPredicates(predicatesMap);
-        ResourceResolver resourceResolver = request.getResource().getResourceResolver();
-        Query query = queryBuilder.createQuery(predicates, resourceResolver.adaptTo(Session.class));
-        if (searchComponent.getPageNumber() != 0) {
-            query.setHitsPerPage(searchComponent.getPageNumber());
+    private SearchResultItem processSearchResult(Hit hit, String articlePageRoot) {
+        Resource filteredResource;
+        try {
+            filteredResource = hit.getResource();
+            SearchResultItem searchResult = filteredResource.adaptTo(SearchResultItem.class);
+            assert searchResult != null;
+            searchResult.setDescription(hit.getExcerpt());
+            searchResult.setArticlePage(filteredResource.getPath().contains(articlePageRoot));
+            return searchResult;
+        } catch (RepositoryException e) {
+            log.error("Unable to get resource or excerpt from hit - exception : ", e);
+            return null;
         }
+    }
+
+    private String getResultsCount(SlingHttpServletRequest request, String storePageRoot, String articlePageRoot,
+                                   String fulltext) {
+        Map<String, String> predicatesMap = this.getPredicatesMap(storePageRoot, articlePageRoot, fulltext);
+        long filteredResults = executeQueryCount(request, predicatesMap);
+        return String.valueOf(filteredResults);
+    }
+
+    private Map<String, String> getPredicatesMap(String storePageRoot, String articlePageRoot, String fulltext) {
+        Map<String, String> predicatesMap = new HashMap<>();
+        predicatesMap.put("group.p.or", "true");
+        predicatesMap.put("orderby", "@jcr:score");
+        predicatesMap.put("orderby.sort", "desc");
+        if(StringUtils.isNotEmpty(fulltext)) {
+            fulltext = fulltext.replaceAll(REGEX_HYPHENATED, " ").trim();
+            predicatesMap.put(FulltextPredicateEvaluator.FULLTEXT, Text.escapeIllegalXpathSearchChars(fulltext) + "*");
+        }
+
+        // Page Predicate
+        this.addPagePredicates(predicatesMap, "group.1_group.", storePageRoot);
+
+        this.addPagePredicates(predicatesMap, "group.2_group.", articlePageRoot);
+
+        return predicatesMap;
+    }
+
+    private void addPagePredicates(Map<String, String> predicatesMap, String groupPrefix,
+                                   String searchRoot) {
+        predicatesMap.put(groupPrefix + PathPredicateEvaluator.PATH, searchRoot);
+        predicatesMap.put(groupPrefix + TypePredicateEvaluator.TYPE, NameConstants.NT_PAGE);
+        predicatesMap.put(groupPrefix + "1_group.p.not", "true");
+        predicatesMap.put(groupPrefix + "1_group.1_property", "jcr:content/hideInSiteSearch");
+        predicatesMap.put(groupPrefix + "1_group.1_property.value", "true");
+        predicatesMap.put(groupPrefix + "1_group.1_property.operation", "equals");
+    }
+
+    private List<Hit> executeQuery(SlingHttpServletRequest request, long resultsOffset,
+                                   long resultsLimit, Map<String, String> predicatesMap) {
+        Query query = this.getQuery(request, predicatesMap);
+        query.setHitsPerPage(resultsLimit);
         if (resultsOffset != 0) {
             query.setStart(resultsOffset);
         }
         SearchResult searchResult = query.getResult();
+        return searchResult.getHits();
+    }
 
-        LinkManager linkManager = request.adaptTo(LinkManager.class);
-        // Query builder has a leaking resource resolver, so the following work around is required.
-        ResourceResolver leakingResourceResolver = null;
-        try {
-            Iterator<Resource> resourceIterator = searchResult.getResources();
-            while (resourceIterator.hasNext()) {
-                Resource resource = resourceIterator.next();
+    private long executeQueryCount(SlingHttpServletRequest request, Map<String, String> predicatesMap) {
+        Query query = this.getQuery(request, predicatesMap);
+        SearchResult searchResult = query.getResult();
+        return searchResult.getTotalMatches();
+    }
 
-                // Get a reference to QB's leaking resource resolver
-                if (leakingResourceResolver == null) {
-                    leakingResourceResolver = resource.getResourceResolver();
-                }
-
-                Optional.of(resource)
-                        .map(res -> resourceResolver.getResource(res.getPath()))
-                        .map(pageManager::getContainingPage)
-                        .map(page -> new PageListItemImpl(linkManager, page, searchComponent.getId(), null))
-                        .ifPresent(results::add);
-            }
-        } finally {
-            if (leakingResourceResolver != null) {
-                leakingResourceResolver.close();
-            }
-        }
-        return results;
+    private Query getQuery(SlingHttpServletRequest request, Map<String, String> predicatesMap) {
+        PredicateGroup predicates = PredicateConverter.createPredicates(predicatesMap);
+        ResourceResolver resourceResolver = request.getResourceResolver();
+        return queryBuilder.createQuery(predicates, resourceResolver.adaptTo(Session.class));
     }
 }

@@ -1,10 +1,11 @@
-$paddings: ('none':$spacing-0, 'xs':$spacing-4, "sm":$spacing-8, 'md':$spacing-16, 'lg':$spacing-24, 'xl':$spacing-48);
+$paddings: ('0':$spacing-0, '2xs':$spacing-2, 'xs':$spacing-8, 'sm':$spacing-12, 'base':$spacing-16, 'md':$spacing-20, 'ml':$spacing-28, 'lg':$spacing-32, '2lg':$spacing-40, '3lg':$spacing-48, '4lg':$spacing-64, '5lg':$spacing-80);
 $fonts: ('typonine': $font-family--typonine, 'thema': $font-family--thema);
 $font-sizes: ('xxs':$font-xxs, 'xs':$font-xs, 'sm':$font-sm, 'md':$font-md, 'ml':$font-ml, 'base':$font-base, 'lg':$font-lg, 'xl':$font-xl, '2xl':$font-2xl, '3xl':$font-3xl, '4xl':$font-4xl, '5xl':$font-5xl, '6xl':$font-6xl, '7xl':$font-7xl, '8xl':$font-8xl);
 $line-height: ('none':$line-height-none, 'snug':$line-height-tighter, 'tight':$line-height-tight, 'normal':$line-height-normal);
 $letter-spacing: ('normal':$tracking-normal, 'sm':$tracking-sm, 'md':$tracking-md, 'ml':$tracking-ml, 'lg':$tracking-lg, 'xl':$tracking-xl, '2xl':$tracking-2xl);
 $font-weight: ('light':$font-weight-light, 'normal':$font-weight-normal, 'medium':$font-weight-medium, 'semibold':$font-weight-semibold, 'bold':$font-weight-bold);
 $colors: ('gray-200': $gray-200, 'gray-50': $gray-50, 'gray-400': $gray-400, 'darkgrey':$darkgrey, 'white':$white, 'black':$black, 'dark':$dark);
+$margins: ('0':$spacing-0, '2xs':$spacing-2, 'xs':$spacing-8, 'sm':$spacing-12, 'base':$spacing-16, 'md':$spacing-20, 'ml':$spacing-28, 'lg':$spacing-32, '2lg':$spacing-40, '3lg':$spacing-48, '4lg':$spacing-64, '5lg':$spacing-80);
 
 .button {
   width: fit-content;
@@ -35,8 +36,8 @@ a.cmp-button:active {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: $spacer;
-  transition: color, opacity, background-color .15s ease-in;
+  gap: 0;
+  transition: all .15s ease-in;
   border-radius: $spacing-2;
   border: 1px solid transparent;
   padding: $spacing-8;
@@ -54,6 +55,30 @@ a.cmp-button:active {
     opacity: 0.5;
     cursor: default;
   }
+
+  @include media-breakpoint-up(md) {
+    &:hover {
+      gap: $spacer;
+
+      .cmp-button__icon {
+        i {
+          opacity: 1;
+          font-size: $font-base;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    gap: $spacer;
+
+    .cmp-button__icon {
+      i {
+        opacity: 1;
+        font-size: $font-base;
+      }
+    }
+  }
 }
 
 .cmp-button__text {
@@ -67,8 +92,8 @@ a.cmp-button:active {
 
 .cmp-button__icon {
   i {
-    font-size: $font-base;
-    transition: color, opacity .15s ease-in;
+    font-size: 0;
+    transition: all .15s ease-in;
   }
 }
 
@@ -92,11 +117,7 @@ a.cmp-button:active {
     &:active:not(:disabled) {
       .cmp-button__text,
       .cmp-link__screen-reader-only {
-        color: $accent-01;
-
-        @media (prefers-color-scheme: light) {
-          color: $color-accent-01-light;
-        }
+        color: currentColor;
       }
 
       .cmp-button__icon {
@@ -270,17 +291,37 @@ a.cmp-button:active {
 
 @each $name, $padding in $paddings {
   .button {
-    &.padding-x--#{$name} {
+    &.px-#{$name} {
       .cmp-button {
         padding-left: $padding;
         padding-right: $padding;
       }
     }
 
-    &.padding-y--#{$name} {
+    &.py-#{$name} {
       .cmp-button {
         padding-top: $padding;
         padding-bottom: $padding;
+      }
+    }
+  }
+}
+
+@each $name, $padding in $paddings {
+  .button {
+    @include media-breakpoint-down(md) {
+      &.px-md-#{$name} {
+        .cmp-button {
+          padding-left: $padding;
+          padding-right: $padding;
+        }
+      }
+
+      &.py-md-#{$name} {
+        .cmp-button {
+          padding-top: $padding;
+          padding-bottom: $padding;
+        }
       }
     }
   }
@@ -302,9 +343,29 @@ a.cmp-button:active {
         font-size: $font-size;
       }
 
-      .cmp-button__icon {
-        i {
+      &:hover {
+        .cmp-button__icon {
+          i {
+            font-size: $font-size;
+          }
+        }
+      }
+    }
+  }
+
+  @each $name, $font-size in $font-sizes {
+    @include media-breakpoint-down(md) {
+      &.button__text-sm--#{$name} {
+        .cmp-button__text {
           font-size: $font-size;
+        }
+
+        &:hover {
+          .cmp-button__icon {
+            i {
+              font-size: $font-size;
+            }
+          }
         }
       }
     }
@@ -351,6 +412,79 @@ a.cmp-button:active {
           color: $color;
         }
       }
+    }
+  }
+
+  @each $name, $margin in $margins {
+    &.ml-#{$name} {
+      margin-left: $margin;
+    }
+
+    &.mr-#{$name} {
+      margin-right: $margin;
+    }
+  }
+
+  @each $name, $margin in $margins {
+    @include media-breakpoint-down(md) {
+      &.ml-md-#{$name} {
+        margin-left: $margin;
+      }
+
+      &.mr-md-#{$name} {
+        margin-right: $margin;
+      }
+    }
+  }
+}
+
+.hover-gb__white.button {
+  .cmp-button {
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: $white;
+
+      .cmp-button__text {
+        color: $black;
+      }
+
+      .cmp-button__icon {
+        i {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.hover-gb__black.button {
+  .cmp-button {
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: $black;
+
+      .cmp-button__text {
+        color: $white;
+      }
+
+      .cmp-button__icon {
+        i {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.button.button-mobile__fullwidth {
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+
+  .cmp-button {
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      justify-content: space-between;
     }
   }
 }

@@ -17,8 +17,14 @@ body {
   }
 }
 
+body {
+  position: relative;
+}
+
 main.container {
   padding: 0 !important;
+  z-index: 1;
+  position: relative;
 }
 
 a {
@@ -56,4 +62,33 @@ footer.experiencefragment {
 
 .container {
   max-width: none;
+}
+
+.root-container {
+  > .cmp-container,
+  > .cmp-container > div.aem-Grid {
+    > .container {
+      > .cmp-container {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+footer {
+  .cmp-container,
+  .cmp-container > div.aem-Grid {
+    > .container {
+      > .cmp-container {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.root {
+  z-index: 1;
+  position: relative;
 }
