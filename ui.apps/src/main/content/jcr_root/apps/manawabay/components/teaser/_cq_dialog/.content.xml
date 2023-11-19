@@ -359,6 +359,35 @@
                         jcr:title="Asset"
                         sling:resourceType="core/wcm/components/include/imagedelegate"
                         path="core/wcm/components/image/v3/image/cq:dialog/content/items/tabs/items/asset"/>
+                    <video
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Video"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <file
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="false"
+                                                fieldLabel="Video"
+                                                fileReferenceParameter="./videoFileReference"
+                                                mimeTypes="[video/*]"
+                                                name="./videoFile"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </video>
                     <styletab
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/include"
