@@ -67,23 +67,30 @@ public class Teaser implements com.adobe.cq.wcm.core.components.models.Teaser {
     private MimeTypeService mimeTypeService;
 
     private Resource iconResource;
+
     private Resource brandImageResource;
+
     @ValueMapValue
     private Calendar publishDate;
 
     @ValueMapValue
     protected boolean showIcon;
+
     @ValueMapValue
     protected boolean showPublishDate;
+
     @ValueMapValue
     protected boolean hideTitle;
+
     @ValueMapValue
     protected boolean showDescription;
+
     @ValueMapValue
     protected boolean hideImage;
 
     @ValueMapValue
     protected boolean showBrandImage;
+
     @ValueMapValue
     private String publishDateFormatString;
 
