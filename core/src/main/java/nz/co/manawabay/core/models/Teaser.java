@@ -94,6 +94,9 @@ public class Teaser implements com.adobe.cq.wcm.core.components.models.Teaser {
     @ValueMapValue
     private String publishDateFormatString;
 
+    @ValueMapValue
+    private String videoFileReference;
+
     public Calendar getPublishDate() {
         if (publishDate == null) {
             publishDate = pageProperties.get(PN_PAGE_PUBLISHDATE, Calendar.class);
@@ -242,13 +245,12 @@ public class Teaser implements com.adobe.cq.wcm.core.components.models.Teaser {
             this.brandImageResource = this.currentPage.getContentResource(NN_PAGE_BRANDIMAGE_IMAGE);
         }
 
-        String videoFileReference = this.resource.getValueMap().get("videoFileReference", String.class);
         if (StringUtils.isNotBlank(videoFileReference)) {
-            initVideoResource(videoFileReference);
+            initVideoResource();
         }
     }
 
-    private void initVideoResource(String videoFileReference) {
+    private void initVideoResource() {
         Resource downloadResource = resourceResolver.getResource(videoFileReference);
 
         if (downloadResource != null) {
