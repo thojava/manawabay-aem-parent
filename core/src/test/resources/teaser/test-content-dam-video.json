@@ -1,0 +1,37 @@
+{
+  "sample_video.mp4": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable"
+    ],
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "dam:assetState": "processed",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "original": {
+          "jcr:primaryType": "nt:file",
+          "jcr:content": {
+            "jcr:primaryType": "oak:Resource",
+            "jcr:mimeType": "video/mp4",
+            ":jcr:data": 27795
+          }
+        }
+      }
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "tiff:ImageLength": 2000,
+      "tiff:ImageWidth": 2000,
+      "dc:format": "video/mp4",
+      "dam:sha1": "1385f0808b7ef1600b6c39244917ef1df2ce6652",
+      "dam:size": 3114374
+    }
+  }
+}

@@ -199,6 +199,12 @@
                 "text": "CTA linking to an asset"
               }
             }
+          },
+          "teaser-16": {
+            "jcr:primaryType"     : "nt:unstructured",
+            "jcr:title"           : "Teaser",
+            "sling:resourceType"  : "manawabay/components/teaser",
+            "videoFileReference": "/content/dam/core/videos/sample_video.mp4"
           }
         }
       }

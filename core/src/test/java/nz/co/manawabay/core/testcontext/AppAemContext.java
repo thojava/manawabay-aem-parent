@@ -15,14 +15,13 @@
  */
 package nz.co.manawabay.core.testcontext;
 
-import static com.adobe.cq.wcm.core.components.testing.mock.ContextPlugins.CORE_COMPONENTS;
-import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;
-
-import org.apache.sling.testing.mock.sling.ResourceResolverType;
-
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextBuilder;
 import io.wcm.testing.mock.aem.junit5.AemContextCallback;
+import org.apache.sling.testing.mock.sling.ResourceResolverType;
+
+import static com.adobe.cq.wcm.core.components.testing.mock.ContextPlugins.CORE_COMPONENTS;
+import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;
 
 /**
  * Sets up {@link AemContext} for unit tests in this application.
@@ -33,6 +32,7 @@ public final class AppAemContext {
     public static final String TEST_CONTENT_JSON = "/test-content.json";
     public static final String TEST_TAGS_JSON = "/test-tags.json";
     public static final String TEST_CONTENT_DAM_JSON = "/test-content-dam.json";
+    public static final String TEST_CONTENT_DAM_VIDEO_JSON = "/test-content-dam-video.json";
     public static final String TEST_APPS_JSON = "/test-apps.json";
     public static final String TEST_CONF_JSON = "/test-conf.json";
 

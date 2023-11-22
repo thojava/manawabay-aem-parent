@@ -4,8 +4,8 @@ import com.adobe.cq.wcm.core.components.models.ListItem;
 import com.day.cq.commons.jcr.JcrConstants;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-import nz.co.manawabay.core.utils.ModelUtils;
 import nz.co.manawabay.core.testcontext.AppAemContext;
+import nz.co.manawabay.core.utils.ModelUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletRequest;
@@ -25,6 +25,7 @@ class TeaserTest {
     static final String CONF_ROOT = "/conf";
     static final String PNG_IMAGE_BINARY_NAME = "Adobe_Systems_logo_and_wordmark.png";
     static final String PNG_ASSET_PATH = "/content/dam/core/images/" + PNG_IMAGE_BINARY_NAME;
+    static final String VIDEO_BINARY_NAME = "test_video.mp4";
     static final String CONTEXT_PATH = "/core";
     static final String TEST_ROOT_PAGE = "/content/teasers";
     static final String TEST_ROOT_PAGE_GRID = "/jcr:content/root/responsivegrid";
@@ -46,6 +47,7 @@ class TeaserTest {
     static final String TEASER_13 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-13";
     static final String TEASER_14 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-14";
     static final String TEASER_15 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-15";
+    static final String TEASER_16 = TEST_ROOT_PAGE + TEST_ROOT_PAGE_GRID + "/teaser-16";
 
     final AemContext context = AppAemContext.newAemContext();
 
@@ -63,6 +65,8 @@ class TeaserTest {
         context.load().json(testBase + AppAemContext.TEST_APPS_JSON, AppAemContext.TEST_APPS_ROOT);
         context.load().json(testBase + AppAemContext.TEST_CONF_JSON, CONF_ROOT);
         context.load().binaryFile("/image/" + PNG_IMAGE_BINARY_NAME, PNG_ASSET_PATH + "/jcr:content/renditions/original");
+        context.load().json(testBase + AppAemContext.TEST_CONTENT_DAM_VIDEO_JSON, "/content/dam/core/videos");
+        context.load().binaryFile("/video/" + VIDEO_BINARY_NAME, "/content/dam/core/videos/jcr:content/renditions/original");
     }
 
     @Test
@@ -237,6 +241,12 @@ class TeaserTest {
         Teaser teaser = getTeaserUnderTest(TEASER_15);
         List<ListItem> actions = teaser.getActions();
         assertEquals(CONTEXT_PATH + "/content/dam/core/images/Adobe_Systems_logo_and_wordmark.png", actions.get(0).getPath());
+    }
+
+    @Test
+    void testTeaserWithVideoAsset() {
+        Teaser teaser = getTeaserUnderTest(TEASER_16);
+        assertEquals("/content/dam/core/videos/sample_video.mp4.coredownload.mp4", teaser.getVideoUrl());
     }
 
     Teaser getTeaserUnderTest(String resourcePath, Object... properties) {
